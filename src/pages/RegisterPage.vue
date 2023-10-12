@@ -16,12 +16,11 @@
 
     <div>
       <label for="confirm_password">Potwierdź hasło:</label>
-      <input v-model="confirm_password" type="confirm_password" id="confirm_password" required>
+      <input v-model="confirm_password" type="password" id="confirm_password" required>
     </div>
 
     <button type="submit">Zarejestruj się</button>
   </form>
-
 
 
 </template>
@@ -40,13 +39,14 @@ export default {
   methods: {
     async register() {
       try {
-        const response = await this.$axios.post( '/register', {
+        const response = await this.$axios.post('/register', {
           email: this.email,
           password: this.password,
           confirm_password: this.confirm_password,
 
-        })
-      }catch (error){
+        });
+        this.$router.push('/logowanie')
+      } catch (error) {
         console.error('Błąd rejestracji:', error)
       }
     }
