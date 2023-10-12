@@ -27,7 +27,9 @@ export default {
         const response = await this.$axios.post('/login',{
           email: this.email,
           password: this.password
-        })
+        });
+        console.log('Zalogowano:', response.data)
+
       }catch (error){
         console.error('Błąd logowanie:', error)
       }

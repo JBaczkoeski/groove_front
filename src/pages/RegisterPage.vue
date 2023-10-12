@@ -1,25 +1,26 @@
 <template>
-  <div>
+  <div class="text-center">
     <h1>Rejestracja</h1>
   </div>
 
-  <form @submit.prevent="register">
-    <div>
+  <form @submit.prevent="register" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column text-center container-flex">
+
+    <div class="col-7 mt-4">
       <label for="email">E-mail:</label>
-      <input v-model="email" type="email" id="email" required>
+      <input v-model="email" type="email" id="email" required class="form-control">
     </div>
 
-    <div>
+    <div class="col-7 mt-4">
       <label for="password">Hasło:</label>
-      <input v-model="password" type="password" id="password" required>
+      <input v-model="password" type="password" id="password" required class="form-control">
     </div>
 
-    <div>
+    <div class="col-7 mt-4">
       <label for="confirm_password">Potwierdź hasło:</label>
-      <input v-model="confirm_password" type="password" id="confirm_password" required>
+      <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
     </div>
 
-    <button type="submit">Zarejestruj się</button>
+    <button type="submit" class="btn btn-secondary mt-4">Zarejestruj się</button>
   </form>
 
 
@@ -45,7 +46,9 @@ export default {
           confirm_password: this.confirm_password,
 
         });
-        this.$router.push('/logowanie')
+        this.$router.push('/logowanie');
+        console.log('Zarejestrowano:', response.data)
+
       } catch (error) {
         console.error('Błąd rejestracji:', error)
       }
