@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import axios from "axios";
+import store from './store'
 
 // import widoków
 import HomePage from "@/pages/HomePage.vue";
@@ -19,5 +21,7 @@ const router = createRouter({
 
 const app = createApp(App)
 
+app.config.globalProperties.$axios = axios;
+app.use(store)
 app.use(router)
 app.mount('#app')

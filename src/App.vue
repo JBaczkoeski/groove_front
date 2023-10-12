@@ -44,19 +44,22 @@
       </div>
     </div>
   </nav>
-  <div class="mb-5">
+  <div class="container-fluid">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import NavLink from './components/NavbarHref.vue';
+
 export default {
+  name: 'App',
+
   components: {
     NavLink
   },
-  name: 'App',
-  data(){
+  
+  data() {
     return {
       isLogged: false
     }
