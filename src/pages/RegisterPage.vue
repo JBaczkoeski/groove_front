@@ -1,11 +1,12 @@
 <template>
-  <div class="text-center">
-    <h1>Rejestracja</h1>
+  <div>
+
   </div>
 
-  <form @submit.prevent="register" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column text-center container-flex">
+  <form @submit.prevent="register" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column text-center container-flex center-vertical">
 
     <div class="col-7 mt-4">
+      <h1 class="text-center">Rejestracja</h1>
       <label for="email">E-mail:</label>
       <input v-model="email" type="email" id="email" required class="form-control">
     </div>
@@ -20,7 +21,7 @@
       <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-secondary mt-4">Zarejestruj się</button>
+    <button type="submit" class="btn btn-success mt-4 mb-5">Zarejestruj się</button>
   </form>
 
 
@@ -60,5 +61,7 @@ export default {
 </script>
 
 <style scoped>
-
+.center-vertical{
+margin-top: 130px;
+}
 </style>
