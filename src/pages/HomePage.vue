@@ -1,6 +1,6 @@
 <template>
   <div class="container col-5 shadow d-flex justify-content-center align-items-center flex-column container-flex">>
-    <h3 class="mt-5">Logowanie</h3>
+    <h3 class="mt-5">Strona Główna</h3>
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
