@@ -2,11 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import store from './store'
+import axios from "axios";
 
 // import widoków
 import HomePage from "@/pages/HomePage.vue";
 import LoginPage from '@/pages/LoginPage.vue'
 import RegisterPage from "@/pages/RegisterPage.vue";
+import SongsPage from "@/pages/SongsPage.vue";
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,12 +17,15 @@ const router = createRouter({
         { path: '/', component: HomePage },
         { path: '/logowanie', component: LoginPage },
         { path: '/rejestracja', component: RegisterPage },
-        { path: '/login', component: RegisterPage}
+        { path: '/login', component: RegisterPage},
+        { path: '/utwory', component: SongsPage}
     //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
 
 const app = createApp(App)
+
+app.config.globalProperties.$axios = axios
 
 app.use(store)
 app.use(router)
