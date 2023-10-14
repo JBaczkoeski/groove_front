@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+//import {mapState} from 'vuex';
 
 
 import NavLink from './components/NavbarHref.vue';
@@ -70,13 +70,18 @@ export default {
     }
 
   },
-
-  computed: {
-    ...mapState({
-      isLogged: state => state.auth.isLogged,
-      token: state => state.auth.token
-    })
+  data() {
+    return {
+      isLogged: true
+    }
   },
+
+  // computed: {
+  //   ...mapState({
+  //     isLogged: state => state.auth.isLogged,
+  //     token: state => state.auth.token
+  //   })
+  // },
 }
 </script>
 <style>
