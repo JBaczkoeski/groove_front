@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="login" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column text-center container-flex">
+  <form @submit.prevent="login" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column container-flex">
     <h3 class="mt-5">Logowanie</h3>
     <div class="col-7 mt-4">
       <label for="email">E-mail:</label>
@@ -9,16 +9,21 @@
       <label for="password">Hasło:</label>
       <input v-model="password" type="password" id="password" class="form-control" required>
     </div>
-    <div class="col-7 mt-4">
-      <button type="submit" class="btn btn-success mt-4 mb-5">Zaloguj się</button>
+    <div class="col-7 mt-4 text-center">
+      <SubmitButton :customClass="'btn-success mt-4 mb-5'" :label="'Zaloguj'"/>
     </div>
   </form>
 
 </template>
 
 <script>
+import SubmitButton from "@/components/SubmitButton.vue";
+
 export default {
   name: 'LoginForm',
+  components:{
+    SubmitButton
+  },
   data() {
     return {
       email: '',
@@ -28,11 +33,13 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await this.$axios.post('/login', {
+        const response = await this.$axios.post('api/Account/Login', {
           email: this.email,
           password: this.password
         });
-        console.log('Zalogowano', response.data)
+        this.$store.dispatch('auth/setIsLogged', true);
+        this.$store.dispatch('auth/setToken', response.data);
+        this.$router.push('/utwory');
       } catch (error) {
         console.error('Błąd logowanie:', error)
       }

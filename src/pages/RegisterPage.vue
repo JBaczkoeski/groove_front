@@ -3,10 +3,16 @@
 
   </div>
 
-  <form @submit.prevent="register" class="container col-5 shadow d-flex justify-content-center align-items-center flex-column text-center container-flex center-vertical">
+  <form @submit.prevent="register"
+        class="container col-5 shadow d-flex justify-content-center align-items-center flex-column container-flex center-vertical">
+    <h1 class="text-center">Rejestracja</h1>
 
     <div class="col-7 mt-4">
-      <h1 class="text-center">Rejestracja</h1>
+      <label for="name">Nazwa:</label>
+      <input v-model="name" type="text" id="name" required class="form-control">
+    </div>
+
+    <div class="col-7 mt-4">
       <label for="email">E-mail:</label>
       <input v-model="email" type="email" id="email" required class="form-control">
     </div>
@@ -21,18 +27,22 @@
       <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-success mt-4 mb-5">Zarejestruj się</button>
+    <SubmitButton :class="'btn-success mt-4 mb-5'" :label="'Zarejestruj się'"/>
   </form>
 
 
 </template>
 
 <script>
+import SubmitButton from "@/components/SubmitButton.vue";
+
 export default {
   name: 'RegisterPage',
+  components: {SubmitButton},
 
   data() {
     return {
+      name: '',
       email: '',
       password: '',
       confirm_password: '',
@@ -41,15 +51,14 @@ export default {
   methods: {
     async register() {
       try {
-        const response = await this.$axios.post('/register', {
+        await this.$axios.post('api/Account/Register', {
+          name: this.name,
           email: this.email,
           password: this.password,
-          confirm_password: this.confirm_password,
+          ComfirmedPassword: this.confirm_password,
 
         });
         this.$router.push('/logowanie');
-        console.log('Zarejestrowano:', response.data)
-
       } catch (error) {
         console.error('Błąd rejestracji:', error)
       }
@@ -61,7 +70,7 @@ export default {
 </script>
 
 <style scoped>
-.center-vertical{
-margin-top: 130px;
+.center-vertical {
+  margin-top: 130px;
 }
 </style>

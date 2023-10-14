@@ -1,18 +1,20 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand">Logo :(</router-link>
+      <img src="./assets/logo.png" class="logo me-3" alt="Opis obrazu">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse col-8" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" v-if="!isLogged">
           <li class="nav-item">
             <NavLink :to="'/'" :label="'Strona główna'"/>
           </li>
+        </ul>
+        <ul class="navbar-nav" v-if="isLogged">
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'Funkcje'"/>
+            <NavLink :to="'/utwory'" :label="'Utwory'"/>
           </li>
           <li class="nav-item">
             <NavLink :to="'/'" :label="'COŚ'"/>
@@ -35,10 +37,10 @@
       <div class="container col-3 d-flex justify-content-end" v-if="isLogged">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <NavLink :to="'/user'" :label="'Konto'"/>
+            <NavLink :to="'/utwory'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
-            <NavLink :to="'/logout'" :label="'Wyloguj'"/>
+            <button class="nav-link" @click="logout">Wyloguj</button>
           </li>
         </ul>
       </div>
@@ -50,6 +52,9 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
+
+
 import NavLink from './components/NavbarHref.vue';
 
 export default {
@@ -58,11 +63,24 @@ export default {
   components: {
     NavLink
   },
-  
-  data() {
-    return {
-      isLogged: false
+
+  methods:{
+    logout(){
+      this.$store.commit('logout')
     }
-  }
+
+  },
+
+  computed: {
+    ...mapState({
+      isLogged: state => state.auth.isLogged,
+      token: state => state.auth.token
+    })
+  },
 }
 </script>
+<style>
+ .logo{
+    width: 60px;
+ }
+</style>
