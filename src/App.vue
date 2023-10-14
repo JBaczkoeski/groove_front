@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      isLogged: true
+      isLogged: false
     }
   },
 
