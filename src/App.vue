@@ -70,9 +70,11 @@ export default {
     }
 
   },
-  data(){
-    isLogged: true
-  }
+  data() {
+    return {
+      isLogged: true
+    }
+  },
 
   // computed: {
   //   ...mapState({
