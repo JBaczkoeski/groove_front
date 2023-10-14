@@ -33,7 +33,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await this.$axios.post('api/Account/Login', {
+        const response = await this.$axios.post('https://groovesync.azurewebsites.net/api/Account/Login', {
           email: this.email,
           password: this.password
         });

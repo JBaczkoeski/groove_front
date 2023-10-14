@@ -51,7 +51,7 @@ export default {
   methods: {
     async register() {
       try {
-        await this.$axios.post('/api/Account/Register', {
+        await this.$axios.post('https://groovesync.azurewebsites.net/api/Account/Register', {
           name: this.name,
           email: this.email,
           password: this.password,
