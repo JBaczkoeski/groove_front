@@ -1,51 +1,79 @@
-
-import axios from '@/helpers/axios';
-
+import router from "@/helpers/router";
 
 const state = {
-    token: null,
-    user: null,
+    isLogged: false,
+    token: '',
 };
 
-const getters = {
-    isAuthenticated: (state) => !!state.token,
+const mutations = {
+    SET_IS_LOGGED(state, value) {
+        state.isLogged = value;
+    },
+    SET_TOKEN(state, value) {
+        state.token = value;
+    },
 };
 
 const actions = {
     async login({ commit }, { email, password }) {
         try {
-            const response = await axios.post('/login', { email, password });
-            const { token, user } = response.data;
-            commit('setToken', token);
-            commit('setUser', user);
-            return true;
+            const response = await fetch('/api/Account/Login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                commit('SET_IS_LOGGED', true);
+                commit('SET_TOKEN', data.token);
+                await router.push('/utwory');
+                return true;
+            } else {
+                return false;
+            }
         } catch (error) {
-            console.error(error);
+            console.error('Błąd podczas logowania:', error);
+            return false;
+        }
+    },
+
+    async register({ commit }, { name, email, password, confirm_password }) {
+        try {
+            const response = await fetch('/api/Account/Register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, password, confirm_password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                commit('SET_IS_LOGGED', true);
+                commit('SET_TOKEN', data.token);
+                return true;
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.error('Błąd podczas rejestracji:', error);
             return false;
         }
     },
 
     logout({ commit }) {
-        commit('setToken', null);
-        commit('setUser', null);
+        commit('SET_IS_LOGGED', false);
+        commit('SET_TOKEN', '');
+        router.push('/');
     },
 };
 
-const mutations = {
-    setToken(state, token) {
-        state.token = token;
-    },
-    setUser(state, user) {
-        state.user = user;
-    },
-};
-
-const authStore = pinia.defineStore({
-    id: 'auth',
+export default {
+    namespaced: true,
     state,
-    actions,
-    getters,
     mutations,
-});
-
-export default authStore;
+    actions,
+};
