@@ -56,7 +56,6 @@
 
 
 import NavLink from './components/NavbarHref.vue';
-import {mapState} from "vuex";
 
 export default {
   name: 'App',
@@ -65,18 +64,24 @@ export default {
     NavLink
   },
 
-  methods: {
-    logout() {
-      this.$store.dispatch('auth/logout');
-    },
+  methods:{
+    logout(){
+      this.$store.commit('logout')
+    }
+
+  },
+  data() {
+    return {
+      isLogged: true
+    }
   },
 
-  computed: {
-    ...mapState({
-      isLogged: state => state.auth.isLogged,
-      token: state => state.auth.token
-    })
-  },
+  // computed: {
+  //   ...mapState({
+  //     isLogged: state => state.auth.isLogged,
+  //     token: state => state.auth.token
+  //   })
+  // },
 }
 </script>
 <style>
