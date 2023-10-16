@@ -11,7 +11,7 @@
         <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
       </tr>
       </thead>
-      <tbody v-if="tracks">
+      <tbody v-if="tracks.length">
       <SongElementList v-for="track in tracks" :key="track.id" :place="track.id" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
       </tbody>
     </table>

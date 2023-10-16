@@ -49,22 +49,15 @@ export default {
     }
   },
   methods: {
-    async register() {
-      try {
-        await this.$axios.post('api/Account/Register', {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          ComfirmedPassword: this.confirm_password,
-
-        });
-        this.$router.push('/logowanie');
-      } catch (error) {
-        console.error('Błąd rejestracji:', error)
-      }
+    register() {
+      this.$store.dispatch('auth/register', {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        confirm_password: this.confirm_password,
+      });
     }
   }
-
 }
 
 </script>

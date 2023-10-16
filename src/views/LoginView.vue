@@ -31,18 +31,11 @@ export default {
     }
   },
   methods: {
-    async login() {
-      try {
-        const response = await this.$axios.post('api/Account/Login', {
-          email: this.email,
-          password: this.password
-        });
-        this.$store.dispatch('auth/setIsLogged', true);
-        this.$store.dispatch('auth/setToken', response.data);
-        this.$router.push('/utwory');
-      } catch (error) {
-        console.error('Błąd logowanie:', error)
-      }
+    login() {
+      this.$store.dispatch('auth/login', {
+        email: this.email,
+        password: this.password,
+      });
     }
   },
 }
