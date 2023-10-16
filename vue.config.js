@@ -5,10 +5,7 @@ module.exports = defineConfig({
         proxy: {
             '/api': {
                 target: 'https://groovesync.azurewebsites.net',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
+                changeOrigin: true
             }
         }
     }
