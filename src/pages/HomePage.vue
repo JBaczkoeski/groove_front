@@ -1,6 +1,6 @@
 <template>
   <div class="baner mt-4 d-flex justify-content-center">
-    <img src="../assets/baner.png" alt="baner">
+    <img src="../assets/baner.jpg" alt="baner" class="banner">
   </div>
 
   <hr class="divider">
@@ -51,6 +51,9 @@ export default {
 .right-image{
   width: 600px;
   height: 300px;
+}
+.banner{
+  width: 1500px;
 }
 .photo_2 {
   width: 352px;
