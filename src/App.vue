@@ -7,7 +7,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse col-8" id="navbarNav">
-        <ul class="navbar-nav" v-if="!isLogged">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <NavLink :to="'/'" :label="'Strona główna'"/>
           </li>
@@ -17,7 +17,7 @@
             <NavLink :to="'/utwory'" :label="'Utwory'"/>
           </li>
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'COŚ'"/>
+            <NavLink :to="'/albumy'" :label="'Albumy'"/>
           </li>
           <li class="nav-item">
             <NavLink :to="'/'" :label="'COŚ'"/>
