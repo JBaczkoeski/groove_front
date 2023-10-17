@@ -8,7 +8,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white mb-2">
+        <a href="/konto/zamowienia" class="nav-link text-white mb-2">
           <i class="fa-solid fa-file-invoice fa-2xl" style="color: #ffffff;"></i>
           Zamówienia
         </a>
