@@ -1,4 +1,5 @@
 import router from "@/helpers/router";
+import api from '@/services/api';
 
 const state = {
     isLogged: false,
@@ -17,16 +18,13 @@ const mutations = {
 const actions = {
     async login({ commit }, { email, password }) {
         try {
-            const response = await fetch('/api/Account/Login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
+            const response = await api.post('/api/Account/Login', {
+                email,
+                password
             });
 
-            if (response.ok) {
-                const data = await response.json();
+            if (response.status === 200) {
+                const data = response.data;
                 commit('SET_IS_LOGGED', true);
                 commit('SET_TOKEN', data.token);
                 await router.push('/utwory');
@@ -42,16 +40,15 @@ const actions = {
 
     async register({ commit }, { name, email, password, confirm_password }) {
         try {
-            const response = await fetch('/api/Account/Register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, password, confirm_password }),
+            const response = await api.post('/api/Account/Register', {
+                name,
+                email,
+                password,
+                confirm_password
             });
 
-            if (response.ok) {
-                const data = await response.json();
+            if (response.status === 200) {
+                const data = response.data;
                 commit('SET_IS_LOGGED', true);
                 commit('SET_TOKEN', data.token);
                 return true;

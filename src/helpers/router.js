@@ -6,6 +6,7 @@ import RegisterPage from "@/views/auth/RegisterView.vue";
 import SongsPage from "@/views/SongsView.vue";
 import AlbumView from "@/views/AlbumView.vue";
 import UserView from "@/views/auth/UserView.vue";
+import DeleteAccountView from "@/views/auth/DeleteAccountView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,9 +15,11 @@ const router = createRouter({
         { path: '/logowanie', component: LoginPage },
         { path: '/rejestracja', component: RegisterPage },
         { path: '/login', component: RegisterPage},
+        { path: '/konto/usun', component: DeleteAccountView},
         { path: '/konto', component: UserView},
         { path: '/utwory', component: SongsPage},
         { path: '/album', component: AlbumView},
+
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
