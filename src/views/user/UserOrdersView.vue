@@ -4,7 +4,7 @@
       <div class="col-3">
         <SideBarUser style="height:663px;"/>
       </div>
-      <div class="container col-8 border border-3 rounded rounded-5 mt-5 mb-4 shadow">
+      <div class="container col-8 mt-5 mb-4 ms-4">
         <div class="row">
           <div class="container col-12 mt-2 text-center border-bottom border-3">
             <h2>Zamówienia</h2>
@@ -20,9 +20,9 @@
             </tr>
             </thead>
             <tbody>
-              <ordersElement :id = "1" :series_number = "'asd123'" :order_date = "20323-10-17" :price = "53"/>
-              <ordersElement :id = "2" :series_number = "'a122222'" :order_date = "20323-10-17" :price = "22"/>
-              <ordersElement :id = "3" :series_number = "'as3333'" :order_date = "20323-10-17" :price = "45"/>
+            <ordersElement :id="1" :series_number="'asd123'" :order_date="20323-10-17" :price="53"/>
+            <ordersElement :id="2" :series_number="'a122222'" :order_date="20323-10-17" :price="22"/>
+            <ordersElement :id="3" :series_number="'as3333'" :order_date="20323-10-17" :price="45"/>
             </tbody>
           </table>
         </div>
@@ -36,10 +36,10 @@ import SideBarUser from "@/components/SideBarUser.vue";
 import ordersElement from "@/components/OrdersElement.vue";
 
 export default {
-  components : {
+  components: {
     SideBarUser,
-    ordersElement
-  }
+    ordersElement,
+  },
 }
 </script>
 

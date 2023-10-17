@@ -5,9 +5,9 @@ import LoginPage from '@/views/auth/LoginView.vue'
 import RegisterPage from "@/views/auth/RegisterView.vue";
 import SongsPage from "@/views/SongsView.vue";
 import AlbumView from "@/views/AlbumView.vue";
-import UserView from "@/views/auth/UserView.vue";
-import UserOrdersView from "@/views/auth/UserOrdersView.vue";
-import DeleteAccountView from "@/views/auth/DeleteAccountView.vue";
+import UserView from "@/views/user/UserView.vue";
+import UserOrdersView from "@/views/user/UserOrdersView.vue";
+import DeleteAccountView from "@/views/user/DeleteAccountView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
