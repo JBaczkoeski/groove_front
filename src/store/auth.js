@@ -1,5 +1,5 @@
 import router from "@/helpers/router";
-import api from '@/services/api'; // Importuj nasz serwis
+import api from '@/services/api';
 
 const state = {
     isLogged: false,
