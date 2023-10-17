@@ -37,7 +37,7 @@
       <div class="container col-3 d-flex justify-content-end" v-if="isLogged">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <NavLink :to="'/utwory'" :label="'Konto'"/>
+            <NavLink :to="'/konto'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
             <button class="nav-link" @click="logout">Wyloguj</button>
@@ -77,10 +77,15 @@ export default {
       token: state => state.auth.token
     })
   },
+  data() {
+    return {
+      isLogged: true
+    }
+  }
 }
 </script>
 <style>
- .logo{
-    width: 60px;
- }
+.logo {
+  width: 60px;
+}
 </style>
