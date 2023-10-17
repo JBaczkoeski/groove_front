@@ -1,5 +1,5 @@
 <template>
-  <div class="baner mt-4 d-flex justify-content-center">
+  <div class="baner mt-4 d-flex justify-content-center  shadow shadow-lg">
     <img src="../assets/baner.jpg" alt="baner" class="banner">
   </div>
 
@@ -21,12 +21,12 @@
 
   <hr class="divider">
 
-  <div class="row">
-    <div class="col-md-7 ">
-      <img class="photo_2 img-fluid mx-auto "
-           src="https://i0.wp.com/polskaplyta-polskamuzyka.pl/wp-content/uploads/2023/01/Najlepsze-rapowe-plyty-2022-roku-RANKING.png?fit=800%2C800&ssl=1">
+  <div class="row text-center mt-5">
+    <div class="col-5 shadow ms-5">
+      <img class="left-image"
+           src="../assets/playerPhoto.png">
     </div>
-    <div class="col-md-5">
+    <div class="col-6">
 
       <h2> Ogromna baza albumów</h2>
       <p class="lead">
@@ -55,9 +55,9 @@ export default {
 .banner{
   width: 1500px;
 }
-.photo_2 {
-  width: 352px;
-  height: 217px;
+.left-image {
+  width: 600px;
+  height: 300px;
 }
 
 
