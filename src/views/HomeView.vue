@@ -1,11 +1,9 @@
 <template>
-  <div class="baner mt-4 d-flex justify-content-center  shadow shadow-lg">
+  <div class="baner mt-4 d-flex justify-content-center">
     <img src="../assets/baner.jpg" alt="baner" class="banner">
   </div>
 
-  <hr class="divider">
-
-  <div class="row text-center">
+  <div class="row text-center mt-3 shadow py-3">
     <div class="col-6 pt-5">
 
       <h2> Prosty i intuicyjny odtwarzacz</h2>
@@ -13,13 +11,11 @@
         Nasza aplikacja posiada prosty i intuicyjny odtwarzacz.
       </p>
     </div>
-    <div class="col-5 shadow me-3">
+    <div class="col-5 me-3">
       <img class="right-image"
            src="../assets/playerPhoto.png">
     </div>
   </div>
-
-  <hr class="divider">
 
   <div class="row text-center mt-5">
     <div class="col-5 shadow ms-5">
@@ -35,8 +31,6 @@
     </div>
 
   </div>
-
-  <hr class="divider">
 
 </template>
 
