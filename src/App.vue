@@ -54,6 +54,7 @@
 
 
 import NavLink from './components/NavbarHref.vue';
+import {mapState} from "vuex";
 
 export default {
   name: 'App',
