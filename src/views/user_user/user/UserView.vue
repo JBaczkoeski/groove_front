@@ -22,23 +22,23 @@
               </div>
 
               <div class="col-7 mt-4">
-                <label for="email">Telefon:</label>
-                <input v-model="email" type="email" id="email" required class="form-control">
+                <label for="phone">Telefon:</label>
+                <input v-model="email" type="number" id="phone" required class="form-control">
               </div>
 
               <div class="col-7 mt-4">
-                <label for="email">Ulica:</label>
-                <input v-model="email" type="email" id="email" required class="form-control">
+                <label for="street">Ulica:</label>
+                <input v-model="email" type="text" id="street" required class="form-control">
               </div>
 
               <div class="col-7 mt-4">
-                <label for="email">Kod pocztowy:</label>
-                <input v-model="email" type="email" id="email" required class="form-control">
+                <label for="postal_code">Kod pocztowy:</label>
+                <input v-model="email" type="text" id="postal_code" required class="form-control">
               </div>
 
               <div class="col-7 mt-4">
-                <label for="email">Miasto:</label>
-                <input v-model="email" type="email" id="email" required class="form-control">
+                <label for="city">Miasto:</label>
+                <input v-model="email" type="text" id="city" required class="form-control">
               </div>
 
               <div class="col-7 mt-4">

@@ -5,11 +5,12 @@
     <div class="card-body row">
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">Wykonawca: {{ author }}</p>
+      <p class="card-text">Studio: {{ studio }}</p>
       <p class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1" style="color: #000000;"></i>{{ songs }}
         piosenek</p>
       <p class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1" style="color: #000000;"></i> {{ albumLenght }}
         minut</p>
-      <a href="#" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
+      <a :href="`/album/show/${id}`" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
     </div>
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
     cover: String,
     title: String,
     author: String,
+    studio: String,
     songs: Number,
     albumLenght: Number
   },
@@ -32,6 +34,7 @@ export default {
     const coverRef = ref(props.cover);
     const titleRef = ref(props.title);
     const authorRef = ref(props.author);
+    const studioRef = ref(props.studio);
     const songsRef = ref(props.songs);
     const albumLenghtRef = ref(props.albumLenght);
 
@@ -40,6 +43,7 @@ export default {
       coverRef,
       titleRef,
       authorRef,
+      studioRef,
       songsRef,
       albumLenghtRef
     };
