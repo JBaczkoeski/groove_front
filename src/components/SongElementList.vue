@@ -6,12 +6,12 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
+    <td class="pt-5"><a href="#">Sprawdź</a></td>
   </tr>
 </template>
 
 <script>
 import { ref } from 'vue';
-
 export default {
   props: {
     place: Number,

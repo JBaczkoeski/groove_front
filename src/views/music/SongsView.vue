@@ -9,6 +9,7 @@
         <th scope="col">Album</th>
         <th scope="col">Data dodania</th>
         <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
+        <th scope="col"></th>
       </tr>
       </thead>
       <tbody v-if="tracks.length">

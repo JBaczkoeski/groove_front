@@ -9,6 +9,7 @@ import UserView from "@/views/user/UserView.vue";
 import UserOrdersView from "@/views/user/UserOrdersView.vue";
 import DeleteAccountView from "@/views/user/DeleteAccountView.vue";
 import AlbumsView from "@/views/music/AlbumsView.vue";
+import SongFormView from "@/views/label/song/SongFormView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -23,7 +24,7 @@ const router = createRouter({
         { path: '/utwory', component: SongsPage},
         { path: '/albumy', component: AlbumsView},
         { path: '/album', component: AlbumView},
-
+        { path: '/formularz', component: SongFormView},
 
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
