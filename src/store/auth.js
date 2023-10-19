@@ -2,8 +2,8 @@ import router from "@/helpers/router";
 import api from '@/services/api';
 
 const state = {
-    isLogged: false,
-    token: '',
+    isLogged: localStorage.getItem('isLogged') === 'true' || false,
+    token: localStorage.getItem('token') || '',
 };
 
 const mutations = {

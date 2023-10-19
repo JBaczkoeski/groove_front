@@ -1,7 +1,7 @@
 <template>
   <tr>
     <th scope="row" class="pt-5">{{ place }}</th>
-    <td><img :src="cover" alt="Opis obrazu" class="shadow cover-album"></td>
+    <td><img v-if="cover" :src="cover" alt="Opis obrazu" class="shadow cover-album"></td>
     <td class="pt-5">{{ title }}</td>
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>

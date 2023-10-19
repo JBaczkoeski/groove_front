@@ -20,7 +20,8 @@
 
 <script>
 import SongElementList from "@/components/SongElementList.vue";
-import axios from "axios";
+// import axios from "axios";
+import api from "@/services/api";
 
 export default {
   components: {
@@ -36,7 +37,7 @@ export default {
   },
   methods: {
     getAllTracks() {
-      axios.get('/api/Track/GetAllTracks')
+      api.get('/api/Track/GetAllTracks')
           .then(response => {
             this.tracks = response.data;
             console.log(this.tracks);

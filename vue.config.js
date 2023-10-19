@@ -3,8 +3,9 @@ module.exports = defineConfig({
     transpileDependencies: true,
     devServer: {
         proxy: {
-            '/api': {
+            '/api/*': {
                 target: 'https://groovesync.azurewebsites.net',
+                ws: true,
                 changeOrigin: true
             }
         }

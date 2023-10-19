@@ -22,7 +22,7 @@ const router = createRouter({
         { path: '/konto/zamowienia', component: UserOrdersView},
         { path: '/utwory', component: SongsPage},
         { path: '/albumy', component: AlbumsView},
-        { path: '/album', component: AlbumView},
+        { path: '/album/show/:id', component: AlbumView},
 
 
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
