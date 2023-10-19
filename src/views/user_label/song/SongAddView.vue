@@ -28,7 +28,7 @@
             <div class="form-group">
               <label for="photo">Zdjęcie</label>
               <input
-                  @change="SelectFileChange"
+                  @change="selectFileChange"
                   type="file"
                   class="form-control mt-2"
                   id="photo"
@@ -66,7 +66,6 @@
 // import songElementList from "@/components/songElementList.vue";
 
 export default {
-  components: {},
   data() {
     return {
       song: {
@@ -90,7 +89,7 @@ export default {
         description: this.description
       })
     },
-    SelectFileChange(event){
+    selectFileChange(event) {
       const filePhoto = event.target.files[0];
       this.photo = filePhoto;
     }
