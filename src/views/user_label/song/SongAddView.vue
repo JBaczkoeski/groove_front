@@ -83,10 +83,10 @@ export default {
     handleSave() {
       this.isSaving = true
       this.$store.dispatch('song/create', {
-        name: this.name,
-        author: this.author,
-        photo: this.photo,
-        description: this.description
+        name: this.song.name,
+        author: this.song.author,
+        photo: this.song.photo,
+        description: this.song.description
       })
     },
     selectFileChange(event) {
@@ -98,6 +98,6 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 
 </style>

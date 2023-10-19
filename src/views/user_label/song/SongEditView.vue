@@ -28,7 +28,7 @@
             <div class="form-group">
               <label for="photo">Zdjęcie</label>
               <input
-                  @change="SelectFileChange"
+                  @change="selectFileChange"
                   type="file"
                   class="form-control mt-2"
                   id="photo"
