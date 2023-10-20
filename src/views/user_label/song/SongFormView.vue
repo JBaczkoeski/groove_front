@@ -28,11 +28,14 @@
             <div class="form-group">
               <label for="photo">Zdjęcie</label>
               <input
-                  @change="SelectFileChange"
+                  v-on:change="SelectFileChange"
                   type="file"
                   class="form-control mt-2"
                   id="photo"
-                  name="photo"/>
+                  name="photo"
+                  accept="image/*"
+                  required
+                  />
             </div>
             <div class="form-group">
               <label for="description">Opis</label>
@@ -66,7 +69,6 @@
 // import songElementList from "@/components/songElementList.vue";
 
 export default {
-  components: {},
   data() {
     return {
       song: {
@@ -83,16 +85,12 @@ export default {
   methods: {
     handleSave() {
       this.isSaving = true
-      this.$store.dispatch('song/create', {
-        name: this.name,
-        author: this.author,
-        photo: this.photo,
-        description: this.description
-      })
+      this.$store.dispatch('song/createSong',this.song)
+      //location.reload();
     },
     SelectFileChange(event){
       const filePhoto = event.target.files[0];
-      this.photo = filePhoto;
+      this.song.photo = filePhoto;
     }
   }
 }

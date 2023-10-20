@@ -8,9 +8,9 @@ import SideBarUser from "@/components/SideBarUser.vue";
   <div class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <SideBarUser style="height: 663px"/>
+        <SideBarUser style="height:879px;"/>
       </div>
-      <div class="container col-7 border border-3 rounded rounded-5 my-5 mb-4 shadow text-center">
+      <div class="container col-7 my-5 mb-4 text-center">
         <div class="container my-5">
           <h2 class="fw-bold">Usunięcie konta </h2>
           <p class="mt-3">

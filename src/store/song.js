@@ -2,14 +2,14 @@ import router from "@/helpers/router";
 import api from '@/services/api';
 
 const actions = {
-    async create({ name, author, photo, description }){
+    async createSong({Name, author, Img, description, UserId }){
         try {
-
-            const response = await api.post('api/Artist/addTrack', {
-                name,
+            const response = await api.post('/api/Artist/AddTrack', {
+                Name,
                 author,
-                photo,
-                description
+                Img,
+                description,
+                UserId
             });
 
             if (response.status === 200) {

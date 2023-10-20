@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <SideBarUser style="height:663px;"/>
+        <SideBarUser style="height:879px;"/>
       </div>
       <div class="container col-8 mt-5 mb-4 ms-4">
         <div class="row">

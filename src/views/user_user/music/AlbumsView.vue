@@ -1,7 +1,7 @@
 <template>
   <div class="container pt-3">
     <div class="row d-flex justify-content-center">
-      <SingleAlbum v-for="album in albums" :key="album.id" :cover="'https://glamrap.pl/wp-content/uploads/2021/03/sentino-czary-mary.jpg'" :title="album.name" :album-lenght="59" :author="'Oskar Sukiennik'" :songs="14" :id="album.id"/>
+      <SingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name" :album-lenght="59" :author="album.author" :songs="14" :id="album.id"/>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       api.get('/api/Album/GetAllAlbums')
           .then(response => {
             this.albums = response.data.$values;
-            console.log(this.albums);
+            return true;
           })
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);

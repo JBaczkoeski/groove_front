@@ -2,7 +2,7 @@
   <div class="container-fluid mt-3">
     <table class="table">
       <thead>
-      <tr>
+      <tr class="text-center">
         <th scope="col">#</th>
         <th scope="col"></th>
         <th scope="col">Tytuł</th>
@@ -12,8 +12,8 @@
         <th scope="col"></th>
       </tr>
       </thead>
-      <tbody v-if="tracks.length">
-      <SongElementList v-for="track in tracks" :key="track.id" :place="track.id" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
+      <tbody v-if="tracks">
+      <SongElementList v-for="(track, index) in tracks" :key="track.id" :id="track.id" :place="index" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
       </tbody>
     </table>
   </div>
@@ -38,10 +38,9 @@ export default {
   },
   methods: {
     getAllTracks() {
-      api.get('/api/Track/GetAllTracks')
+      api.get('/api/Track/GetAllTracks' )
           .then(response => {
-            this.tracks = response.data;
-            console.log(this.tracks);
+            this.tracks = response.data.$values;
           })
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);

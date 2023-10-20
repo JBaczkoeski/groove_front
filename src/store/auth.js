@@ -3,7 +3,6 @@ import api from '@/services/api';
 
 const state = {
     isLogged: localStorage.getItem('isLogged') === 'true' || false,
-    token: localStorage.getItem('token') || '',
 };
 
 const mutations = {
@@ -11,12 +10,12 @@ const mutations = {
         state.isLogged = value;
     },
     SET_TOKEN(state, value) {
-        state.token = value;
+        state.user = value;
     },
 };
 
 const actions = {
-    async login({ commit }, { email, password }) {
+    async login({commit}, {email, password}) {
         try {
             const response = await api.post('/api/Account/Login', {
                 email,
@@ -24,9 +23,10 @@ const actions = {
             });
 
             if (response.status === 200) {
-                const data = response.data;
                 commit('SET_IS_LOGGED', true);
-                commit('SET_TOKEN', data.token);
+                if (response.data.token) {
+                    localStorage.setItem('user', JSON.stringify(response.data));
+                }
                 await router.push('/utwory');
                 return true;
             } else {
@@ -38,7 +38,7 @@ const actions = {
         }
     },
 
-    async register({ commit }, { name, email, password, confirm_password }) {
+    async register({commit}, {name, email, password, confirm_password}) {
         try {
             const response = await api.post('/api/Account/Register', {
                 name,
@@ -61,7 +61,7 @@ const actions = {
         }
     },
 
-    logout({ commit }) {
+    logout({commit}) {
         commit('SET_IS_LOGGED', false);
         commit('SET_TOKEN', '');
         router.push('/');
