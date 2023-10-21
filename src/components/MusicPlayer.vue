@@ -1,5 +1,6 @@
 <template>
-  <div v-if="showPlayer" class="container col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
+  <div v-if="showPlayer"
+       class="container col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
     <div class="row text-center">
       <div class="container col-2 margin-left-radius">
         <img src="https://images.genius.com/88995b369b9b98d6a02eafa49be445ef.1000x1000x1.png" alt="Opis obrazu"
@@ -10,10 +11,19 @@
         <p>Oskar Sukiennik</p>
       </div>
       <div class="container col-1 liked mt-5">
-        <button @click="toggleLike" class="btn btn-secondary rounded-circle">
-          <i v-if="isLiked" class="fas fa-heart"></i>
-          <i v-else class="far fa-heart"></i>
-        </button>
+        <div class="row">
+          <div class="container" style="margin-top: -50px">
+            <button @click="hidePlayer" class="btn btn-secondary rounded-circle">
+              <i class="fa-regular fa-eye-slash" style="color: #ffffff;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="container mt-3">
+          <button @click="toggleLike" class="btn btn-secondary rounded-circle">
+            <i v-if="isLiked" class="fas fa-heart"></i>
+            <i v-else class="far fa-heart"></i>
+          </button>
+        </div>
       </div>
       <div class="container col-6 margin-left-radius mt-3">
         <button @click="prevTrack" class="btn btn-secondary rounded-circle">
@@ -139,6 +149,9 @@ export default {
       }
     },
 
+    hidePlayer() {
+      store.dispatch('player/togglePlayer', false);
+    }
   },
 
   watch: {
@@ -179,7 +192,8 @@ export default {
   margin-top: -10px;
 
 }
-.liked{
+
+.liked {
   margin-left: -80px;
   margin-right: -15px;
 }
