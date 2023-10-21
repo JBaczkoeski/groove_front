@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
+  <div v-if="showPlayer" class="container col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
     <div class="row text-center">
       <div class="container col-2 margin-left-radius">
         <img src="https://images.genius.com/88995b369b9b98d6a02eafa49be445ef.1000x1000x1.png" alt="Opis obrazu"
@@ -57,6 +57,9 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+import store from "@/store";
+
 export default {
   data() {
     return {
@@ -113,6 +116,7 @@ export default {
         this.isPlaying = false;
         this.currentTime = 0;
         this.audio.pause();
+        store.dispatch('player/togglePlayer', false);
       }
     },
 
@@ -156,6 +160,11 @@ export default {
     this.audio.volume = this.volume / 100;
 
     this.updateCurrentTime();
+  },
+
+  computed: {
+    ...mapState('player', ['showPlayer']),
+
   },
 }
 </script>

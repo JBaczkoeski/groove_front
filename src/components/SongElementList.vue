@@ -6,12 +6,14 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
-    <td class="pt-5"><a class="btn btn-info" :href="`/utwor/show/${id}`">Sprawdź</a></td>
+    <td class="pt-5"><a  @click="play" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
   </tr>
+<!--  :href="`/utwor/show/${id}`"-->
 </template>
 
 <script>
 import { ref } from 'vue';
+import {useStore} from "vuex";
 export default {
   props: {
     id: Number,
@@ -31,6 +33,12 @@ export default {
     const addDateRef = ref(props.addDate);
     const timeRef = ref(props.time);
 
+    const store = useStore();
+
+    const play = () => {
+      store.dispatch('player/togglePlayer', true);
+    };
+
     return {
       idRef,
       placeRef,
@@ -39,8 +47,9 @@ export default {
       albumRef,
       addDateRef,
       timeRef,
+      play
     };
-  }
+  },
 }
 </script>
 
