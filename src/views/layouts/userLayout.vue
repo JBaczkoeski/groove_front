@@ -158,7 +158,7 @@ export default {
     },
   },
     mounted() {
-      this.audio.src = "C:\\Users\\baczk\\Desktop\\Projekty\\groove_front\\src\\assets\\music_1.mp3"; // Ustaw ścieżkę do utworu
+      this.audio.src = "http://127.0.0.1:8080/music/music_1.mp3"; // Ustaw ścieżkę do utworu
       this.audio.volume = this.volume / 100; // Ustaw początkową głośność
     },
 
