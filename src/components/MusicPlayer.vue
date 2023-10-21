@@ -154,12 +154,6 @@ export default {
     }
   },
 
-  watch: {
-    volume(newVolume) {
-      this.audio.volume = newVolume / 100;
-    },
-  },
-
   mounted() {
     this.audio.src = "http://127.0.0.1:8080/music/Travis_2.mp3";
 
@@ -176,8 +170,20 @@ export default {
   },
 
   computed: {
-    ...mapState('player', ['showPlayer']),
+    ...mapState('player', ['showPlayer','track']),
 
+  },
+
+  watch: {
+    track(newTrack) {
+      this.audio.src = newTrack;
+      this.audio.load();
+      this.audio.play();
+    },
+
+    volume(newVolume) {
+      this.audio.volume = newVolume / 100;
+    },
   },
 }
 </script>
