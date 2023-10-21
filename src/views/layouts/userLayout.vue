@@ -69,7 +69,16 @@
         <button @click="nextTrack" class="btn btn-secondary rounded-circle">
           <i class="fas fa-forward"></i>
         </button>
-        <input type="range" class="form-range mt-4" min="0" :max="currentTrack.duration" v-model="currentTime">
+        <div class="container col-12">
+          <div class="row">
+            <div class="container col-2 mt-4">{{ formatTime(currentTime) }}</div>
+            <div class="container col-8">
+              <input type="range" class="form-range mt-4" min="0" :max="currentTrack.duration" v-model="currentTime"
+                     @input="handleTimeChange">
+            </div>
+            <div class="container col-2 mt-4" v-if="currentTrack.duration !== null" >{{ formatTime(currentTrack.duration) }}</div>
+          </div>
+        </div>
       </div>
       <div class="container col-2 mt-5 margin-left-radius">
         <div class="row">
@@ -105,13 +114,13 @@ export default {
         title: "Nazwa Utworu",
         artist: "Nazwa Artysty",
         albumCover: "ścieżka/do/okładki.jpg",
-        duration: 240, // w sekundach
+        duration: null,
       },
       isPlaying: false,
       isMuted: false,
-      currentTime: 120, // aktualny czas odtwarzania w sekundach
+      currentTime: null,
       audio: new Audio(),
-      volume: 50, // głośność (0-100)
+      volume: 50,
     };
   },
 
@@ -144,6 +153,25 @@ export default {
       this.isMuted = !this.isMuted;
       this.audio.muted = this.isMuted;
     },
+    updateCurrentTime() {
+      this.currentTime = Math.floor(this.audio.currentTime);
+      this.timeInterval = setInterval(() => {
+        this.currentTime = Math.floor(this.audio.currentTime);
+      }, 1000);
+    },
+
+    handleTimeUpdate() {
+      if (this.audio.currentTime >= this.currentTrack.duration) {
+        this.isPlaying = false;
+        this.currentTime = 0;
+        this.audio.pause();
+      }
+    },
+
+    handleTimeChange() {
+      this.audio.currentTime = this.currentTime;
+    },
+
     formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
       const remainingSeconds = Math.floor(seconds % 60);
@@ -157,15 +185,26 @@ export default {
       this.audio.volume = newVolume / 100;
     },
   },
-    mounted() {
-      this.audio.src = "http://127.0.0.1:8080/music/music_1.mp3"; // Ustaw ścieżkę do utworu
-      this.audio.volume = this.volume / 100; // Ustaw początkową głośność
-    },
 
-    computed: {
-      ...mapState('auth', ['isLogged','user']),
+  mounted() {
+    this.audio.src = "http://127.0.0.1:8080/music/Travis_2.mp3";
 
-    },
+    this.audio.addEventListener('loadedmetadata', () => {
+      this.currentTrack.duration = Math.floor(this.audio.duration);
+    });
+
+
+    this.audio.addEventListener('timeupdate', this.handleTimeUpdate);
+
+    this.audio.volume = this.volume / 100;
+
+    this.updateCurrentTime();
+  },
+
+  computed: {
+    ...mapState('auth', ['isLogged', 'user']),
+
+  },
 }
 </script>
 <style>
