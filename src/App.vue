@@ -17,4 +17,14 @@ export default {
 body {
   overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
 </style>

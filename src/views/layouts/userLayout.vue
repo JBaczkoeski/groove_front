@@ -47,11 +47,51 @@
     </div>
   </nav>
   <router-view></router-view>
+  <div
+      class="container-fluid col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
+    <div class="row text-center">
+      <div class="container col-2 margin-left-radius">
+        <img src="https://images.genius.com/88995b369b9b98d6a02eafa49be445ef.1000x1000x1.png" alt="Opis obrazu"
+             class="shadow w-50 border border-white border-5 rounded rounded-circle">
+      </div>
+      <div class="container col-2 mt-3" style="margin-left: -100px">
+        <p class="fw-bold">Kocham studia i matematykę</p>
+        <p>Oskar Sukiennik</p>
+      </div>
+      <div class="container col-6 margin-left-radius mt-3">
+        <button @click="prevTrack" class="btn btn-secondary rounded-circle">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button @click="togglePlayback" class="btn btn-primary mx-4 rounded-circle">
+          <i v-if="isPlaying" class="fas fa-pause"></i>
+          <i v-else class="fas fa-play"></i>
+        </button>
+        <button @click="nextTrack" class="btn btn-secondary rounded-circle">
+          <i class="fas fa-forward"></i>
+        </button>
+        <input type="range" class="form-range mt-4" min="0" :max="currentTrack.duration" v-model="currentTime">
+      </div>
+      <div class="container col-2 mt-5 margin-left-radius">
+        <div class="row">
+          <div class="container col-3">
+            <button @click="toggleMute" class="btn btn-secondary rounded-circle">
+              <i v-if="isMuted" class="fas fa-volume-off"></i>
+              <i v-else class="fas fa-volume-up"></i>
+            </button>
+          </div>
+          <div class="container col-9" style="margin-top: 5px">
+            <input type="range" class="form-range" min="0" max="100" v-model="volume">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 
 import NavLink from '../../components/NavbarHref.vue';
 import {mapState} from "vuex";
+
 export default {
   name: 'App',
 
@@ -59,20 +99,86 @@ export default {
     NavLink
   },
 
+  data() {
+    return {
+      currentTrack: {
+        title: "Nazwa Utworu",
+        artist: "Nazwa Artysty",
+        albumCover: "ścieżka/do/okładki.jpg",
+        duration: 240, // w sekundach
+      },
+      isPlaying: false,
+      isMuted: false,
+      currentTime: 120, // aktualny czas odtwarzania w sekundach
+      audio: new Audio(),
+      volume: 50, // głośność (0-100)
+    };
+  },
+
   methods: {
     logout() {
       this.$store.dispatch('auth/logout');
     },
+    play() {
+      this.audio.play();
+    },
+    pause() {
+      this.audio.pause();
+    },
+    togglePlayback() {
+      if (this.audio.paused) {
+        this.play();
+        this.isPlaying = true;
+      } else {
+        this.pause();
+        this.isPlaying = false;
+      }
+    },
+    prevTrack() {
+      // Tu można dodać logikę przejścia do poprzedniego utworu
+    },
+    nextTrack() {
+      // Tu można dodać logikę przejścia do następnego utworu
+    },
+    toggleMute() {
+      this.isMuted = !this.isMuted;
+      this.audio.muted = this.isMuted;
+    },
+    formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    },
+
   },
 
-  computed: {
-    ...mapState('auth', ['isLogged', 'user']),
+  watch: {
+    volume(newVolume) {
+      this.audio.volume = newVolume / 100;
+    },
   },
+    mounted() {
+      this.audio.src = "C:\\Users\\baczk\\Desktop\\Projekty\\groove_front\\src\\assets\\music_1.mp3"; // Ustaw ścieżkę do utworu
+      this.audio.volume = this.volume / 100; // Ustaw początkową głośność
+    },
 
+    computed: {
+      ...mapState('auth', ['isLogged','user']),
+
+    },
 }
 </script>
 <style>
 .logo {
   width: 60px;
+}
+
+.music-player-container {
+  width: 1650px;
+  height: 158px;
+}
+
+.margin-left-radius {
+  margin-left: -50px
 }
 </style>
