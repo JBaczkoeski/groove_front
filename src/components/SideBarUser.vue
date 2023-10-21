@@ -35,7 +35,7 @@
 
 <style>
 .side-bar {
-  margin-left: -12px;
+  margin-left: -25px;
   display: flex;
   flex-direction: column;
   height: 100%;
