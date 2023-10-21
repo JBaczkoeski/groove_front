@@ -1,27 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import HomePage from "@/views/HomeView.vue";
-import LoginPage from '@/views/auth/LoginView.vue'
-import RegisterPage from "@/views/auth/RegisterView.vue";
-import SongsPage from "@/views/SongsView.vue";
-import AlbumView from "@/views/AlbumView.vue";
-import UserView from "@/views/user/UserView.vue";
-import UserOrdersView from "@/views/user/UserOrdersView.vue";
-import DeleteAccountView from "@/views/user/DeleteAccountView.vue";
+import HomeView from "@/views/user_user/HomeView.vue";
+import LoginView from '@/views/user_user/auth/LoginView.vue'
+import RegisterView from "@/views/user_user/auth/RegisterView.vue";
+import SongsView from "@/views/user_user/music/SongsView.vue";
+import AlbumView from "@/views/user_user/music/AlbumView.vue";
+import UserView from "@/views/user_user/user/UserView.vue";
+import UserOrdersView from "@/views/user_user/user/UserOrdersView.vue";
+import DeleteAccountView from "@/views/user_user/user/DeleteAccountView.vue";
+import AlbumsView from "@/views/user_user/music/AlbumsView.vue";
+import SongAddView from "@/views/user_label/song/SongAddView.vue";
+import SongView from "@/views/user_user/music/SongView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: HomePage },
-        { path: '/logowanie', component: LoginPage },
-        { path: '/rejestracja', component: RegisterPage },
-        { path: '/login', component: RegisterPage},
+        { path: '/', component: HomeView },
+        { path: '/logowanie', component: LoginView },
+        { path: '/rejestracja', component: RegisterView },
+        { path: '/login', component: RegisterView},
         { path: '/konto/usun', component: DeleteAccountView},
         { path: '/konto', component: UserView},
         { path: '/konto/zamowienia', component: UserOrdersView},
-        { path: '/utwory', component: SongsPage},
+        { path: '/utwory', component: SongsView},
+        { path: '/utwor/show/:id', component:SongView},
+        { path: '/albumy', component: AlbumsView},
         { path: '/album', component: AlbumView},
+        { path: '/album/show/:id', component: AlbumView},
 
+        //Wytwórcia
+        { path: '/wytwornia/utwory/dodawanie', component: SongAddView},
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
