@@ -6,11 +6,16 @@
 
 <script>
 import userLayout from "@/views/layouts/userLayout.vue";
+import {mapState} from "vuex";
 
 export default {
   components:{
     userLayout
-  }
+  },
+  computed: {
+    ...mapState('auth', ['user']),
+
+  },
 }
 </script>
 <style>
