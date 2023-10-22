@@ -13,7 +13,8 @@
       </tr>
       </thead>
       <tbody v-if="tracks">
-      <SongElementList v-for="(track, index) in tracks" :key="track.id" :id="track.id" :place="index" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
+      <SongElementList v-for="(track, index) in tracks" :key="track.id" :track="'http://127.0.0.1:8080/music/Travis_2.mp3'" :id="track.id" :place="index" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
+      <SongElementList v-for="(track, index) in tracks" :key="track.id" :track="'http://127.0.0.1:8080/music/music_1.mp3'" :id="track.id" :place="index" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
       </tbody>
     </table>
   </div>

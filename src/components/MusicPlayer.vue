@@ -3,12 +3,12 @@
        class="container col-12 fixed-bottom mb-5 rounded rounded-pill music-player-container bg-dark py-3 text-white">
     <div class="row text-center">
       <div class="container col-2 margin-left-radius">
-        <img src="https://images.genius.com/88995b369b9b98d6a02eafa49be445ef.1000x1000x1.png" alt="Opis obrazu"
+        <img :src="coverAlbum" alt="Okładka"
              class="shadow w-75 border border-white border-5 rounded rounded-circle">
       </div>
       <div class="container col-2 mt-3" style="margin-left: -100px">
-        <p class="fw-bold">Kocham studia i matematykę</p>
-        <p>Oskar Sukiennik</p>
+        <p class="fw-bold">{{ title }}</p>
+        <p>{{ currentTrack.artist }}</p>
       </div>
       <div class="container col-1 liked mt-5">
         <div class="row">
@@ -74,9 +74,9 @@ export default {
   data() {
     return {
       currentTrack: {
-        title: "Nazwa Utworu",
-        artist: "Nazwa Artysty",
-        albumCover: "ścieżka/do/okładki.jpg",
+        title: "",
+        artist: "Oskar sukiennik",
+        albumCover: "",
         duration: null,
       },
       isPlaying: false,
@@ -92,15 +92,17 @@ export default {
     play() {
       this.audio.play();
     },
-    pause() {
-      this.audio.pause();
-    },
-    togglePlayback() {
+    async togglePlayback() {
       if (this.audio.paused) {
-        this.play();
+        if (this.audio.src !== this.track) {
+           this.audio.pause();
+          this.audio.src = this.track;
+          await this.audio.load();
+        }
+        await this.audio.play();
         this.isPlaying = true;
       } else {
-        this.pause();
+        await this.audio.pause();
         this.isPlaying = false;
       }
     },
@@ -155,12 +157,11 @@ export default {
   },
 
   mounted() {
-    this.audio.src = "http://127.0.0.1:8080/music/Travis_2.mp3";
-
+    this.audio.src = this.track;
+    console.log(this.audio.src)
     this.audio.addEventListener('loadedmetadata', () => {
       this.currentTrack.duration = Math.floor(this.audio.duration);
     });
-
 
     this.audio.addEventListener('timeupdate', this.handleTimeUpdate);
 
@@ -170,17 +171,11 @@ export default {
   },
 
   computed: {
-    ...mapState('player', ['showPlayer','track']),
+    ...mapState('player', ['showPlayer','track','title','coverAlbum']),
 
   },
 
   watch: {
-    track(newTrack) {
-      this.audio.src = newTrack;
-      this.audio.load();
-      this.audio.play();
-    },
-
     volume(newVolume) {
       this.audio.volume = newVolume / 100;
     },

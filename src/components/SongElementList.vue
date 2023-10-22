@@ -6,7 +6,7 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
-    <td class="pt-5"><a  @click="play" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
+    <td class="pt-5"><a  @click="play(track,title,cover)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
   </tr>
 <!--  :href="`/utwor/show/${id}`"-->
 </template>
@@ -23,6 +23,7 @@ export default {
     album: String,
     addDate: String,
     time: String,
+    track: String,
   },
   setup(props) {
     const idRef = ref(props.id);
@@ -32,11 +33,15 @@ export default {
     const albumRef = ref(props.album);
     const addDateRef = ref(props.addDate);
     const timeRef = ref(props.time);
+    const trackRef = ref(props.track);
 
     const store = useStore();
 
-    const play = () => {
+    const play = (track,title,cover) => {
       store.dispatch('player/togglePlayer', true);
+      store.dispatch('player/musicPlayer', track);
+      store.dispatch('player/TitlePlayer', title);
+      store.dispatch('player/CoverAlbumPlayer', cover);
     };
 
     return {
@@ -47,6 +52,7 @@ export default {
       albumRef,
       addDateRef,
       timeRef,
+      trackRef,
       play
     };
   },
