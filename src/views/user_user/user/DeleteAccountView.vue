@@ -8,7 +8,7 @@ import SideBarUser from "@/components/SideBarUser.vue";
   <div class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <SideBarUser style="height:879px;"/>
+        <SideBarUser style="height:657px;"/>
       </div>
       <div class="container col-7 my-5 mb-4 text-center">
         <div class="container my-5">

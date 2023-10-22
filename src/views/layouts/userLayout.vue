@@ -1,16 +1,19 @@
 <template>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 1920px; margin-left: -12px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <img src="../../assets/logo.png" class="logo me-3" alt="Opis obrazu">
+        <img src="../../assets/logo.png" class="logo" alt="Opis obrazu">
+        <p class="navbar-brand" style="margin-top: 10px">Groove Music</p>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse col-8" id="navbarNav">
+        <div class="collapse navbar-collapse col-6" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <NavLink :to="'/'" :label="'Strona główna'"/>
+            </li>
+            <li class="nav-item">
+              <NavLink :to="'/'" :label="'Sklep'"/>
             </li>
           </ul>
           <ul class="navbar-nav" v-if="isLogged">
@@ -19,9 +22,6 @@
             </li>
             <li class="nav-item">
               <NavLink :to="'/albumy'" :label="'Albumy'"/>
-            </li>
-            <li class="nav-item">
-              <NavLink :to="'/'" :label="'COŚ'"/>
             </li>
           </ul>
         </div>
@@ -49,7 +49,6 @@
     </nav>
     <router-view></router-view>
     <MusicPlayer/>
-  </div>
 </template>
 <script>
 
@@ -69,9 +68,7 @@ export default {
     logout() {
       this.$store.dispatch('auth/logout');
     },
-    },
-
-
+  },
   computed: {
     ...mapState('auth', ['isLogged', 'user']),
 
