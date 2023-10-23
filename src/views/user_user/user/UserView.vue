@@ -63,6 +63,8 @@
 <script>
 import SubmitButton from "@/components/SubmitButton.vue";
 import SideBarUser from "@/components/SideBarUser.vue";
+import api from "@/services/api";
+
 export default {
   components: {
     SubmitButton,
@@ -70,10 +72,23 @@ export default {
   },
   data() {
     return {
+      user: [],
       name: 'Oskar',
       email: 'Oskar.Sukiennik@gmail.com',
       password: 'Oskar12313123',
       confirm_password: 'Oskar12313123'
+    }
+  },
+  mounted() {
+    this.GetUserInformation();
+  },
+  methods: {
+    GetUserInformation() {
+      api.get('/api/User/GetUserInfo/1')
+          .then(response => {
+            this.user = response.data.$value;
+            console.log(this.user)
+          })
     }
   }
 }

@@ -17,7 +17,7 @@ import {mapState} from "vuex";
 export default {
   data(){
     return {
-      guard: 'label'
+      guard: 'user'
     }
   },
   components:{
