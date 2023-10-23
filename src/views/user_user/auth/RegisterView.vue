@@ -1,11 +1,7 @@
 <template>
-  <div>
-
-  </div>
-
-  <form @submit.prevent="register"
-        class="container col-5 shadow d-flex justify-content-center align-items-center flex-column container-flex center-vertical">
-    <h1 class="text-center">Rejestracja</h1>
+  <form @submit.prevent="register" style="margin-top: 50px"
+        class="container col-5 shadow d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
+    <h1 class="text-center mt-4">Rejestracja</h1>
 
     <div class="col-7 mt-4">
       <label for="name">Nazwa:</label>
