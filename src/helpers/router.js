@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 
 import HomeView from "@/views/user_user/HomeView.vue";
 import LoginView from '@/views/user_user/auth/LoginView.vue'
@@ -11,27 +11,33 @@ import DeleteAccountView from "@/views/user_user/user/DeleteAccountView.vue";
 import AlbumsView from "@/views/user_user/music/AlbumsView.vue";
 import SongAddView from "@/views/user_label/song/SongAddView.vue";
 import SongView from "@/views/user_user/music/SongView.vue";
-import LabelHomeView from "@/views/user_label/HomeView.vue"
+import LabelHomeView from "@/views/user_label/HomeView.vue";
+import ArtistHomeView from "@/views/user_artist/HomeView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: HomeView },
-        { path: '/logowanie', component: LoginView },
-        { path: '/rejestracja', component: RegisterView },
-        { path: '/login', component: RegisterView},
-        { path: '/konto/usun', component: DeleteAccountView},
-        { path: '/konto', component: UserView},
-        { path: '/konto/zamowienia', component: UserOrdersView},
-        { path: '/utwory', component: SongsView},
-        { path: '/utwor/show/:id', component:SongView},
-        { path: '/albumy', component: AlbumsView},
-        { path: '/album', component: AlbumView},
-        { path: '/album/show/:id', component: AlbumView},
+        {path: '/', component: HomeView},
+        {path: '/logowanie', component: LoginView},
+        {path: '/rejestracja', component: RegisterView},
+        {path: '/login', component: RegisterView},
+        {path: '/konto/usun', component: DeleteAccountView},
+        {path: '/konto', component: UserView},
+        {path: '/konto/zamowienia', component: UserOrdersView},
+        {path: '/utwory', component: SongsView},
+        {path: '/utwor/show/:id', component: SongView},
+        {path: '/albumy', component: AlbumsView},
+        {path: '/album', component: AlbumView},
+        {path: '/album/show/:id', component: AlbumView},
 
         //Wytwórnia
-        { path: '/wytwornia', component: LabelHomeView},
-        { path: '/wytwornia/utwory/dodawanie', component: SongAddView},
+        {path: '/wytwornia', component: LabelHomeView},
+        {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
+
+        //Artysta
+        {path: '/artysta', component: ArtistHomeView},
+
+
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
