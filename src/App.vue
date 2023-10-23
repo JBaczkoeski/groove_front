@@ -1,16 +1,30 @@
 <template>
 <div>
-<user-layout/>
+<user-layout v-if="guard === 'user'"/>
+<admin-layout v-if="guard === 'admin'"/>
+<label-layout v-if="guard === 'label'"/>
+<artist-layout v-if="guard === 'artist'"/>
 </div>
 </template>
 
 <script>
 import userLayout from "@/views/layouts/userLayout.vue";
+import adminLayout from "@/views/layouts/adminLayout.vue";
+import labelLayout from "@/views/layouts/labelLayout.vue";
+import artistLayout from "@/views/layouts/artistLayout.vue";
 import {mapState} from "vuex";
 
 export default {
+  data(){
+    return {
+      guard: 'label'
+    }
+  },
   components:{
-    userLayout
+    adminLayout,
+    userLayout,
+    labelLayout,
+    artistLayout
   },
   computed: {
     ...mapState('auth', ['user']),

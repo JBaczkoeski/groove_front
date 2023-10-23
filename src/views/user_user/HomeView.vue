@@ -17,7 +17,7 @@
   <div class="row text-center mt-5">
     <div class="col-5 shadow ms-5">
       <img class="left-image"
-           src="../../assets/playerPhoto.png">
+           src="../../assets/playerPhoto.png" alt="Zdjęcie promocyjne">
     </div>
     <div class="col-6">
       <h2> Ogromna baza albumów</h2>

@@ -11,6 +11,7 @@ import DeleteAccountView from "@/views/user_user/user/DeleteAccountView.vue";
 import AlbumsView from "@/views/user_user/music/AlbumsView.vue";
 import SongAddView from "@/views/user_label/song/SongAddView.vue";
 import SongView from "@/views/user_user/music/SongView.vue";
+import LabelHomeView from "@/views/user_label/HomeView.vue"
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,7 +29,8 @@ const router = createRouter({
         { path: '/album', component: AlbumView},
         { path: '/album/show/:id', component: AlbumView},
 
-        //Wytwórcia
+        //Wytwórnia
+        { path: '/wytwornia', component: LabelHomeView},
         { path: '/wytwornia/utwory/dodawanie', component: SongAddView},
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
