@@ -38,7 +38,7 @@ const actions = {
         }
     },
 
-    async register({commit}, {type, name, email, password, confirm_password}) {
+    async register({commit}, {type, name, email, password, comfirmedPassword}) {
         try {
             if (type === 'Użytkownik') {
 
@@ -46,7 +46,7 @@ const actions = {
                     name,
                     email,
                     password,
-                    confirm_password
+                    comfirmedPassword
                 });
 
                 if (response.status === 200) {
@@ -64,7 +64,7 @@ const actions = {
                     name,
                     email,
                     password,
-                    confirm_password
+                    comfirmedPassword
                 });
 
                 if (response.status === 200) {
@@ -82,7 +82,7 @@ const actions = {
                     name,
                     email,
                     password,
-                    confirm_password
+                    comfirmedPassword
                 });
 
                 if (response.status === 200) {

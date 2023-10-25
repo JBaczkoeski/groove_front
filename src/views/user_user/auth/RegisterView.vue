@@ -108,7 +108,7 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          confirm_password: this.confirm_password,
+          comfirmedPassword: this.confirm_password,
         });
       }
       if (selectedType === 'Wytwórnia') {
