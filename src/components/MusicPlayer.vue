@@ -95,7 +95,7 @@ export default {
     async togglePlayback() {
       if (this.audio.paused) {
         if (this.audio.src !== this.track) {
-           this.audio.pause();
+          this.audio.pause();
           this.audio.src = this.track;
           await this.audio.load();
         }
@@ -158,7 +158,6 @@ export default {
 
   mounted() {
     this.audio.src = this.track;
-    console.log(this.audio.src)
     this.audio.addEventListener('loadedmetadata', () => {
       this.currentTrack.duration = Math.floor(this.audio.duration);
     });
@@ -171,7 +170,7 @@ export default {
   },
 
   computed: {
-    ...mapState('player', ['showPlayer','track','title','coverAlbum']),
+    ...mapState('player', ['showPlayer', 'track', 'title', 'coverAlbum']),
 
   },
 
