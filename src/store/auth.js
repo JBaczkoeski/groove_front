@@ -78,7 +78,7 @@ const actions = {
             }
 
             if (type === 'Artysta') {
-                const response = await api.post('/api/Account/CreateArtist', {
+                const response = await api.post('/api/Account/RegsiterAsArtist', {
                     name,
                     email,
                     password,
