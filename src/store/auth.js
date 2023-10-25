@@ -38,23 +38,63 @@ const actions = {
         }
     },
 
-    async register({commit}, {name, email, password, confirm_password}) {
+    async register({commit}, {type, name, email, password, confirm_password}) {
         try {
-            const response = await api.post('/api/Account/Register', {
-                name,
-                email,
-                password,
-                confirm_password
-            });
+            if (type === 'Użytkownik') {
 
-            if (response.status === 200) {
-                const data = response.data;
-                commit('SET_IS_LOGGED', true);
-                commit('SET_TOKEN', data.token);
-                return true;
-            } else {
-                return false;
+                const response = await api.post('/api/Account/Register', {
+                    name,
+                    email,
+                    password,
+                    confirm_password
+                });
+
+                if (response.status === 200) {
+                    const data = response.data;
+                    commit('SET_IS_LOGGED', true);
+                    commit('SET_TOKEN', data.token);
+                    return true;
+                } else {
+                    return false;
+                }
             }
+
+            if (type === 'Wytwórnia') {
+                const response = await api.post('/api/Studio/CreateStudio', {
+                    name,
+                    email,
+                    password,
+                    confirm_password
+                });
+
+                if (response.status === 200) {
+                    const data = response.data;
+                    commit('SET_IS_LOGGED', true);
+                    commit('SET_TOKEN', data.token);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            if (type === 'Artysta') {
+                const response = await api.post('/api/Account/CreateArtist', {
+                    name,
+                    email,
+                    password,
+                    confirm_password
+                });
+
+                if (response.status === 200) {
+                    const data = response.data;
+                    commit('SET_IS_LOGGED', true);
+                    commit('SET_TOKEN', data.token);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
         } catch (error) {
             console.error('Błąd podczas rejestracji:', error);
             return false;

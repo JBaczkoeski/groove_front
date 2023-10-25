@@ -1,85 +1,85 @@
 <template>
-    <div class="container d-flex justify-content-center mt-4">
-      <div class="btn-group">
-        <button v-for="(type, index) in types"
-                :key="index"
-                @click="selectedType = type"
-                :class="['btn select-button',selectedType === type ? 'btn-primary':'btn-secondary']"
-        >{{ type }}
-        </button>
+  <div class="container d-flex justify-content-center mt-4">
+    <div class="btn-group">
+      <button v-for="(type, index) in types"
+              :key="index"
+              @click="selectedType = type"
+              :class="['btn select-button',selectedType === type ? 'btn-primary bg-primary text-white':'btn-secondary',]"
+      >{{ type }}
+      </button>
+    </div>
+  </div>
+  <form @submit.prevent="register(selectedType)" style="margin-top: 50px"
+        class="container col-5 shadow d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
+    <h1 class="text-center mt-4">Rejestracja</h1>
+
+    <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
+      <div class="mt-4">
+        <label for="name">Nazwa:</label>
+        <input v-model="name" type="text" id="name" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="email">E-mail:</label>
+        <input v-model="email" type="email" id="email" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="password">Hasło:</label>
+        <input v-model="password" type="password" id="password" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="confirm_password">Potwierdź hasło:</label>
+        <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
       </div>
     </div>
-    <form @submit.prevent="register" style="margin-top: 50px"
-          class="container col-5 shadow d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
-      <h1 class="text-center mt-4">Rejestracja</h1>
 
-      <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
-        <div class="mt-4">
-          <label for="name">Nazwa:</label>
-          <input v-model="name" type="text" id="name" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="email">E-mail:</label>
-          <input v-model="email" type="email" id="email" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="password">Hasło:</label>
-          <input v-model="password" type="password" id="password" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="confirm_password">Potwierdź hasło:</label>
-          <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
-        </div>
+    <div class="col-8 mt-4" v-if="selectedType === 'Wytwórnia'">
+      <div class="mt-4">
+        <label for="name">Nazwa:</label>
+        <input v-model="name" type="text" id="name" required class="form-control">
       </div>
 
-      <div class="col-8 mt-4" v-if="selectedType === 'Wytwórnia'">
-        <div class="mt-4">
-          <label for="name">Nazwa:</label>
-          <input v-model="name" type="text" id="name" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="email">E-mail:</label>
-          <input v-model="email" type="email" id="email" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="password">Hasło:</label>
-          <input v-model="password" type="password" id="password" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="confirm_password">Potwierdź hasło:</label>
-          <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
-        </div>
+      <div class="mt-4">
+        <label for="email">E-mail:</label>
+        <input v-model="email" type="email" id="email" required class="form-control">
       </div>
 
-      <div class="col-8 mt-4" v-if="selectedType === 'Artysta'">
-        <div class="mt-4">
-          <label for="name">Nazwa:</label>
-          <input v-model="name" type="text" id="name" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="email">E-mail:</label>
-          <input v-model="email" type="email" id="email" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="password">Hasło:</label>
-          <input v-model="password" type="password" id="password" required class="form-control">
-        </div>
-
-        <div class="mt-4">
-          <label for="confirm_password">Potwierdź hasło:</label>
-          <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
-        </div>
+      <div class="mt-4">
+        <label for="password">Hasło:</label>
+        <input v-model="password" type="password" id="password" required class="form-control">
       </div>
-      <SubmitButton :class="'btn-success btn-lg mt-4 mb-5'" :label="'Zarejestruj się'"/>
-    </form>
+
+      <div class="mt-4">
+        <label for="confirm_password">Potwierdź hasło:</label>
+        <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
+      </div>
+    </div>
+
+    <div class="col-8 mt-4" v-if="selectedType === 'Artysta'">
+      <div class="mt-4">
+        <label for="name">Nazwa:</label>
+        <input v-model="name" type="text" id="name" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="email">E-mail:</label>
+        <input v-model="email" type="email" id="email" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="password">Hasło:</label>
+        <input v-model="password" type="password" id="password" required class="form-control">
+      </div>
+
+      <div class="mt-4">
+        <label for="confirm_password">Potwierdź hasło:</label>
+        <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
+      </div>
+    </div>
+    <SubmitButton :class="'btn-success btn-lg mt-4 mb-5'" :label="'Zarejestruj się'"/>
+  </form>
 
 
 </template>
@@ -101,14 +101,35 @@ export default {
     }
   },
   methods: {
-    register() {
-      this.$store.dispatch('auth/register', {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        confirm_password: this.confirm_password,
-      });
-    }
+    register(selectedType) {
+      if (selectedType === 'Użytkownik') {
+        this.$store.dispatch('auth/register', {
+          type: selectedType,
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          confirm_password: this.confirm_password,
+        });
+      }
+      if (selectedType === 'Wytwórnia') {
+        this.$store.dispatch('auth/register', {
+          type: selectedType,
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          confirm_password: this.confirm_password,
+        });
+      }
+      if (selectedType === 'Artysta') {
+        this.$store.dispatch('auth/register', {
+          type: selectedType,
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          confirm_password: this.confirm_password,
+        });
+      }
+    },
   },
 
   computed: {
@@ -120,7 +141,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 .center-vertical {
   margin-top: 130px;
 }
@@ -131,10 +152,8 @@ export default {
   margin-bottom: -50px;
   margin-left: 100px;
   margin-right: 100px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 0px;
-  border-radius: 35rem;
+  border: 0px;
+  font-size: 25px;
 }
+
 </style>
