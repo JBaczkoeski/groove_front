@@ -36,9 +36,7 @@
 <style>
 .side-bar {
   margin-left: 12px;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex: 0 0 280px;
+  min-height: 100vh;
 }
-
 </style>

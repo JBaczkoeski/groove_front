@@ -1,5 +1,6 @@
 import router from "@/helpers/router";
 import api from '@/services/api';
+import jwt_decode from "jwt-decode";
 
 const state = {
     isLogged: localStorage.getItem('isLogged') === 'true' || false,
@@ -25,7 +26,9 @@ const actions = {
             if (response.status === 200) {
                 commit('SET_IS_LOGGED', true);
                 if (response.data.token) {
-                    localStorage.setItem('user', JSON.stringify(response.data));
+                     var jwtToken = jwt_decode(response.data.token);
+                     localStorage.setItem('token', response.data.token);
+                     localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
                 }
                 await router.push('/utwory');
                 return true;

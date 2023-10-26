@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <SideBarUser/>
+        <SideBarUser style="height: 980px"/>
       </div>
       <div class="container col-7 border border-3 rounded rounded-5 mt-5 mb-4 shadow">
         <div class="row">
@@ -84,12 +84,14 @@ export default {
   },
   methods: {
     GetUserInformation() {
-      api.get('/api/User/GetUserInfo/1')
+      const token = localStorage.getItem('token');
+      api.get(`/api/User/GetUserInfo?token=${token}`)
           .then(response => {
             this.user = response.data.$value;
-            console.log(this.user)
-          })
+            console.log(this.user);
+          });
     }
-  }
+  },
+
 }
 </script>

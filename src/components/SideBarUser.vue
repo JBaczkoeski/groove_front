@@ -13,6 +13,12 @@
           Subskrybcja
         </a>
       </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+          <i class="fa-solid fa-microphone fa-2xl" style="color: #ffffff;"></i>
+          Artysta
+        </a>
+      </li>
       <li>
         <a href="/konto/zamowienia" class="nav-link text-white mt-3 mb-2">
           <i class="fa-solid fa-file-invoice fa-2xl" style="color: #ffffff;"></i>
