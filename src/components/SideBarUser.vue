@@ -45,5 +45,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding-bottom: 20px;
 }
 </style>
