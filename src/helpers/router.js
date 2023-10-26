@@ -38,6 +38,7 @@ const router = createRouter({
         {path: '/konto/zostanArtysta', component: BecomeAnArtist},
         {path: '/sklep', component: ShopView},
         //Wytwórnia
+
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
 
@@ -48,8 +49,6 @@ const router = createRouter({
         {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
         {path: '/artysta/albumy', component: ArtistAlbumsView},
 
-
-        //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
 
