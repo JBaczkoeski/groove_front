@@ -34,19 +34,15 @@ const router = createRouter({
         {path: '/album', component: AlbumView},
         {path: '/album/show/:id', component: AlbumView},
 
-        //Wytwórnia
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
 
-        //Artysta
         {path: '/artysta', component: ArtistHomeView},
         {path: '/artysta/utwory', component: ArtistSongView},
         {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView},
         {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
         {path: '/artysta/albumy', component: ArtistAlbumsView},
 
-
-        //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
     ]
 })
 
