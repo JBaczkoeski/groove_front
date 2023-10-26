@@ -1,10 +1,11 @@
 <template>
-<div>
-<user-layout v-if="role === 'user'"/>
-<admin-layout v-if="role === 'admin'"/>
-<label-layout v-if="role === 'label'"/>
-<artist-layout v-if="role === 'artist'"/>
-</div>
+  <div>
+    <user-layout v-if="role === 'user'"/>
+    <admin-layout v-if="role === 'admin'"/>
+    <label-layout v-if="role === 'label'"/>
+    <artist-layout v-if="role === 'artist'"/>
+    {{role}}
+  </div>
 </template>
 
 <script>
@@ -15,19 +16,17 @@ import artistLayout from "@/views/layouts/artistLayout.vue";
 import {mapState} from "vuex";
 
 export default {
-  data(){
-    return {
-      role: 'user'
-    }
-  },
-  components:{
+  components: {
     adminLayout,
     userLayout,
     labelLayout,
     artistLayout
   },
   computed: {
-    ...mapState('auth', ['role','token']),
+    role() {
+      return localStorage.getItem('role') || "user"
+    },
+    ...mapState('auth', ['token']),
 
   },
 }
