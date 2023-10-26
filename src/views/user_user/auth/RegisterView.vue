@@ -4,7 +4,7 @@
       <button v-for="(type, index) in types"
               :key="index"
               @click="selectedType = type"
-              :class="['btn select-button',selectedType === type ? 'btn-primary bg-primary text-white':'btn-secondary',]"
+              :class="['btn select-button rounded-5',selectedType === type ? 'btn-primary bg-primary text-white':'btn-secondary',]"
       >{{ type }}
       </button>
     </div>
