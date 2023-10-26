@@ -1,6 +1,13 @@
 {
-  "navigationFallback": {
-    "rewrite": "index.html",
-    "exclude": ["/images/*.{png,jpg,gif,ico}", "/*.{css,scss,js}"]
+  "routes": {
+    "/.well-known/*": {
+      "statusCode": 200
+    },
+    "/api/*": {
+      "allowedRoles": ["anonymous"]
+    },
+    "/*": {
+      "rewrite": "index.html"
+    }
   }
 }
