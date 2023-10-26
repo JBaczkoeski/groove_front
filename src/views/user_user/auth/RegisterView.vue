@@ -15,7 +15,7 @@
 
     <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
       <div class="mt-4">
-        <label for="name">Nazwa:</label>
+        <label for="name">Nazwa :</label>
         <input v-model="name" type="text" id="name" required class="form-control">
       </div>
 
