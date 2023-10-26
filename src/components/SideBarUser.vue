@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar pt-5" style="width: 280px;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar-st pt-5" style="width: 280px;">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
@@ -11,6 +11,12 @@
         <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-dollar-sign fa-2xl" style="color: #ffffff;"></i>
           Subskrybcja
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+          <i class="fa-solid fa-microphone fa-2xl" style="color: #ffffff;"></i>
+          Artysta
         </a>
       </li>
       <li>
@@ -34,10 +40,10 @@
 </script>
 
 <style>
-.side-bar {
+.side-bar-st {
   margin-left: -25px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 }
 </style>

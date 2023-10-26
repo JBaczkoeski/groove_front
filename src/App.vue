@@ -1,9 +1,9 @@
 <template>
 <div>
-<user-layout v-if="guard === 'user'"/>
-<admin-layout v-if="guard === 'admin'"/>
-<label-layout v-if="guard === 'label'"/>
-<artist-layout v-if="guard === 'artist'"/>
+<user-layout v-if="role === 'user'"/>
+<admin-layout v-if="role === 'admin'"/>
+<label-layout v-if="role === 'label'"/>
+<artist-layout v-if="role === 'artist'"/>
 </div>
 </template>
 
@@ -17,7 +17,7 @@ import {mapState} from "vuex";
 export default {
   data(){
     return {
-      guard: 'user'
+      role: 'user'
     }
   },
   components:{
@@ -27,7 +27,7 @@ export default {
     artistLayout
   },
   computed: {
-    ...mapState('auth', ['user']),
+    ...mapState('auth', ['role','token']),
 
   },
 }

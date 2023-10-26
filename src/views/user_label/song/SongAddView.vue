@@ -61,13 +61,6 @@
 </template>
 
 <script>
-
-// import api from '../services/api.js'
-
-
-// import SideBarAdmin from "@/components/SideBarAdmin.vue";
-// import songElementList from "@/components/songElementList.vue";
-
 export default {
   data() {
     return {

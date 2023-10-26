@@ -13,6 +13,10 @@ import SongAddView from "@/views/user_label/song/SongAddView.vue";
 import SongView from "@/views/user_user/music/SongView.vue";
 import LabelHomeView from "@/views/user_label/HomeView.vue";
 import ArtistHomeView from "@/views/user_artist/HomeView.vue";
+import ArtistSongAddView from "@/views/user_artist/artistSong/SongAddView.vue";
+import ArtistSongView from "@/views/user_artist/artistSong/SongsView.vue";
+import ApllyLabelView from "@/views/user_artist/artistSong/ApllyLabelView.vue";
+import ArtistAlbumsView from "@/views/user_artist/artistSong/ArtistAlbumsView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -36,6 +40,10 @@ const router = createRouter({
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView},
+        {path: '/artysta/utwory', component: ArtistSongView},
+        {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView},
+        {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
+        {path: '/artysta/albumy', component: ArtistAlbumsView},
 
 
         //     Tutaj bartuś będziemy dodawać nowe ścieżki na razie chuja tu jest
