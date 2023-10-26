@@ -17,6 +17,8 @@ import ArtistSongAddView from "@/views/user_artist/artistSong/SongAddView.vue";
 import ArtistSongView from "@/views/user_artist/artistSong/SongsView.vue";
 import ApllyLabelView from "@/views/user_artist/artistSong/ApllyLabelView.vue";
 import ArtistAlbumsView from "@/views/user_artist/artistSong/ArtistAlbumsView.vue";
+import BecomeAnArtist from "@/views/user_user/user/BecomeAnArtist.vue";
+import ShopView from "@/views/user_user/ShopView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -33,10 +35,14 @@ const router = createRouter({
         {path: '/albumy', component: AlbumsView},
         {path: '/album', component: AlbumView},
         {path: '/album/show/:id', component: AlbumView},
+        {path: '/konto/zostanArtysta', component: BecomeAnArtist},
+        {path: '/sklep', component: ShopView},
+        //Wytwórnia
 
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
 
+        //Artysta
         {path: '/artysta', component: ArtistHomeView},
         {path: '/artysta/utwory', component: ArtistSongView},
         {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView},

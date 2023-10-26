@@ -13,7 +13,7 @@
               <NavLink :to="'/'" :label="'Strona główna'"/>
             </li>
             <li class="nav-item">
-              <NavLink :to="'/'" :label="'Sklep'"/>
+              <NavLink :to="'/sklep'" :label="'Sklep'"/>
             </li>
           </ul>
           <ul class="navbar-nav" v-if="isLogged">
