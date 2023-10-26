@@ -26,7 +26,7 @@ export default {
       const storedRole = localStorage.getItem('role');
       return storedRole === 'user' ? storedRole : 'user';
     },
-    ...mapState('auth', ['token']),
+    ...mapState('auth', ['token','isLogged']),
 
   },
 }
