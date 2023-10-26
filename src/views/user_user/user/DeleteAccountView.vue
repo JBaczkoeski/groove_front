@@ -30,7 +30,3 @@ import SideBarUser from "@/components/SideBarUser.vue";
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>
