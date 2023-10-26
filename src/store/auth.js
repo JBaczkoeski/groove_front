@@ -27,6 +27,7 @@ const actions = {
                 commit('SET_IS_LOGGED', true);
                 if (response.data.token) {
                      var jwtToken = jwt_decode(response.data.token);
+                    localStorage.setItem('isLogged',true);
                      localStorage.setItem('token', response.data.token);
                      localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
                 }
