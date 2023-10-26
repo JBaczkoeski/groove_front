@@ -1,12 +1,7 @@
 {
   "routes": {
-    "/.well-known/*": {
-      "statusCode": 200
-    },
-    "/api/*": {
-      "allowedRoles": ["anonymous"]
-    },
     "/*": {
+      "allowedRoles": ["anonymous"],
       "rewrite": "index.html"
     }
   }
