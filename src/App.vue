@@ -4,7 +4,6 @@
     <admin-layout v-if="role === 'admin'"/>
     <label-layout v-if="role === 'label'"/>
     <artist-layout v-if="role === 'artist'"/>
-    {{role}}
   </div>
 </template>
 
