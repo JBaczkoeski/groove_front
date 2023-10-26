@@ -24,7 +24,8 @@ export default {
   },
   computed: {
     role() {
-      return localStorage.getItem('role') || "user"
+      const storedRole = localStorage.getItem('role');
+      return storedRole === 'user' ? storedRole : 'user';
     },
     ...mapState('auth', ['token']),
 
