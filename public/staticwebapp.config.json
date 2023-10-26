@@ -1,13 +1,11 @@
 {
-  "routes": {
-    "/.well-known/*": {
-      "statusCode": 200
-    },
-    "/api/*": {
-      "allowedRoles": ["anonymous"]
-    },
-    "/*": {
-      "rewrite": "index.html"
+  "routes": [
+    {
+      "route": "/api/*",
+      "methods": ["GET","POST"]
     }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
   }
 }
