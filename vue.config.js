@@ -9,5 +9,8 @@ module.exports = defineConfig({
                 changeOrigin: true
             }
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+        ? 'https://yellow-wave-052e89603.4.azurestaticapps.net/'
+        : '/'
 })
