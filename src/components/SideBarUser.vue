@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar pt-5" style="width: 280px;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar-st pt-5" style="width: 280px;">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
@@ -34,10 +34,10 @@
 </script>
 
 <style>
-.side-bar {
+.side-bar-st {
   margin-left: -25px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 }
 </style>

@@ -8,7 +8,6 @@
     <td class="pt-5">{{ time }}</td>
     <td class="pt-5"><a  @click="play(track,title,cover)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
   </tr>
-<!--  :href="`/utwor/show/${id}`"-->
 </template>
 
 <script>

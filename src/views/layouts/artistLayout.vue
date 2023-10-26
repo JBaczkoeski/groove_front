@@ -13,7 +13,10 @@
             <NavLink :to="'/'" :label="'Panel główny'"/>
           </li>
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'Coś'"/>
+            <NavLink :to="'/utwory'" :label="'Utwory'"/>
+          </li>
+          <li class="nav-item">
+            <NavLink :to="'/artysta/utwory'" :label="'Wydawanie'"/>
           </li>
         </ul>
       </div>
