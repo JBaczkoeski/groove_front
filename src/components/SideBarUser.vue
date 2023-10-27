@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar-st pt-5" style="width: 280px;">
+  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-st">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
@@ -34,17 +34,16 @@
     </ul>
   </div>
 </template>
-
-<script>
-
-</script>
-
 <style>
 .side-bar-st {
-  margin-left: -25px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   padding-bottom: 20px;
+}
+@media (max-width: 576px) {
+  .side-bar-st {
+    min-height: 50vh;
+  }
 }
 </style>

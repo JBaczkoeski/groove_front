@@ -1,16 +1,16 @@
 <template>
   <div class="container d-flex justify-content-center mt-4">
-    <div class="btn-group">
+    <div class="btn-group col-12 col-sm-8" style="margin-bottom: -60px">
       <button v-for="(type, index) in types"
               :key="index"
               @click="selectedType = type"
-              :class="['btn select-button rounded-5',selectedType === type ? 'btn-primary bg-primary text-white':'btn-secondary',]"
-      >{{ type }}
+              :class="['btn select-button rounded-5', selectedType === type ? 'btn-primary active' : 'btn-secondary']">
+        {{ type }}
       </button>
     </div>
   </div>
   <form @submit.prevent="register(selectedType)" style="margin-top: 50px"
-        class="container col-5 shadow d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
+        class="container col-12 col-sm-5 shadow-lg d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
     <h1 class="text-center mt-4">Rejestracja</h1>
 
     <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
@@ -126,7 +126,7 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          confirm_password: this.confirm_password,
+          ComfirmedPassword: this.confirm_password,
         });
       }
     },
@@ -142,18 +142,8 @@ export default {
 </script>
 
 <style>
-.center-vertical {
-  margin-top: 130px;
-}
-
 .select-button {
-  background-color: white;
-  color: black;
-  margin-bottom: -50px;
-  margin-left: 100px;
-  margin-right: 100px;
-  border: 0px;
-  font-size: 25px;
+  font-size: 1rem; /* Dostosuj wielkość czcionki */
+  margin-bottom: 1rem; /* Dostosuj marginesy */
 }
-
 </style>

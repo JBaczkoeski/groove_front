@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3">
+      <div class="col-12 col-sm-3 col-md-2 p-0">
         <SideBarUser/>
       </div>
-      <div class="container col-7 my-5 mb-4 text-center">
-        <div class="container my-5">
+      <div class="container col-12 my-5 mb-4 text-center">
+        <div class="my-5">
           <h2 class="fw-bold">Zostań artystą</h2>
           <p class="mt-3">
             Jesteś gotowy na niezwykłą przygodę? Kliknij ten przycisk i otwórz drzwi do świata sztuki! Możesz zostać
@@ -17,26 +17,20 @@
             światu to, co masz do powiedzenia. Kliknij przycisk i rozpocznij swoją artystyczną podróż już teraz!
           </p>
         </div>
-        <div class="container p t-5">
-          <SubmitButton :class="'btn-success col-3 mt-2 mb-5'" :label="'Zostań artystą'"/>
-        </div>
+        <SubmitButton :class="'btn-success col-3 mt-2 mb-5'" :label="'Zostań artystą'"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import SubmitButton from "@/components/SubmitButton.vue";
-  import SideBarUser from "@/components/SideBarUser.vue";
+import SubmitButton from "@/components/SubmitButton.vue";
+import SideBarUser from "@/components/SideBarUser.vue";
 
-  export default {
-    components: {
-      SubmitButton,
-      SideBarUser,
-    }
+export default {
+  components: {
+    SubmitButton,
+    SideBarUser,
   }
+}
 </script>
-
-<style>
-
-</style>

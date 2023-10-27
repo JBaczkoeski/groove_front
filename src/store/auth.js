@@ -9,6 +9,7 @@ const state = {
 const mutations = {
     SET_IS_LOGGED(state, value) {
         state.isLogged = value;
+        localStorage.setItem('isLogged', value);
     },
     SET_TOKEN(state, value) {
         state.user = value;
@@ -26,10 +27,9 @@ const actions = {
             if (response.status === 200) {
                 commit('SET_IS_LOGGED', true);
                 if (response.data.token) {
-                     var jwtToken = jwt_decode(response.data.token);
-                    localStorage.setItem('isLogged',true);
-                     localStorage.setItem('token', response.data.token);
-                     localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
+                    var jwtToken = jwt_decode(response.data.token);
+                    localStorage.setItem('token', response.data.token);
+                    localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
                 }
                 await router.push('/utwory');
                 return true;
@@ -42,7 +42,7 @@ const actions = {
         }
     },
 
-    async register({commit}, {type, name, email, password, comfirmedPassword}) {
+    async register({commit}, {type, name, email, password, comfirmedPassword, ComfirmedPassword}) {
         try {
             if (type === 'Użytkownik') {
 
@@ -86,7 +86,7 @@ const actions = {
                     name,
                     email,
                     password,
-                    comfirmedPassword
+                    ComfirmedPassword
                 });
 
                 if (response.status === 200) {

@@ -2,8 +2,8 @@
   <div class="container-fluid mt-3">
     <div class="container my-5">
       <div class="row">
-        <div class="containder col-4 d-flex justify-content-start">
-          <img :src="album.img" class="w-75 shadow" alt="okładka albumu">
+        <div class="containder col-12 col-sm-4 ms-sm-0 ms-4 d-flex justify-content-start">
+          <img :src="album.img" class="w-75 shadow img-fluid" alt="okładka albumu">
         </div>
         <div class="container col-8">
           <div class="container mb-5">
@@ -57,9 +57,11 @@ export default {
     api.get(`/api/Album/GetAlbymById/${id}`)
         .then(response => {
           this.album = response.data;
-          const artistId = response.data.artistId;
+          console.log(this.album);
 
-          api.get(`/api/Track/GetTrackByArtistId/${artistId}`)
+          const albumId = response.data.id;
+
+          api.get(`/api/Track/GetTrackByAlbumId/${albumId}`)
               .then(response => {
                 this.tracks = response.data.$values;
                 console.log(this.tracks);

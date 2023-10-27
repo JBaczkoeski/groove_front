@@ -15,7 +15,7 @@
         </tr>
         </thead>
         <tbody v-if="tracks">
-        <SongElementList/>
+        <SongElementList v-for="(track, index) in tracks" :key="track.id" :track="'http://127.0.0.1:8080/music/Travis_2.mp3'" :id="track.id" :place="index" :cover="track.img" :title="track.name" :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
         </tbody>
       </table>
     </div>
@@ -25,11 +25,26 @@
 <script>
 import SideBar from '@/components/SideBarArtist.vue'
 import SongElementList from "@/components/SongElementList.vue";
+import api from "@/services/api";
 
 export default {
   components: {
     SideBar,
     SongElementList
+  },
+  mounted() {
+    this.getAllTracks();
+  },
+  methods: {
+    getAllTracks() {
+      api.get('/api/Track/GetTrackByArtistId/{artistId}')
+          .then(response => {
+            this.tracks = response.data.$values;
+          })
+          .catch(error => {
+            console.error('Błąd podczas pobierania ścieżek:', error);
+          });
+    }
   }
 }
 </script>

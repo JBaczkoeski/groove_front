@@ -1,58 +1,60 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3">
-        <SideBarUser style="height: 980px"/>
+      <div class="col-12 col-sm-3 col-md-2 p-0">
+        <SideBarUser/>
       </div>
-      <div class="container col-7 border border-3 rounded rounded-5 mt-5 mb-4 shadow">
-        <div class="row">
-          <div class="container col-12 mt-2 text-center border-bottom border-3">
-            <h2>Ustwienia konta</h2>
-          </div>
-          <div class="container col-12 ms-5 mt-3">
-            <form class="d-flex justify-content-center align-items-center flex-column">
-              <div class="col-7 mt-4">
-                <label for="name">Nazwa:</label>
-                <input v-model="name" type="text" id="name" required class="form-control">
-              </div>
+      <div class="col-12 col-sm-9 col-md-10 mt-5 mb-4">
+        <div class="container border border-3 rounded rounded-5 p-4 shadow">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="text-center mb-4">Ustawienia konta</h2>
+            </div>
+            <div class="col-12 col-md-6 offset-md-3">
+              <form @submit.prevent="changeUserData" class="row d-flex justify-content-center">
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="name" class="form-label">Nazwa:</label>
+                  <input v-model="name" type="text" id="name" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="email">E-mail:</label>
-                <input v-model="email" type="email" id="email" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="email" class="form-label">E-mail:</label>
+                  <input v-model="email" type="email" id="email" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="phone">Telefon:</label>
-                <input v-model="email" type="number" id="phone" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="phone">Telefon:</label>
+                  <input v-model="email" type="number" id="phone" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="street">Ulica:</label>
-                <input v-model="email" type="text" id="street" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="street">Ulica:</label>
+                  <input v-model="email" type="text" id="street" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="postal_code">Kod pocztowy:</label>
-                <input v-model="email" type="text" id="postal_code" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="postal_code">Kod pocztowy:</label>
+                  <input v-model="email" type="text" id="postal_code" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="city">Miasto:</label>
-                <input v-model="email" type="text" id="city" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="city">Miasto:</label>
+                  <input v-model="email" type="text" id="city" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="password">Hasło:</label>
-                <input v-model="password" type="password" id="password" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="password">Hasło:</label>
+                  <input v-model="password" type="password" id="password" required class="form-control">
+                </div>
 
-              <div class="col-7 mt-4">
-                <label for="confirm_password">Potwierdź hasło:</label>
-                <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
-              </div>
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="confirm_password">Potwierdź hasło:</label>
+                  <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
+                </div>
 
-              <SubmitButton :class="'btn-secondary col-3 mt-4 mb-5 mb-2'" :label="'Zmień dane'"/>
-            </form>
+                <SubmitButton class="btn-secondary col-12 col-md-6 mt-4" label="Zmień dane"/>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -90,8 +92,10 @@ export default {
             this.user = response.data.$value;
             console.log(this.user);
           });
+    },
+    changeUserData() {
+      // Tutaj dodaj logikę do zmiany danych użytkownika
     }
   },
-
 }
 </script>

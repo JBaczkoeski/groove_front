@@ -20,7 +20,7 @@
           </li>
         </ul>
       </div>
-      <div class="container col-3 d-flex justify-content-end" v-if="isLogged">
+      <div class="container col-3 d-flex justify-content-end">
         <ul class="navbar-nav">
           <li class="nav-item">
             <NavLink :to="'/konto'" :label="'Konto'"/>

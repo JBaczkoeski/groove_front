@@ -19,6 +19,7 @@ import ApllyLabelView from "@/views/user_artist/artistSong/ApllyLabelView.vue";
 import ArtistAlbumsView from "@/views/user_artist/artistSong/ArtistAlbumsView.vue";
 import BecomeAnArtist from "@/views/user_user/user/BecomeAnArtist.vue";
 import ShopView from "@/views/user_user/ShopView.vue";
+import store from "@/store";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,16 +27,15 @@ const router = createRouter({
         {path: '/', component: HomeView},
         {path: '/logowanie', component: LoginView},
         {path: '/rejestracja', component: RegisterView},
-        {path: '/login', component: RegisterView},
-        {path: '/konto/usun', component: DeleteAccountView},
-        {path: '/konto', component: UserView},
-        {path: '/konto/zamowienia', component: UserOrdersView},
+        {path: '/konto/usun', component: DeleteAccountView, meta:{requiresAuth: true}},
+        {path: '/konto', component: UserView, meta:{requiresAuth: true}},
+        {path: '/konto/zamowienia', component: UserOrdersView, meta:{requiresAuth: true}},
         {path: '/utwory', component: SongsView},
         {path: '/utwor/show/:id', component: SongView},
         {path: '/albumy', component: AlbumsView},
         {path: '/album', component: AlbumView},
         {path: '/album/show/:id', component: AlbumView},
-        {path: '/konto/zostanArtysta', component: BecomeAnArtist},
+        {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
         {path: '/sklep', component: ShopView},
         //Wytwórnia
 
@@ -49,7 +49,16 @@ const router = createRouter({
         {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
         {path: '/artysta/albumy', component: ArtistAlbumsView},
 
-    ]
+    ],
+})
+
+router.beforeEach((to,from,next) => {
+    const isAuthenticated = store.state.auth.isLogged;
+    if (to.meta.requiresAuth && !isAuthenticated) {
+        next('/logowanie');
+    }else {
+        next();
+    }
 })
 
 export default router;
