@@ -1,10 +1,10 @@
 <template>
-  <div class="container-fluid">
-    <div class="row container pt-3">
+  <div class="">
+    <div class="row pt-3" style="margin-top: -16px">
       <div class="container col-1">
-        <SideBarFilter style="height:657px;"/>
+        <SideBarFilter/>
       </div>
-      <div class="row container col-11">
+      <div class="container col-10">
         <h1 class="text-center mt-4 mb-4">Sklep</h1>
         <div class="col-3">
           <select class="form-select mb-1" aria-label="Default select example">

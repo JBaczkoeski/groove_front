@@ -1,6 +1,6 @@
 <template>
   <div class="card border border-0 shadow me-3 mb-3 text-center rounded-5"
-       style="width: 22rem;">
+       style="width: 20rem;">
     <img v-if="cover" :src="cover" class="w-75 mt-4 rounded-5" style="margin-left: 38px;" alt="album cover">
     <div class="card-body row">
       <h5 v-if="title" class="card-title">{{ title }}</h5>
