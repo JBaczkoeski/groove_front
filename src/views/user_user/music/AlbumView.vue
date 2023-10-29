@@ -16,24 +16,26 @@
         </div>
       </div>
     </div>
-    <table class="table">
-      <thead>
-      <tr class="text-center">
-        <th scope="col">#</th>
-        <th scope="col"></th>
-        <th scope="col">Tytuł</th>
-        <th scope="col">Album</th>
-        <th scope="col">Data dodania</th>
-        <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
-        <th scope="col"></th>
-      </tr>
-      </thead>
-      <tbody v-if="tracks">
-      <SongElementList v-for="(track, index) in tracks" :key="track.id"
-                       :place="index" :cover="track.img" :title="track.name"
-                       :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr class="text-center">
+          <th scope="col">#</th>
+          <th scope="col"></th>
+          <th scope="col">Tytuł</th>
+          <th scope="col">Album</th>
+          <th scope="col">Data dodania</th>
+          <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody v-if="tracks">
+        <SongElementList v-for="(track, index) in tracks" :key="track.id"
+                         :place="index" :cover="track.img" :title="track.name"
+                         :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -56,25 +58,13 @@ export default {
 
     api.get(`/api/Album/GetAlbymById/${id}`)
         .then(response => {
+          console.log(response.data)
           this.album = response.data;
-          console.log(this.album);
-
-          const albumId = response.data.id;
-
-          api.get(`/api/Track/GetTrackByAlbumId/${albumId}`)
-              .then(response => {
-                this.tracks = response.data.$values;
-                console.log(this.tracks);
-              })
-              .catch(error => {
-                console.error('Błąd podczas pobierania ścieżek:', error);
-              });
-
+          this.tracks = response.data.tracks.$values
         })
         .catch(error => {
           console.error('Błąd podczas pobierania ścieżek:', error);
         });
-
 
 
   }
