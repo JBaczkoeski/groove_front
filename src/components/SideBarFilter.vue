@@ -10,8 +10,15 @@
 
       <li class="nav-item">
         <a class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-solid fa-filter fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
           Artysta
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white mt-3 mb-2" aria-current="page">
+          <i class="fa-solid fa-users-line fa-2xl" style="color: #ffffff;"></i>
+          Wytwórnia
         </a>
       </li>
     </ul>
