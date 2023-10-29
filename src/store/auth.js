@@ -13,6 +13,7 @@ const mutations = {
     },
     SET_TOKEN(state, value) {
         state.user = value;
+        localStorage.setItem('token', value);
     },
 };
 
@@ -28,7 +29,7 @@ const actions = {
                 commit('SET_IS_LOGGED', true);
                 if (response.data.token) {
                     var jwtToken = jwt_decode(response.data.token);
-                    localStorage.setItem('token', response.data.token);
+                    commit('SET_TOKEN', response.data.token);
                     localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
                 }
                 await router.push('/utwory');

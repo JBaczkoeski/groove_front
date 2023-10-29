@@ -157,7 +157,6 @@ export default {
   },
 
   mounted() {
-    this.audio.src = this.track;
     this.audio.addEventListener('loadedmetadata', () => {
       this.currentTrack.duration = Math.floor(this.audio.duration);
     });
@@ -175,6 +174,11 @@ export default {
   },
 
   watch: {
+    track(showPlayer){
+      if(showPlayer){
+        this.audio.src = this.track;
+      }
+    },
     volume(newVolume) {
       this.audio.volume = newVolume / 100;
     },
