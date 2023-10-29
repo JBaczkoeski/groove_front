@@ -9,7 +9,7 @@ import SideBarUser from "@/components/SideBarUser.vue";
       <div class="col-12 col-sm-3 col-md-2 p-0">
         <SideBarUser/>
       </div>
-      <div class="container col-12 my-5 mb-4 text-center">
+      <div class="container col-12 col-sm-9 my-5 mb-4 text-center">
         <div class="my-5">
           <h2 class="fw-bold">Usunięcie konta </h2>
           <p class="mt-3">

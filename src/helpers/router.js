@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
-//import store from "@/store";
+import store from "@/store";
 
 import HomeView from "@/views/user_user/HomeView.vue";
 import LoginView from '@/views/user_user/auth/LoginView.vue'
@@ -20,7 +20,9 @@ import ApllyLabelView from "@/views/user_artist/artistSong/ApllyLabelView.vue";
 import ArtistAlbumsView from "@/views/user_artist/artistSong/ArtistAlbumsView.vue";
 import BecomeAnArtist from "@/views/user_user/user/BecomeAnArtist.vue";
 import ShopView from "@/views/user_user/ShopView.vue";
-import LabelArtistView from "@/views/user_label/management/LabelArtistView.vue";
+import SubscriptionView from "@/views/user_user/user/SubscriptionView.vue";
+import LabelApllyArtistView from "@/views/user_label/management/LabelApllyArtistView.vue";
+import ArtistListView from "@/views/user_label/management/ArtistListView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -31,6 +33,7 @@ const router = createRouter({
         {path: '/konto/usun', component: DeleteAccountView, meta:{requiresAuth: true}},
         {path: '/konto', component: UserView, meta:{requiresAuth: true}},
         {path: '/konto/zamowienia', component: UserOrdersView, meta:{requiresAuth: true}},
+        {path: '/konto/subskrypcja', component:SubscriptionView, meta:{requiresAuth: true}},
         {path: '/utwory', component: SongsView},
         {path: '/utwor/show/:id', component: SongView},
         {path: '/albumy', component: AlbumsView},
@@ -42,7 +45,8 @@ const router = createRouter({
 
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
-        {path: '/wytwornia/aplikacje', component: LabelArtistView},
+        {path: '/wytwornia/artysci', component: ArtistListView},
+        {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView},
@@ -53,14 +57,14 @@ const router = createRouter({
     ],
 })
 
-// router.beforeEach((to,from,next) => {
-//     const isAuthenticated = store.state.auth.isLogged;
-//     if (to.meta.requiresAuth && !isAuthenticated) {
-//         next('/logowanie');
-//     }else {
-//         next();
-//     }
-// })
+router.beforeEach((to,from,next) => {
+    const isAuthenticated = store.state.auth.isLogged;
+    if (to.meta.requiresAuth && !isAuthenticated) {
+        next('/logowanie');
+    }else {
+        next();
+    }
+})
 
 export default router;
 

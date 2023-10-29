@@ -87,7 +87,7 @@ export default {
   methods: {
     GetUserInformation() {
       const token = localStorage.getItem('token');
-      api.get(`/api/User/GetUserInfo?token=${token}`)
+      api.get(`/api/User/GetUserInfo/${token}`)
           .then(response => {
             this.user = response.data.$value;
             console.log(this.user);

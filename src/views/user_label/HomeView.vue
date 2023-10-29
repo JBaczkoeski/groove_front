@@ -1,10 +1,10 @@
 <template>
 <div class="container-fluid">
   <div class="row">
-    <div class="container justify-content-center text-center d-flex mt-4">
-      <div class="row">
+    <div class="container  mt-4">
+      <div class="row justify-content-center text-center d-flex">
       <h3>Najpopularniejsze albumy wytwórni</h3>
-        <div class="card border border-0 shadow shadow-lg me-5 mb-3 text-center rounded-5 mt-5" style="width: 19rem; margin-left: 250px">
+        <div class="col-12 col-sm-2 card border border-0 mx-3  shadow shadow-lg mb-3 text-center rounded-5 mt-5">
           <img src="../../assets/logo.png" class="w-75 mt-4" style="margin-left: 34px;" alt="album cover">
           <div class="card-body row">
             <h5 v-if="title" class="card-title">{{ title }}</h5>
@@ -17,7 +17,7 @@
             <a :href="`/album/show/`" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
           </div>
         </div>
-        <div class="card border border-0 shadow me-5 mb-3 text-center rounded-5 mt-5" style="width: 19rem;">
+        <div class="col-12 col-sm-2 card border border-0 mx-3 shadow mb-3 text-center rounded-5 mt-5">
           <img src="../../assets/logo.png" class="w-75 mt-4" style="margin-left: 34px;" alt="album cover">
           <div class="card-body row">
             <h5 v-if="title" class="card-title">{{ title }}</h5>
@@ -30,7 +30,7 @@
             <a :href="`/album/show/`" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
           </div>
         </div>
-        <div class="card border border-0 shadow me-3 mb-3 text-center rounded-5 mt-5" style="width: 19rem;">
+        <div class="col-12 col-sm-2 card border border-0 mx-3  shadow mb-3 text-center rounded-5 mt-5">
           <img src="../../assets/logo.png" class="w-75 mt-4" style="margin-left: 34px;" alt="album cover">
           <div class="card-body row">
             <h5 v-if="title" class="card-title">{{ title }}</h5>

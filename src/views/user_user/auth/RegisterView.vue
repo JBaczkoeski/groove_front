@@ -12,7 +12,7 @@
   <form @submit.prevent="register(selectedType)" style="margin-top: 50px"
         class="container col-12 col-sm-5 shadow-lg d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
     <h1 class="text-center mt-4">Rejestracja</h1>
-
+<!--user-->
     <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
       <div class="mt-4">
         <label for="name">Nazwa :</label>
@@ -34,7 +34,7 @@
         <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
       </div>
     </div>
-
+<!--label-->
     <div class="col-8 mt-4" v-if="selectedType === 'Wytwórnia'">
       <div class="mt-4">
         <label for="name">Nazwa:</label>
@@ -56,7 +56,7 @@
         <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
       </div>
     </div>
-
+<!--artist-->
     <div class="col-8 mt-4" v-if="selectedType === 'Artysta'">
       <div class="mt-4">
         <label for="name">Nazwa:</label>
@@ -117,7 +117,7 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          confirm_password: this.confirm_password,
+          ComfirmedPassword: this.confirm_password,
         });
       }
       if (selectedType === 'Artysta') {

@@ -65,7 +65,7 @@ const actions = {
             }
 
             if (type === 'Wytwórnia') {
-                const response = await api.post('/api/Studio/CreateStudio', {
+                const response = await api.post('/api/Account/RegisterAsStudio', {
                     name,
                     email,
                     password,
