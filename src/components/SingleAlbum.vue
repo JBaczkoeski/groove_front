@@ -1,6 +1,6 @@
 <template>
   <div class="card border border-0 shadow me-3 mb-3 text-center rounded-5 col-12 col-sm-3">
-    <img v-if="cover" :src="cover" class="w-75 mt-4 rounded-4" style="margin-left: 34px;" alt="album cover">
+    <img v-if="cover" :src="cover" class="w-75 mt-4 ms-5 rounded-4" alt="album cover">
     <div class="card-body row">
       <h5 v-if="title" class="card-title">{{ title }}</h5>
       <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>

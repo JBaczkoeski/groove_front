@@ -23,7 +23,7 @@ export default {
   },
   data(){
     return{
-      role: 'label'
+      role: 'artist'
     }
   },
   computed: {

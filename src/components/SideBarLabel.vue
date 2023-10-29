@@ -29,11 +29,6 @@
     </ul>
   </div>
 </template>
-
-<script>
-
-</script>
-
 <style>
 .side-bar-label {
   display: flex;
