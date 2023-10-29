@@ -1,23 +1,23 @@
 <template>
   <div class="row">
-    <div class="col-12 col-sm-3 col-md-2 p-0">
-      <SideBarLabel/>
-    </div>
+    <side-bar-label class="container col-2"/>
     <div class="container col-9 mt-3">
       <table class="table">
         <thead>
         <tr class="text-center">
           <th scope="col">#</th>
-          <th scope="col"></th>
-          <th scope="col">Tytuł</th>
-          <th scope="col">Album</th>
-          <th scope="col">Data dodania</th>
-          <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
+          <th scope="col">Imię</th>
+          <th scope="col">Nazwisko</th>
+          <th scope="col">Utwór</th>
+          <th scope="col">Data aplikacji</th>
           <th scope="col"></th>
         </tr>
+
         </thead>
         <tbody>
-123
+          <ArtistElementList
+            :key = "1" :name = "'Oskar'" :lastName = "'Sukiennik'" :song = "'POLITECHNIKA'" :addDate = "'09-09-2023'"
+          />
         </tbody>
       </table>
     </div>
@@ -26,10 +26,12 @@
 
 <script>
 import SideBarLabel from '@/components/SideBarLabel.vue';
+import ArtistElementList from "@/components/ArtistElementList.vue";
 
 export default {
   components: {
     SideBarLabel,
+    ArtistElementList,
   },
 }
 </script>

@@ -1,28 +1,29 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-bar-label pt-5" style="width: 280px;">
+  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-label">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/wytwornia/albumy" class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-solid fa-compact-disc fa-2xl" style="color: #ffffff;"></i>
-          Albumy wytworni
+        <a href="/wytwornia/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
+          <i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i>
+          Ustawienia konta
         </a>
       </li>
       <li class="nav-item">
-        <a href="/wywornia/albumy/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
-          <i class="fa-solid fa-plus fa-2xl" style="color: #ffffff;"></i>
-          Dodawanie albumu
+        <a href="/wytwornia/aplikacje" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+          <i class="fa-solid fa-users-line fa-2xl" style="color: #ffffff;"></i>
+          Aplikacje artystow
         </a>
       </li>
-      <li>
-        <a href="/wytwornia/aplikacje" class="nav-link text-white mt-3 mb-2">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-record-vinyl fa-2xl" style="color: #ffffff;"></i>
-          Aplikacje do wytworni
+          Albumy
         </a>
       </li>
+
       <li>
-        <a href="/artysta/utwory/wytwornia" class="nav-link text-white mt-3 mb-2">
-          <i class="fa-solid fa-money-bill-1-wave fa-2xl" style="color: #ffffff;"></i>
-          Wytwórnia
+        <a href="/wytwornia/konto/usun" class="nav-link text-white mt-3">
+          <i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i>
+          Usunięcie konta
         </a>
       </li>
     </ul>
@@ -39,6 +40,7 @@
   flex-direction: column;
   min-height: 100vh;
   padding-bottom: 20px;
+  margin-left: -5px;
 }
 @media (max-width: 576px) {
   .side-bar-label {

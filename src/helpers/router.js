@@ -20,7 +20,7 @@ import ApllyLabelView from "@/views/user_artist/artistSong/ApllyLabelView.vue";
 import ArtistAlbumsView from "@/views/user_artist/artistSong/ArtistAlbumsView.vue";
 import BecomeAnArtist from "@/views/user_user/user/BecomeAnArtist.vue";
 import ShopView from "@/views/user_user/ShopView.vue";
-import ArtistCheckView from "@/views/user_label/ArtistCheckView.vue";
+import LabelArtistView from "@/views/user_label/management/LabelArtistView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -42,7 +42,7 @@ const router = createRouter({
 
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
-        {path: '/wytwornia/aplikacje', components: ArtistCheckView},
+        {path: '/wytwornia/aplikacje', component: LabelArtistView},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView},
