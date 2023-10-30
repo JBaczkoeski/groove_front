@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse col-6" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'Panel główny'"/>
+            <NavLink :to="'/admin'" :label="'Panel główny'"/>
           </li>
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'Coś'"/>
+            <NavLink :to="'/admin/zarzadznie'" :label="'Zarządzanie serwisem'"/>
           </li>
         </ul>
       </div>

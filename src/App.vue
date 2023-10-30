@@ -23,7 +23,7 @@ export default {
   },
   data(){
     return{
-      role: 'user',
+      role: 'admin',
     }
   },
   computed: {
@@ -50,6 +50,6 @@ body {
   border-radius: 5px;
   border: 2px solid transparent;
 }
-root{color:black!important;}
+
 
 </style>

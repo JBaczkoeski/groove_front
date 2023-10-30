@@ -69,7 +69,7 @@ const actions = {
                     name,
                     email,
                     password,
-                    comfirmedPassword
+                    ComfirmedPassword
                 });
 
                 if (response.status === 200) {

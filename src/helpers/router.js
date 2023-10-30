@@ -23,10 +23,13 @@ import ShopView from "@/views/user_user/ShopView.vue";
 import SubscriptionView from "@/views/user_user/user/SubscriptionView.vue";
 import LabelApllyArtistView from "@/views/user_label/management/LabelApllyArtistView.vue";
 import ArtistListView from "@/views/user_label/management/ArtistListView.vue";
+import AdminHome from "@/views/user_admin/HomeView.vue";
+import ServiceManagment from "@/views/user_admin/ServiceManagment.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        //user
         {path: '/', component: HomeView},
         {path: '/logowanie', component: LoginView},
         {path: '/rejestracja', component: RegisterView},
@@ -41,8 +44,8 @@ const router = createRouter({
         {path: '/album/show/:id', component: AlbumView},
         {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
         {path: '/sklep', component: ShopView},
-        //Wytwórnia
 
+        //Wytwórnia
         {path: '/wytwornia', component: LabelHomeView},
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
         {path: '/wytwornia/artysci', component: ArtistListView},
@@ -54,6 +57,10 @@ const router = createRouter({
         {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView},
         {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
         {path: '/artysta/albumy', component: ArtistAlbumsView},
+
+        //Admin
+        {path: '/admin', component:AdminHome},
+        {path: '/admin/zarzadznie', component: ServiceManagment}
     ],
 })
 
