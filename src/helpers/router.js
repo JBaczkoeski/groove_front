@@ -25,11 +25,12 @@ import LabelApllyArtistView from "@/views/user_label/management/LabelApllyArtist
 import ArtistListView from "@/views/user_label/management/ArtistListView.vue";
 import AdminHome from "@/views/user_admin/HomeView.vue";
 import ServiceManagment from "@/views/user_admin/ServiceManagment.vue";
+import OrderView from "@/views/user_user/user/OrderView.vue"
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        //user
+        //user konto i logowanie ogolne
         {path: '/', component: HomeView},
         {path: '/logowanie', component: LoginView},
         {path: '/rejestracja', component: RegisterView},
@@ -37,12 +38,15 @@ const router = createRouter({
         {path: '/konto', component: UserView, meta:{requiresAuth: true}},
         {path: '/konto/zamowienia', component: UserOrdersView, meta:{requiresAuth: true}},
         {path: '/konto/subskrypcja', component:SubscriptionView, meta:{requiresAuth: true}},
+        {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
+        {path: '/konto/zamowienie', component: OrderView},
+        // user utwory
         {path: '/utwory', component: SongsView},
         {path: '/utwor/show/:id', component: SongView},
         {path: '/albumy', component: AlbumsView},
         {path: '/album', component: AlbumView},
         {path: '/album/show/:id', component: AlbumView},
-        {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
+        //sklep ogolny
         {path: '/sklep', component: ShopView},
 
         //Wytwórnia
