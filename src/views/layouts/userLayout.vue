@@ -1,8 +1,12 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <img src="../../assets/logo.png" class="logo me-4 me-sm-0" alt="Opis obrazu">
+        <a href="/">
+          <img src="../../assets/logo.png" class="logo me-4 me-sm-0" alt="Opis obrazu">
+        </a>
+        <a href="/" class="btn">
         <p class="navbar-brand" style="margin-top: 10px">Groove Music</p>
+        </a>
         <button class="navbar-toggler ms-4 ms-sm-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
