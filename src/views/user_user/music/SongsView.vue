@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid mt-3">
     <div class="table-responsive">
-      <table class="table">
+      <table class="table table-striped">
         <thead>
         <tr class="text-center">
           <th scope="col">#</th>

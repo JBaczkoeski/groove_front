@@ -10,7 +10,7 @@
             <h2>Zamówienie nr 12312412412</h2>
           </div>
           <div class="col-12 mt-5 px-5">
-            <div class="row mb-3 border-bottom border-3">
+            <div class="row mb-3">
               <div class="col-12 col-sm-5 ms-5">
                 <h4 class="mb-3">Dane Klienta:</h4>
                 <p><strong>Imię:</strong> Jan Kowalski</p>
@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class="row mb-3 border-bottom border-3">
-              <div class="col-12">
+              <div class="col-12 ms-5">
                 <h4 class="mb-3 text-center">Produkty</h4>
                 <ul class="list-unstyled">
                   <li><strong>Produkt 1</strong> - 100 zł</li>

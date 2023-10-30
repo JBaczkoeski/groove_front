@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-3">
+  <div class="container-fluid pt-3">
     <div class="row d-flex justify-content-center">
       <SingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name" :album-lenght="59" :author="album.author" :songs="14" :id="album.id"/>
     </div>
