@@ -1,9 +1,10 @@
 <template>
   <div>
-    <user-layout v-if="role === 'user'"/>
-    <admin-layout v-if="role === 'admin'"/>
-    <label-layout v-if="role === 'label'"/>
-    <artist-layout v-if="role === 'artist'"/>
+    {{}}
+    <user-layout v-if="role.includes('user') && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>
+    <admin-layout v-if="role[1] === 'admin'"/>
+    <label-layout v-if="role[0] === 'studiohead'"/>
+    <artist-layout v-if="role[1] === 'artist'"/>
   </div>
 </template>
 
@@ -23,10 +24,10 @@ export default {
   },
 
   computed: {
-     role() {
-       const storedRole = localStorage.getItem('role');
-       return storedRole === 'user' ? storedRole : 'user';
-     },
+    role() {
+      const storedRoles = localStorage.getItem('role');
+      return storedRoles ? JSON.parse(storedRoles) : [];
+    },
     ...mapState('auth', ['token', 'isLogged']),
 
   },

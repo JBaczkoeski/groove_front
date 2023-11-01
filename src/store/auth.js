@@ -109,6 +109,7 @@ const actions = {
     logout({commit}) {
         commit('SET_IS_LOGGED', false);
         commit('SET_TOKEN', '');
+        localStorage.setItem('role','user');
         router.push('/');
     },
 };

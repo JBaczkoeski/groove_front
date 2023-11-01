@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-st">
-    <ul class="nav nav-pills flex-column mb-auto">
+    <ul class="nav nav-pills flex-column mb-auto mt-5">
       <li class="nav-item">
         <a href="/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
           <i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i>
