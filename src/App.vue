@@ -25,8 +25,7 @@ export default {
 
   computed: {
     role() {
-      const storedRoles = localStorage.getItem('role');
-      return storedRoles ? JSON.parse(storedRoles) : [];
+      return JSON.parse(localStorage.getItem('role'))
     },
     ...mapState('auth', ['token', 'isLogged']),
 

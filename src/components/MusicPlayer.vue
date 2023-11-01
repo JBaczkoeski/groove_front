@@ -69,6 +69,7 @@
 <script>
 import {mapState} from "vuex";
 import store from "@/store";
+import api from "@/services/api";
 
 export default {
   data() {
@@ -145,8 +146,14 @@ export default {
     toggleLike() {
       this.isLiked = !this.isLiked;
       if (this.isLiked) {
+        const trackId = this.trackId;
+        const userId = localStorage.getItem('userId');
+        api.post(`/api/User/LikeTrack/${userId}/${trackId}`)
         console.log('Utwór polubiony!');
       } else {
+        const trackId = this.trackId;
+        const userId = localStorage.getItem('userId');
+        api.post(`/api/User/DislikeTrack/${userId}/${trackId}`)
         console.log('Utwór niepolubiony.');
       }
     },
@@ -169,7 +176,7 @@ export default {
   },
 
   computed: {
-    ...mapState('player', ['showPlayer', 'track', 'title', 'coverAlbum']),
+    ...mapState('player', ['showPlayer', 'track', 'title', 'coverAlbum', 'trackId'],'auth', ['token']),
 
   },
 

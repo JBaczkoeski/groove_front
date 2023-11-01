@@ -30,7 +30,9 @@ const actions = {
                 if (response.data.token) {
                     var jwtToken = jwt_decode(response.data.token);
                     commit('SET_TOKEN', response.data.token);
-                    localStorage.setItem('role', JSON.stringify(jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']));
+                    const roles = jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+                    localStorage.setItem('userId', jwtToken['UserId']);
+                    localStorage.setItem('role', JSON.stringify(roles));
                 }
                 await router.push('/utwory');
                 return true;

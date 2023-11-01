@@ -6,6 +6,7 @@ export default {
         track: localStorage.getItem('track') || '',
         title: localStorage.getItem('title') || '',
         coverAlbum: localStorage.getItem('coverAlbum') || '',
+        trackId: localStorage.getItem('trackId') || '',
     },
 
     mutations: {
@@ -20,6 +21,9 @@ export default {
         },
         setCoverAlbumPlayer(state, value) {
             state.coverAlbum = value;
+        },
+        setTrackIdPlayer(state, value) {
+            state.trackId = value;
         },
     },
 
@@ -36,5 +40,14 @@ export default {
         CoverAlbumPlayer({ commit }, value) {
             commit('setCoverAlbumPlayer', value);
         },
+        TrackIdPlayer({ commit }, value) {
+            commit('setTrackIdPlayer', value)
+        }
+    },
+
+    getters:{
+        getTrackId: state => {
+            return state.trackId
+        }
     }
 };

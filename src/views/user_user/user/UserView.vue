@@ -29,22 +29,22 @@
 
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="phone">Telefon:</label>
-                  <input v-model="email" type="number" id="phone" required class="form-control">
+                  <input v-model="telephone" type="number" id="phone" required class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="street">Ulica:</label>
-                  <input v-model="email" type="text" id="street" required class="form-control">
+                  <input v-model="street" type="text" id="street" required class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="postal_code">Kod pocztowy:</label>
-                  <input v-model="email" type="text" id="postal_code" required class="form-control">
+                  <input v-model="postal" type="text" id="postal_code" required class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="city">Miasto:</label>
-                  <input v-model="email" type="text" id="city" required class="form-control">
+                  <input v-model="city" type="text" id="city" required class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
@@ -82,6 +82,10 @@ export default {
       user: [],
       name: 'Oskar',
       email: 'Oskar.Sukiennik@gmail.com',
+      telephone: '123456789',
+      street: 'Prawobrzeska',
+      postal: '74-500',
+      city: 'Szczecin',
       password: 'Oskar12313123',
       confirm_password: 'Oskar12313123',
       image: 'https://scontent-waw1-1.xx.fbcdn.net/v/t1.6435-9/103488860_1966332453498047_1673215677078360732_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=be3454&_nc_ohc=rmDTA4aETMoAX_qeicJ&_nc_ht=scontent-waw1-1.xx&oh=00_AfAyw3rAT-5ug63--8tht5KkIln2olXMLrkOemt4v65FvA&oe=656206C2'
@@ -92,7 +96,7 @@ export default {
   },
   methods: {
     GetUserInformation() {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('userId');
       api.get(`/api/User/GetUserInfo/${token}`)
           .then(response => {
             this.user = response.data.$value;

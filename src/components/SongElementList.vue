@@ -6,7 +6,7 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
-    <td class="pt-5"><a  @click="load(track,title,cover)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
+    <td class="pt-5"><a  @click="load(track,title,cover,id)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
   </tr>
 </template>
 
@@ -36,11 +36,12 @@ export default {
 
     const store = useStore();
 
-    const load = (track,title,cover) => {
+    const load = (track,title,cover,id) => {
       store.dispatch('player/togglePlayer', true);
       store.dispatch('player/musicPlayer', track);
       store.dispatch('player/TitlePlayer', title);
       store.dispatch('player/CoverAlbumPlayer', cover);
+      store.dispatch('player/TrackIdPlayer', id);
     };
 
     return {
