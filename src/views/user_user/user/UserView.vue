@@ -71,6 +71,7 @@
 import SubmitButton from "@/components/SubmitButton.vue";
 import SideBarUser from "@/components/SideBarUser.vue";
 import api from "@/services/api";
+import {mapState} from "vuex";
 
 export default {
   components: {
@@ -81,7 +82,7 @@ export default {
     return {
       user: [],
       name: 'Oskar',
-      email: 'Oskar.Sukiennik@gmail.com',
+      email: '',
       telephone: '123456789',
       street: 'Prawobrzeska',
       postal: '74-500',
@@ -96,16 +97,26 @@ export default {
   },
   methods: {
     GetUserInformation() {
-      const token = localStorage.getItem('userId');
-      api.get(`/api/User/GetUserInfo/${token}`)
+      const token = localStorage.getItem('token');
+      api.get(`/api/User/GetUserInfo`,{
+        token: token
+      })
           .then(response => {
-            this.user = response.data.$value;
-            console.log(this.user);
+            this.user = response.data;
+
+              this.email = this.user.email;
+              this.name = this.user.name;
+              this.telephone = this.user.phoneNumber;
+
           });
     },
     changeUserData() {
       // Tutaj dodaj logikę do zmiany danych użytkownika
     }
+  },
+  computed: {
+    ...mapState('auth', ['token']),
+
   },
 }
 </script>
