@@ -21,16 +21,12 @@ export default {
     labelLayout,
     artistLayout
   },
-  data(){
-    return{
-      role: 'user',
-    }
-  },
+
   computed: {
-    // role() {
-    //   const storedRole = localStorage.getItem('role');
-    //   return storedRole === 'user' ? storedRole : 'user';
-    // },
+     role() {
+       const storedRole = localStorage.getItem('role');
+       return storedRole === 'user' ? storedRole : 'user';
+     },
     ...mapState('auth', ['token', 'isLogged']),
 
   },
