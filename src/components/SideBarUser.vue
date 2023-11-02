@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+        <a href="/konto/subskrypcja" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-dollar-sign fa-2xl" style="color: #ffffff;"></i>
           Subskrybcja
         </a>

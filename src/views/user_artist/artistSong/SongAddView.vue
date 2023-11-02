@@ -96,9 +96,8 @@ export default {
       //location.reload();
     },
     SelectFileChange(event) {
-      const filePhoto = event.target.files[0];
-      this.song.photo = filePhoto;
-    }
+      this.song.photo = event.target.files[0];
+    },
   }
 }
 </script>
