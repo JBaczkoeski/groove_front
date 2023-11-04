@@ -1,34 +1,87 @@
 <template>
-  <div class="container-fluid mt-5">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center mb-5">
+  <div class="container-fluid">
+
+    <div>
+      <div class="banner-container">
+        <img src="@/assets/baner.jpg" class="img-fluid w-100" alt="Szeroki baner">
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center shadow py-3">
+      <div class="col-12 col-sm-6 pt-5">
+        <div class="d-flex justify-content-center mb-3">
+          <h2> Dowiedz się więcej o naszych funkcjach</h2>
+          <i class="fa-solid fa-arrow-down fa-2xl" style="color: #000000;"></i>
+        </div>
+        <div>
+          <p>Pragniemy, aby nasza aplikacja muzyczna była nie tylko miejscem odkrywania nowych brzmień, ale także
+            platformą, która dostosowuje się do Twoich potrzeb. Niezależnie od tego, czy jesteś miłośnikiem muzyki,
+            artystą szukającym ekspozycji czy studiem nagraniowym, nasze funkcje są zaprojektowane, aby umożliwić Ci
+            pełne
+            wykorzystanie naszej aplikacji.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center shadow py-3" style="background-color: #c9c9ca;">
+      <div class="col-12 col-sm-6 pt-5">
+        <h2>Baza albumów</h2>
+        <p>Odkryj niezliczone tytuły i gatunki muzyczne w naszej aplikacji, która oferuje dostęp do ogromnej bazy
+          albumów. Bez względu na Twoje preferencje muzyczne, znajdziesz tu coś dla siebie. Poszerz swoje muzyczne
+          horyzonty i odkrywaj nowe dźwięki każdego dnia!</p>
+
+      </div>
+      <div class="col-12 col-sm-5">
         <img src="@/assets/baner.jpg" alt="baner" class="img-fluid shadow-lg">
       </div>
     </div>
 
-    <div class="row text-center shadow py-3">
+    <div class="row text-center shadow py-3" style="background-color: white;">
       <div class="col-12 col-sm-6 pt-5">
-        <h2> Prosty i intuicyjny odtwarzacz</h2>
-        <p class="lead">
-          Nasza aplikacja posiada prosty i intuicyjny odtwarzacz.
-        </p>
+        <img src="@/assets/register.png" alt="baner" class="img-fluid shadow-lg">
+
+
       </div>
       <div class="col-12 col-sm-5">
-        <img class="img-fluid" src="@/assets/playerPhoto.png" alt="player">
+        <h2>Możliwość rejestracji jako studio, artysta lub użytkownik</h2>
+        <p>Dołącz do społeczności muzyków, słuchaczy i entuzjastów naszej aplikacji! Zarejestruj się jako studio
+          muzyczne, artysta lub po prostu jako pasjonat muzyki. Otwórz sobie drzwi do różnorodnych funkcji, które
+          dostosowane są do Twoich potrzeb w świecie muzycznym.</p>
       </div>
     </div>
 
-    <div class="row text-center mt-5">
-      <div class="col-12 col-sm-6">
-        <h2> Ogromna baza albumów</h2>
-        <p class="lead">
-          Nasza aplikacja posiada ogromną bazę albumów.
-        </p>
+    <div class="row text-center shadow py-3" style="background-color: #c9c9ca;">
+      <div class="col-12 col-sm-6 pt-5">
+        <h2>Intuicyjny wygląd</h2>
+        <p>Nasza aplikacja oferuje intuicyjny i estetyczny interfejs, który sprawia, że korzystanie z niej jest
+          przyjemne i proste. Z łatwością nawiguj przez funkcje i treści, bez zbędnego zamieszania. Przejrzystość i
+          prostota to nasze motto, abyś mógł cieszyć się muzyką bez dodatkowych przeszkód.</p>
+
       </div>
-      <div class="col-12 col-sm-5 shadow">
-        <img class="img-fluid" src="@/assets/playerPhoto.png" alt="Zdjęcie promocyjne">
+      <div class="col-12 col-sm-5">
+        <img src="@/assets/logo_name.png" alt="baner" class="img-fluid shadow-lg">
       </div>
     </div>
+
+    <div class="row text-center shadow py-3" style="background-color: white;">
+      <div class="col-12 col-sm-6 pt-5">
+        <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg">
+
+
+      </div>
+      <div class="col-12 col-sm-5">
+        <h2>Wbudowany player</h2>
+        <p>Odtwarzaj ulubione utwory bez przerywania. Nasz wbudowany odtwarzacz umożliwia słuchanie muzyki bez przerw,
+          gdziekolwiek jesteś w aplikacji. Reguluj głośność i ciesz się doskonałą jakością
+          dźwięku - wszystko w jednym miejscu.</p>
+      </div>
+    </div>
+
+    <div class="container mt-2">
+      <p>&copy; 2023 Groove. Wszelkie prawa zastrzeżone.</p>
+      <p>Kontakt: groove@groovemail.com | +48 123 456 789</p>
+    </div>
+
   </div>
 </template>
 
@@ -39,6 +92,16 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+p {
+  font-size: 20px;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 .container-fluid {
   padding: 0;
 }
