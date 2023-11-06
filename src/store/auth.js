@@ -59,7 +59,6 @@ const actions = {
 
                 if (response.status === 200) {
                     const data = response.data;
-                    commit('SET_IS_LOGGED', true);
                     commit('SET_TOKEN', data.token);
                     return true;
                 } else {
@@ -77,7 +76,6 @@ const actions = {
 
                 if (response.status === 200) {
                     const data = response.data;
-                    commit('SET_IS_LOGGED', true);
                     commit('SET_TOKEN', data.token);
                     return true;
                 } else {
@@ -95,7 +93,6 @@ const actions = {
 
                 if (response.status === 200) {
                     const data = response.data;
-                    commit('SET_IS_LOGGED', true);
                     commit('SET_TOKEN', data.token);
                     return true;
                 } else {
