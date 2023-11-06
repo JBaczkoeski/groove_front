@@ -27,6 +27,7 @@ import AdminHome from "@/views/user_admin/HomeView.vue";
 import ServiceManagment from "@/views/user_admin/ServiceManagment.vue";
 import OrderView from "@/views/user_user/user/OrderView.vue";
 import AlbumAddView from "@/views/user_artist/artistSong/AlbumAddView.vue";
+import LabelManagementPanel from "@/views/user_label/management/LabelManagementPanel.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -55,6 +56,7 @@ const router = createRouter({
         {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
         {path: '/wytwornia/artysci', component: ArtistListView},
         {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView},
+        {path: '/wytwornia/panel', component: LabelManagementPanel},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView},

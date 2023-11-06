@@ -36,7 +36,7 @@ const actions = {
                     localStorage.setItem('role', roles);
                 }
                 await router.push('/utwory');
-                return true;
+                location.reload();
             } else {
                 return false;
             }
@@ -60,7 +60,7 @@ const actions = {
                 if (response.status === 200) {
                     const data = response.data;
                     commit('SET_TOKEN', data.token);
-                    return true;
+                    location.reload();
                 } else {
                     return false;
                 }
@@ -77,7 +77,7 @@ const actions = {
                 if (response.status === 200) {
                     const data = response.data;
                     commit('SET_TOKEN', data.token);
-                    return true;
+                    location.reload();
                 } else {
                     return false;
                 }
@@ -94,7 +94,7 @@ const actions = {
                 if (response.status === 200) {
                     const data = response.data;
                     commit('SET_TOKEN', data.token);
-                    return true;
+                    location.reload();
                 } else {
                     return false;
                 }
@@ -111,6 +111,7 @@ const actions = {
         commit('SET_TOKEN', '');
         localStorage.setItem('role',['user']);
         router.push('/');
+        location.reload();
     },
 };
 

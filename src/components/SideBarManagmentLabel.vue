@@ -2,9 +2,9 @@
   <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-label">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/wytwornia/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i>
-          Ustawienia konta
+        <a href="/wytwornia/panel" class="nav-link text-white mt-3 mb-2" aria-current="page">
+          <i class="fa-solid fa-table-columns fa-2xl" style="color: #ffffff;"></i>
+          Panel główny
         </a>
       </li>
       <li class="nav-item">

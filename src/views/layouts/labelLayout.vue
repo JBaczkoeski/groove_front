@@ -13,7 +13,7 @@
             <NavLink :to="'/wytwornia'" :label="'Panel główny'"/>
           </li>
           <li class="nav-item">
-            <NavLink :to="'/'" :label="'Coś'"/>
+            <NavLink :to="'/wytwornia/panel'" :label="'Zarządzanie'"/>
           </li>
         </ul>
       </div>

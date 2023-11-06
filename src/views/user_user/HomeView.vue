@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="row d-flex justify-content-center shadow py-3">
+    <div class="row d-flex justify-content-center shadow-lg py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <div class="d-flex justify-content-center mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
@@ -23,26 +23,26 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3" style="background-color: #c9c9ca;">
-      <div class="col-12 col-sm-6 pt-5">
+    <div class="row text-center shadow py-3 block" style="background-color: #d6dae1;">
+      <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Baza albumów</h2>
         <p>Odkryj niezliczone tytuły i gatunki muzyczne w naszej aplikacji, która oferuje dostęp do ogromnej bazy
           albumów. Bez względu na Twoje preferencje muzyczne, znajdziesz tu coś dla siebie. Poszerz swoje muzyczne
           horyzonty i odkrywaj nowe dźwięki każdego dnia!</p>
 
       </div>
-      <div class="col-12 col-sm-5">
+      <div class="col-12 col-sm-5 m-5">
         <img src="@/assets/baner.jpg" alt="baner" class="img-fluid shadow-lg">
       </div>
     </div>
 
-    <div class="row text-center shadow py-3" style="background-color: white;">
+    <div class="row text-center shadow py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <img src="@/assets/register.png" alt="baner" class="img-fluid shadow-lg">
 
 
       </div>
-      <div class="col-12 col-sm-5">
+      <div class="col-12 col-sm-5 mt-5">
         <h2>Możliwość rejestracji jako studio, artysta lub użytkownik</h2>
         <p>Dołącz do społeczności muzyków, słuchaczy i entuzjastów naszej aplikacji! Zarejestruj się jako studio
           muzyczne, artysta lub po prostu jako pasjonat muzyki. Otwórz sobie drzwi do różnorodnych funkcji, które
@@ -50,26 +50,26 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3" style="background-color: #c9c9ca;">
-      <div class="col-12 col-sm-6 pt-5">
+    <div class="row text-center shadow py-3 block" style="background-color: #d6dae1;">
+      <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Intuicyjny wygląd</h2>
         <p>Nasza aplikacja oferuje intuicyjny i estetyczny interfejs, który sprawia, że korzystanie z niej jest
           przyjemne i proste. Z łatwością nawiguj przez funkcje i treści, bez zbędnego zamieszania. Przejrzystość i
           prostota to nasze motto, abyś mógł cieszyć się muzyką bez dodatkowych przeszkód.</p>
 
       </div>
-      <div class="col-12 col-sm-5">
-        <img src="@/assets/logo_name.png" alt="baner" class="img-fluid shadow-lg">
+      <div class="col-12 col-sm-5 mt-5">
+        <img src="@/assets/logo_name.png" alt="baner" class="img-fluid shadow-lg mt-5">
       </div>
     </div>
 
-    <div class="row text-center shadow py-3" style="background-color: white;">
+    <div class="row text-center shadow py-3 block">
       <div class="col-12 col-sm-6 pt-5">
-        <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg">
+        <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg mt-5">
 
 
       </div>
-      <div class="col-12 col-sm-5">
+      <div class="col-12 col-sm-5 mt-5">
         <h2>Wbudowany player</h2>
         <p>Odtwarzaj ulubione utwory bez przerywania. Nasz wbudowany odtwarzacz umożliwia słuchanie muzyki bez przerw,
           gdziekolwiek jesteś w aplikacji. Reguluj głośność i ciesz się doskonałą jakością
@@ -109,5 +109,9 @@ p {
 .row {
   margin-right: 0;
   margin-left: 0;
+}
+
+.block{
+  height: 50vh;
 }
 </style>
