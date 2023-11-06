@@ -15,7 +15,7 @@
                 <div class="form-group">
                   <label for="name">Tytuł</label>
                   <input
-                      v-model="song.name"
+                      v-model="Name"
                       type="text"
                       class="form-control mt-2"
                       id="name"
@@ -24,28 +24,29 @@
                 <div class="form-group">
                   <label for="text">Autor</label>
                   <input
-                      v-model="song.author"
+                      v-model="Author"
                       type="text"
                       class="form-control mt-2"
                       id="author"
                       name="author"/>
                 </div>
-                <div class="form-group">
-                  <label for="photo">Okładka</label>
+                <div class="form-group mt-4">
+                  <label for="cover">Okładka</label>
                   <input
-                      v-on:change="SelectFileChange"
                       type="file"
+                      @change="handleFileChange"
                       class="form-control mt-2"
-                      id="photo"
-                      name="photo"
+                      id="cover"
+                      name="cover"
                       accept="image/*"
-                      required
                   />
+                  <label for="cover">lub dodaj link do zdjęcia</label>
+                  <input type="text" v-model="ImgUrl" class="form-control mt-2">
                 </div>
                 <div class="form-group">
                   <label for="description">Opis</label>
                   <textarea
-                      v-model="song.description"
+                      v-model="Description"
                       class="form-control mt-2"
                       id="description"
                       rows="3"
@@ -54,7 +55,6 @@
                 <div class="form-group text-center">
                   <button
                       @click="handleSave()"
-                      :disabled="isSaving"
                       type="button"
                       class="btn btn-success mt-3 btn-lg shadow">
                     Dodaj nowy utwór
@@ -71,18 +71,16 @@
 
 <script>
 import sideBar from '@/components/SideBarArtist.vue'
+import api from "@/services/api";
 
 export default {
   data() {
     return {
-      song: {
-        name: '',
-        author: '',
-        photo: null,
-        description: ''
-      },
-
-      isSaving: false
+      Name: '',
+      Author: '',
+      Img: '',
+      Description: '',
+      ImgUrl: '',
     }
   },
   components: {
@@ -90,18 +88,27 @@ export default {
   },
 
   methods: {
-    handleSave() {
-      this.isSaving = true
-      this.$store.dispatch('song/createSong', this.song)
-      //location.reload();
+    handleFileChange(event) {
+      this.Img = event.target.files[0].name;
+      console.log(this.Img)
     },
-    SelectFileChange(event) {
-      this.song.photo = event.target.files[0];
+    handleSave() {
+      const UserId = localStorage.getItem('userId')
+
+      if(this.Img === ''){
+        console.log(this.Img)
+        console.log('brak')
+        this.Img = this.ImgUrl;
+      }
+
+      api.post('/api/Artist/AddTrack', {
+        Name: this.Name,
+        Author: this.Author,
+        Img: this.Img,
+        Description: this.Description,
+        UserId:UserId
+      });
     },
   }
 }
 </script>
-
-<style scoped>
-
-</style>

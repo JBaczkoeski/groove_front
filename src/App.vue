@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-layout v-if="role.includes('user') && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>
+    <user-layout v-if="role ='user' && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>
     <admin-layout v-if="role[1] === 'admin'"/>
     <label-layout v-if="role[0] === 'studiohead'"/>
     <artist-layout v-if="role[1] === 'artist'"/>
@@ -24,11 +24,11 @@ export default {
 
   computed: {
     role() {
-      if(localStorage.getItem('role') === '') {
-        return JSON.parse(
-        localStorage.getItem('role') === '')
+      if(localStorage.getItem('role') === null) {
+        return ['user'];
       }else {
-        return 'user'
+        const roles = localStorage.getItem('role')
+        return roles.split(',');
       }
     },
     ...mapState('auth', ['token', 'isLogged']),

@@ -31,7 +31,7 @@
 
 <script>
 import SideBar from '@/components/SideBarArtist.vue'
-import SongElementList from "@/components/SongElementList.vue";
+import SongElementList from "@/components/ArtistSongElementList.vue";
 import api from "@/services/api";
 
 export default {
@@ -39,12 +39,18 @@ export default {
     SideBar,
     SongElementList
   },
+  data(){
+    return {
+      tracks: []
+    }
+  },
   mounted() {
     this.getAllTracks();
   },
   methods: {
     getAllTracks() {
-      api.get('/api/Track/GetTrackByArtistId/{artistId}')
+      const UserId = 4;
+      api.get(`/api/Track/GetTrackByArtistId/${UserId}`)
           .then(response => {
             this.tracks = response.data.$values;
           })

@@ -13,37 +13,15 @@
             <div class="col-12 col-md-8 offset-md-2">
               <form>
                 <div class="mb-3">
-                  <label for="name" class="form-label">Imię i nazwisko</label>
-                  <input
-                      v-model="song.name"
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      name="name"
-                  />
-                </div>
-                <div class="mb-3">
                   <label for="author" class="form-label">Wytwórnia</label>
                   <select
-                      v-model="song.author"
-                      class="form-control"
+                      v-model="label"
+                      class="form-select"
                       id="author"
                       name="author"
                   >
-                    <option value="wytwornia1">Wytwórnia 1</option>
-                    <option value="wytwornia2">Wytwórnia 2</option>
-                    <option value="wytwornia3">Wytwórnia 3</option>
+                    <option v-for="studio in studios" :key="studio.id" :value="studio.id">{{ studio.name }}</option>
                   </select>
-                </div>
-                <div class="mb-3">
-                  <label for="description" class="form-label">Wiadomość do wytwórni</label>
-                  <textarea
-                      v-model="song.description"
-                      class="form-control"
-                      id="description"
-                      rows="3"
-                      name="description"
-                  ></textarea>
                 </div>
                 <div class="text-center">
                   <button
@@ -66,37 +44,42 @@
 
 <script>
 import sideBar from '@/components/SideBarArtist.vue'
+import api from "@/services/api";
 
 export default {
   data() {
     return {
-      song: {
-        name: '',
-        author: '',
-        photo: null,
-        description: ''
-      },
-
-      isSaving: false
+      label: '',
+      studios: []
     }
   },
   components: {
     sideBar
   },
-
+  mounted() {
+    this.getAllStudios();
+  },
   methods: {
     handleSave() {
-      this.isSaving = true
-      this.$store.dispatch('song/createSong', this.song)
+      const userId = localStorage.getItem('userId');
+      api.post('/api/Artist/ApplyToStudio', {
+        artistId:userId,
+        studioId: this.label
+      })
     },
     SelectFileChange(event) {
-      const filePhoto = event.target.files[0];
-      this.song.photo = filePhoto;
+      this.song.photo = event.target.files[0];
+    },
+    getAllStudios() {
+      api.get(`/api/Studio/GetAllStudios`)
+          .then(response => {
+            this.studios = response.data.$values;
+            console.log(this.studios)
+          })
+          .catch(error => {
+            console.error('Błąd podczas pobierania ścieżek:', error);
+          });
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

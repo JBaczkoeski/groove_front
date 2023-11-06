@@ -29,10 +29,11 @@ const actions = {
                 commit('SET_IS_LOGGED', true);
                 if (response.data.token) {
                     var jwtToken = jwt_decode(response.data.token);
+                    console.log(jwtToken);
                     commit('SET_TOKEN', response.data.token);
                     const roles = jwtToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
                     localStorage.setItem('userId', jwtToken['UserId']);
-                    localStorage.setItem('role', JSON.stringify(roles));
+                    localStorage.setItem('role', roles);
                 }
                 await router.push('/utwory');
                 return true;
@@ -111,7 +112,7 @@ const actions = {
     logout({commit}) {
         commit('SET_IS_LOGGED', false);
         commit('SET_TOKEN', '');
-        localStorage.setItem('role','user');
+        localStorage.setItem('role',['user']);
         router.push('/');
     },
 };

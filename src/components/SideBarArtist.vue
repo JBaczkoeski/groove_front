@@ -20,6 +20,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a href="/artysta/albumy/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+          <i class="fa-solid fa-folder-plus fa-2xl" style="color: #ffffff;"></i>
+          Dodawanie albumu
+        </a>
+      </li>
+      <li class="nav-item">
         <a href="/artysta/utwory/wytwornia" class="nav-link text-white mt-3 mb-2">
           <i class="fa-solid fa-money-bill-1-wave fa-2xl" style="color: #ffffff;"></i>
           Wytwórnia
@@ -33,8 +39,9 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 20px;
+  height: 100%;
 }
+
 @media (max-width: 576px) {
   .side-bar-ar {
     min-height: 50vh !important;
