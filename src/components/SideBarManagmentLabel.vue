@@ -34,8 +34,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100%;
   padding-bottom: 20px;
-  margin-left: -5px;
 }
 @media (max-width: 576px) {
   .side-bar-label {
