@@ -7,14 +7,14 @@
       <div class="container col-9 mt-3">
         <div class="row">
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-5 mt-2">Ilość albumów:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Ilość albumów:</h3>
             <p class="fw-bold h1">
               3
             </p>
           </div>
 
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Ilość artystów:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Ilość artystów:</h3>
             <p>
               7
             </p>
@@ -23,14 +23,14 @@
 
         <div class="row">
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Ilość aplikacji artystów:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Ilość aplikacji artystów:</h3>
             <p>
               9
             </p>
           </div>
 
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Ilość zakupionych albumów:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Ilość zakupionych albumów:</h3>
             <p>
               777
             </p>
@@ -39,14 +39,14 @@
 
         <div class="row">
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Najlepszy artysta:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Najlepszy artysta:</h3>
             <p>
               Oskar Sukiennik
             </p>
           </div>
 
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Najlepiej sprzedający się album:</h3>
+            <h3 class="border border-0 rounded-4 mt-2 p-2">Najlepiej sprzedający się album:</h3>
             <p>
               Kocham programowanie i matematyke
             </p>
