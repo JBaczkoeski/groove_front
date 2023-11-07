@@ -7,8 +7,8 @@
       <div class="container col-9 mt-3">
         <div class="row">
           <div class="container col-3 rounded-5 border border-3 shadow-lg text-center mb-5">
-            <h3 class="border border-0 rounded-circle">Ilość albumów:</h3>
-            <p>
+            <h3 class="border border-0 rounded-5 mt-2">Ilość albumów:</h3>
+            <p class="fw-bold h1">
               3
             </p>
           </div>

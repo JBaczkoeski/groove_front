@@ -110,7 +110,7 @@ const actions = {
         commit('SET_IS_LOGGED', false);
         commit('SET_TOKEN', '');
         localStorage.setItem('role',['user']);
-        router.push('/');
+        router.go('/')
         location.reload();
     },
 };
