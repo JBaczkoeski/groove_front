@@ -89,7 +89,7 @@ export default {
 </script>
 <style>
 .logo {
-  width: 60px;
+  width: 80px;
 }
 .user-profile {
   width: 50px;

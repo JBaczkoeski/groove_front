@@ -1,28 +1,28 @@
 <template>
-  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-label">
+  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-label p-0">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/wytwornia/panel" class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-solid fa-table-columns fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-table-columns fa-xl" style="color: #ffffff;"></i>
           Panel główny
         </a>
       </li>
       <li class="nav-item">
         <a href="/wytwornia/aplikacje" class="nav-link text-white mt-3 mb-2 " aria-current="page">
-          <i class="fa-solid fa-users-line fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-users-line fa-xl" style="color: #ffffff;"></i>
           Aplikacje artystow
         </a>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link text-white mt-3 mb-2 " aria-current="page">
-          <i class="fa-solid fa-record-vinyl fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-record-vinyl fa-xl" style="color: #ffffff;"></i>
           Albumy
         </a>
       </li>
 
       <li>
         <a href="/wytwornia/konto/usun" class="nav-link text-white mt-3">
-          <i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-trash fa-xl" style="color: #ffffff;"></i>
           Usunięcie konta
         </a>
       </li>

@@ -59,6 +59,6 @@ export default {
 </script>
 <style>
 .logo {
-  width: 60px;
+  width: 80px;
 }
 </style>
