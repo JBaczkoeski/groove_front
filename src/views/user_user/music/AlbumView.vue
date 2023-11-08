@@ -5,7 +5,7 @@
         <div class="containder col-12 col-sm-4 ms-sm-0 ms-4 d-flex justify-content-start">
           <img :src="album.img" class="w-75 shadow img-fluid" alt="okładka albumu">
         </div>
-        <div class="container col-8">
+        <div class="container col-5">
           <div class="container mb-5">
             <h1>{{ album.name }}</h1>
             <p>{{ album.desc }}</p>
@@ -13,6 +13,10 @@
           <div class="container fw-bold mt-5">
             <p>Wykonwaca: {{ album.artist ?? 'Brak' }} * 14 utworów, 48 min 54sek </p>
           </div>
+        </div>
+        <div class="container col-3 pt-5 text-center mt-4">
+          <p class="h2 mb-3">Cena: 49.99 zł</p>
+          <a href="#" class="btn btn-success btn-lg">Kup teraz</a>
         </div>
       </div>
     </div>

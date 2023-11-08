@@ -55,6 +55,9 @@
             <li class="nav-item ms-2 mt-2">
               <button class="nav-link" @click="logout">Wyloguj</button>
             </li>
+            <li>
+              <a class="nav-link" href="/koszyk"><i class="fa-solid fa-cart-shopping fa-xl mt-4" style="color: #ffffff;"></i></a>
+            </li>
           </ul>
         </div>
       </div>

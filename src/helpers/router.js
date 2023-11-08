@@ -28,6 +28,7 @@ import ServiceManagment from "@/views/user_admin/ServiceManagment.vue";
 import OrderView from "@/views/user_user/user/OrderView.vue";
 import AlbumAddView from "@/views/user_artist/artistSong/AlbumAddView.vue";
 import LabelManagementPanel from "@/views/user_label/management/LabelManagementPanel.vue";
+import CartView from "@/views/user_user/user/CartView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -50,6 +51,7 @@ const router = createRouter({
         {path: '/album/show/:id', component: AlbumView},
         //sklep ogolny
         {path: '/sklep', component: ShopView},
+        {path: '/koszyk', component: CartView},
 
         //Wytwórnia
         {path: '/wytwornia', component: LabelHomeView},
