@@ -4,7 +4,7 @@
       <div class="col-12 col-sm-2 p-0">
         <SideBarFilter/>
       </div>
-      <div class="container col-10 col-sm-8">
+      <div class="container col-10 col-sm-10">
         <h1 class="text-center mt-4 mb-4">Sklep</h1>
         <div class="col-3">
           <select class="form-select mb-1" aria-label="Default select example">
@@ -19,7 +19,6 @@
         <hr class="hr">
 
         <div class="row d-flex justify-content-center">
-
           <ShopSingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name"
                            :album-lenght="59"
                            :author="album.author" :songs="14" :id="album.id"/>

@@ -22,7 +22,7 @@ import {ref} from "vue";
 export default {
   props: {
     id: Number,
-    cover: '' ?? '../../assets/logo.png',
+    cover: String,
     title: String,
     author: String,
     studio: String,

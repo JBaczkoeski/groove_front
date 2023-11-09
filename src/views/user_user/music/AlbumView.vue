@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="table-responsive">
-      <table class="table">
+      <table class="table table-dark-song">
         <thead>
         <tr class="text-center">
           <th scope="col">#</th>
