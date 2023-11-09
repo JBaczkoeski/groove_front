@@ -1,7 +1,7 @@
 <template>
   <div
-      class="card border border-3 d-flex justify-content-center shadow my-3 mx-2 text-center rounded-5 col-12 col-sm-2 card-dark">
-    <img v-if="cover !== undefined && cover !== ''" :src="cover" style="margin-left: 25px" class="w-75 mt-4 rounded-4"
+      class="card border border-3 d-flex justify-content-center shadow my-3 mx-2 text-center rounded-5 col-12 col-sm-3 card-dark">
+    <img v-if="cover !== undefined && cover !== ''" :src="cover" style="margin-left: 50px" class="w-75 mt-4 rounded-4"
          alt="album cover">
     <div class="card-body row">
       <h5 v-if="title" class="card-title mb-4">{{ title }}</h5>
@@ -11,7 +11,7 @@
                                                  style="color: #CCCCCC;"></i>{{ songs }} piosenek</p>
       <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1"
                                                        style="color: #CCCCCC;"></i> {{ albumLenght }} minut</p>
-      <a :href="`/album/show/${id}`" class="btn btn-success rounded rounded-2 my-4">Podgląd</a>
+      <a :href="`/album/show/${id}`" style="max-height: 45px" class="btn btn-success rounded rounded-pill my-4">Podgląd</a>
     </div>
   </div>
 </template>

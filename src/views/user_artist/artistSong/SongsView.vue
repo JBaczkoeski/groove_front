@@ -5,7 +5,7 @@
         <side-bar/>
       </div>
       <div class="container col-9 mt-3">
-        <table class="table">
+        <table class="table table-dark-song">
           <thead>
           <tr class="text-center">
             <th scope="col">#</th>

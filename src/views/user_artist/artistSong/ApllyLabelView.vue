@@ -16,7 +16,7 @@
                   <label for="author" class="form-label">Wytwórnia</label>
                   <select
                       v-model="label"
-                      class="form-select"
+                      class="form-select input-field"
                       id="author"
                       name="author"
                   >

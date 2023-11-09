@@ -5,7 +5,7 @@
           <img src="../../assets/logo.png" class="logo me-4 me-sm-0" alt="Opis obrazu">
         </a>
         <a href="/" class="btn">
-        <p style="margin-top: 10px; color: #CCCCCC !important; ">Groove Music</p>
+        <p class="mt-1 h3" style="margin-top: 10px; color: #CCCCCC !important; ">Groove Music</p>
         </a>
         <button class="navbar-toggler ms-4 ms-sm-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,11 +99,5 @@ export default {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-}
-.dark{
-  background-color: #121212;
-}
-.nav-dark{
-  border-bottom: 3px solid #CCCCCC;
 }
 </style>

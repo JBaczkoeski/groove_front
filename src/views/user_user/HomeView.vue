@@ -5,7 +5,7 @@
         <img src="@/assets/baner.jpg" class="img-fluid w-100 rounded-5" alt="Szeroki baner">
       </div>
     </div>
-    <div class="row d-flex justify-content-center shadow-lg py-3 block">
+    <div class="row d-flex justify-content-center py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <div class="d-flex justify-content-center mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3 block">
+    <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <img src="@/assets/register.png" alt="baner" class="img-fluid shadow-lg">
 
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3 block">
+    <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg mt-5">
       </div>

@@ -8,8 +8,8 @@ body{
 }
 
 .input-field {
-    background-color: #333333 !important;
-    color: #CCCCCC !important;
+    background-color: #222222;
+    color: #CCCCCC;
 }
 
 .submit-button-green {
@@ -29,5 +29,22 @@ body{
 
 .card-dark{
     background-color: #121212 !important;
+    color: #CCCCCC;
+}
+
+.bg-dark-grey{
+   background-color:  #121211;
+}
+
+.dark{
+    background-color: #121212;
+}
+
+.nav-dark{
+    border-bottom: 3px solid #CCCCCC;
+}
+
+.select-field {
+    background-color: #222222;
     color: #CCCCCC;
 }

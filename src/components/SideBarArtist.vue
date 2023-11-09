@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-ar">
+  <div class="container-fluid d-flex flex-column p-3 side-bar-ar">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/artysta/utwory" class="nav-link text-white mt-3 mb-2" aria-current="page">
@@ -40,6 +40,7 @@
   flex-direction: column;
   min-height: 100vh;
   height: 100%;
+  border-right: 3px solid #CCCCCC;
 }
 
 @media (max-width: 576px) {

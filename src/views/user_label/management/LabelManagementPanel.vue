@@ -88,6 +88,6 @@ export default {
 
 .block-header {
   font-weight: bold;
-  background-color: #6993bf;
+  background-color: #001F3F;
 }
 </style>

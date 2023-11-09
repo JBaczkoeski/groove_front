@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg dark">
+    <div class="container-fluid nav-dark">
       <img src="../../assets/logo.png" class="logo" alt="Opis obrazu">
-      <p class="navbar-brand" style="margin-top: 10px">Groove Music Label</p>
+      <p class="h3 me-2 mt-2" style="margin-top: 10px; color: #CCCCCC !important;">Groove Music Label</p>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
             <NavLink :to="'/konto'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
-            <button class="nav-link" @click="logout">Wyloguj</button>
+            <button class="nav-link" @click="logout" style="color: #CCCCCC">Wyloguj</button>
           </li>
         </ul>
       </div>

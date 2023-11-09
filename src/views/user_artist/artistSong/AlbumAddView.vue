@@ -10,7 +10,7 @@
           <div class="container col-12">
             <h2 class="text-center mt-5 mb-3">Dodawanie albumu</h2>
           </div>
-          <div class="card">
+          <div class="card card-dark border border-3 rounded rounded-5">
             <div class="card-body">
               <form>
                 <div class="form-group">
@@ -18,7 +18,7 @@
                   <input
                       v-model="Name"
                       type="text"
-                      class="form-control mt-2"
+                      class="form-control mt-2 input-field"
                       id="name"
                       name="name"
                   />
@@ -28,7 +28,7 @@
                   <input
                       type="file"
                       @change="handleFileChange()"
-                      class="form-control mt-2"
+                      class="form-control mt-2 input-field"
                       :id="'cover'"
                       :name="'cover'"
                       accept="image/*"
@@ -41,7 +41,7 @@
                   <input
                       v-model="track.Name"
                       type="text"
-                      class="form-control mt-2 mb-3"
+                      class="form-control mt-2 mb-3 input-field"
                       :id="'name' + index"
                       :name="'name' + index"
                   />
@@ -49,13 +49,13 @@
                   <input
                       type="file"
                       @change="handleFileChange(index, $event)"
-                      class="form-control mt-2"
+                      class="form-control mt-2 input-field"
                       :id="'cover' + index"
                       :name="'cover' + index"
                       accept="image/*"
                   />
                   <label :for="'cover' + index">lub dodaj link do zdjęcia</label>
-                  <input v-model="track.ImgUrl" class="form-control mt-2">
+                  <input v-model="track.ImgUrl" class="form-control mt-2 input-field">
                 </div>
                 <div class="form-group text-center">
                   <button @click="addTrack" type="button" class="btn btn-success mt-3 me-4 shadow">
