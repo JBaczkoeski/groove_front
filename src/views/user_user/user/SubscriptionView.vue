@@ -19,7 +19,7 @@
 
           </p>
         </div>
-        <SubmitButton :class="'btn-success col-3 mt-2 mb-5'" :label="'Kup dostęp'"/>
+        <SubmitButton :class="'submit-button-green col-3 mt-2 mb-5'" :label="'Kup dostęp'"/>
       </div>
     </div>
   </div>

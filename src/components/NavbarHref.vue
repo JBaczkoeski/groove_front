@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="to" :class="['nav-link', customClass]">{{ label }}{{ icon }}</router-link>
+  <router-link :to="to" :class="['nav-link dark', customClass]">{{ label }}{{ icon }}</router-link>
 </template>
 
 <script>
@@ -27,3 +27,8 @@ export default {
   }
 }
 </script>
+<style>
+.dark{
+  color: #CCCCCC !important
+}
+</style>

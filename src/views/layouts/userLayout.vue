@@ -1,11 +1,11 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg dark">
+      <div class="container-fluid nav-dark">
         <a href="/">
           <img src="../../assets/logo.png" class="logo me-4 me-sm-0" alt="Opis obrazu">
         </a>
         <a href="/" class="btn">
-        <p class="navbar-brand" style="margin-top: 10px">Groove Music</p>
+        <p style="margin-top: 10px; color: #CCCCCC !important; ">Groove Music</p>
         </a>
         <button class="navbar-toggler ms-4 ms-sm-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,10 @@
               <NavLink :to="'/konto'" :label="'Konto'"/>
             </li>
             <li class="nav-item ms-2 mt-2">
-              <button class="nav-link" @click="logout">Wyloguj</button>
+              <button class="nav-link" @click="logout" style="color: #CCCCCC">Wyloguj</button>
             </li>
             <li>
-              <a class="nav-link" href="/koszyk"><i class="fa-solid fa-cart-shopping fa-xl mt-4" style="color: #ffffff;"></i></a>
+              <a class="nav-link" href="/koszyk"><i class="fa-solid fa-cart-shopping fa-xl mt-4" style="color: #CCCCCC;"></i></a>
             </li>
           </ul>
         </div>
@@ -99,5 +99,11 @@ export default {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+}
+.dark{
+  background-color: #121212;
+}
+.nav-dark{
+  border-bottom: 3px solid #CCCCCC;
 }
 </style>

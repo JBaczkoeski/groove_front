@@ -1,17 +1,15 @@
 <template>
   <div class="container-fluid">
-
     <div>
-      <div class="banner-container">
-        <img src="@/assets/baner.jpg" class="img-fluid w-100" alt="Szeroki baner">
+      <div class="banner-container p-2 ">
+        <img src="@/assets/baner.jpg" class="img-fluid w-100 rounded-5" alt="Szeroki baner">
       </div>
     </div>
-
     <div class="row d-flex justify-content-center shadow-lg py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <div class="d-flex justify-content-center mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
-          <i class="fa-solid fa-arrow-down fa-2xl" style="color: #000000;"></i>
+          <i class="fa-solid fa-arrow-down fa-2xl"></i>
         </div>
         <div>
           <p>Pragniemy, aby nasza aplikacja muzyczna była nie tylko miejscem odkrywania nowych brzmień, ale także
@@ -23,7 +21,7 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3 block" style="background-color: #d6dae1;">
+    <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Baza albumów</h2>
         <p>Odkryj niezliczone tytuły i gatunki muzyczne w naszej aplikacji, która oferuje dostęp do ogromnej bazy
@@ -50,13 +48,12 @@
       </div>
     </div>
 
-    <div class="row text-center shadow py-3 block" style="background-color: #d6dae1;">
+    <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Intuicyjny wygląd</h2>
         <p>Nasza aplikacja oferuje intuicyjny i estetyczny interfejs, który sprawia, że korzystanie z niej jest
           przyjemne i proste. Z łatwością nawiguj przez funkcje i treści, bez zbędnego zamieszania. Przejrzystość i
           prostota to nasze motto, abyś mógł cieszyć się muzyką bez dodatkowych przeszkód.</p>
-
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <img src="@/assets/logo_name.png" alt="baner" class="img-fluid shadow-lg mt-5">
@@ -66,8 +63,6 @@
     <div class="row text-center shadow py-3 block">
       <div class="col-12 col-sm-6 pt-5">
         <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg mt-5">
-
-
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <h2>Wbudowany player</h2>
@@ -76,12 +71,6 @@
           dźwięku - wszystko w jednym miejscu.</p>
       </div>
     </div>
-
-    <div class="container mt-2">
-      <p>&copy; 2023 Groove. Wszelkie prawa zastrzeżone.</p>
-      <p>Kontakt: groove@groovemail.com | +48 123 456 789</p>
-    </div>
-
   </div>
 </template>
 
@@ -111,7 +100,7 @@ p {
   margin-left: 0;
 }
 
-.block{
+.block {
   height: 50vh;
 }
 </style>

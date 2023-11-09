@@ -11,7 +11,7 @@
           </div>
           <div class="col-12">
             <div class="table-responsive">
-              <table class="table text-center">
+              <table class="table text-center table-dark-song">
                 <thead>
                 <tr>
                   <th scope="col">L.p.</th>

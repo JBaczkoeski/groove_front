@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid d-flex flex-column p-3 text-white bg-dark side-bar-filter">
+  <div class="container-fluid d-flex flex-column p-3 text-white side-bar-filter">
     <ul class="nav nav-pills flex-column mb-auto mt-4">
       <li class="nav-item d-flex justify-content-center">
         <a class="nav-link text-white mt-3 mb-2 fw-bold" aria-current="page">
@@ -46,6 +46,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  border-right: 3px solid #CCCCCC;
 }
 
 @media (max-width: 576px) {

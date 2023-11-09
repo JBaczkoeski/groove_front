@@ -9,8 +9,8 @@
       </button>
     </div>
   </div>
-  <form @submit.prevent="register(selectedType)" style="margin-top: 50px"
-        class="container col-12 col-sm-5 shadow-lg d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
+  <form @submit.prevent="register(selectedType)" style="margin-top: 50px; margin-bottom: 50px"
+        class="container col-12 col-sm-5 dark-form d-flex rounded-5 justify-content-center align-items-center flex-column container-flex center-vertical">
     <h1 class="text-center mt-4">Rejestracja</h1>
 <!--user-->
     <div class="col-8 mt-4" v-if="selectedType === 'Użytkownik'">
@@ -78,7 +78,7 @@
         <input v-model="confirm_password" type="password" id="confirm_password" required class="form-control">
       </div>
     </div>
-    <SubmitButton :class="'btn-success btn-lg mt-4 mb-5'" :label="'Zarejestruj się'"/>
+    <SubmitButton :class="'submit-button-green btn-lg mt-4 mb-5'" :label="'Zarejestruj się'"/>
   </form>
 
 

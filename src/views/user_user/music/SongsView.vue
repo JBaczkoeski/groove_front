@@ -1,15 +1,15 @@
 <template>
   <div class="container-fluid mt-3">
     <div class="table-responsive">
-      <table class="table table-striped">
+      <table class="table table-hover table-dark-song">
         <thead>
-        <tr class="text-center">
+        <tr class="text-center ">
           <th scope="col">#</th>
           <th scope="col"></th>
           <th scope="col">Tytuł</th>
           <th scope="col">Album</th>
           <th scope="col">Data dodania</th>
-          <th scope="col"><i class="fa-regular fa-clock fa-lg"></i></th>
+          <th scope="col"><i class="fa-regular fa-clock fa-lg" style="color: #CCCCCC"></i></th>
           <th scope="col"></th>
         </tr>
         </thead>

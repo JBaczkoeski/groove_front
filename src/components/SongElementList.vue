@@ -6,7 +6,7 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
-    <td class="pt-5"><a  @click="load(track,title,cover,id)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #000000;"></i></a></td>
+    <td class="pt-5"><a  @click="load(track,title,cover,id)" class="btn" ><i class="fa-solid fa-play fa-2xl" style="color: #CCCCCC;"></i></a></td>
   </tr>
 </template>
 

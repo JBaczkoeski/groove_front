@@ -1,0 +1,33 @@
+body{
+    background-color: #121212 !important;
+    color: #CCCCCC;
+}
+
+.dark-form{
+    background-color: #1E1E1E;
+}
+
+.input-field {
+    background-color: #333333 !important;
+    color: #CCCCCC !important;
+}
+
+.submit-button-green {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+.table-dark-song th,
+.table-dark-song td {
+    background-color: #121212 !important;
+    color: #CCCCCC !important;
+}
+
+.border{
+    color: #CCCCCC !important;
+}
+
+.card-dark{
+    background-color: #121212 !important;
+    color: #CCCCCC;
+}

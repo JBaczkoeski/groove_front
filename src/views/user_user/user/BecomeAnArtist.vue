@@ -17,7 +17,7 @@
             światu to, co masz do powiedzenia. Kliknij przycisk i rozpocznij swoją artystyczną podróż już teraz!
           </p>
         </div>
-        <SubmitButton :class="'btn-success col-3 mt-2 mb-5'" :label="'Zostań artystą'"/>
+        <SubmitButton :class="'submit-button-green col-3 mt-2 mb-5'" :label="'Zostań artystą'"/>
       </div>
     </div>
   </div>

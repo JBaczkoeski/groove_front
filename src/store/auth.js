@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 
 const state = {
     isLogged: localStorage.getItem('isLogged') === 'true' || false,
+    error: null
 };
 
 const mutations = {
@@ -14,6 +15,9 @@ const mutations = {
     SET_TOKEN(state, value) {
         state.user = value;
         localStorage.setItem('token', value);
+    },
+    SET_ERROR(state, error) {
+        state.error = error;
     },
 };
 
@@ -38,11 +42,11 @@ const actions = {
                 await router.push('/utwory');
                 location.reload();
             } else {
-                return false;
+                console.log(response);
+                commit('SET_ERROR', `Błąd podczas logowania: ${{response}}`);
             }
         } catch (error) {
-            console.error('Błąd podczas logowania:', error);
-            return false;
+            console.error(error)
         }
     },
 
@@ -109,8 +113,8 @@ const actions = {
     logout({commit}) {
         commit('SET_IS_LOGGED', false);
         commit('SET_TOKEN', '');
-        localStorage.setItem('role',['user']);
-        router.go('/')
+        localStorage.removeItem('role');
+        localStorage.removeItem('userId');
         location.reload();
     },
 };
