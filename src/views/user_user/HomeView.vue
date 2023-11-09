@@ -21,24 +21,21 @@
       </div>
     </div>
 
-    <div class="row text-center py-3 block">
+    <div class="row text-center py-3 block border-home mid-back-color">
       <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Baza albumów</h2>
         <p>Odkryj niezliczone tytuły i gatunki muzyczne w naszej aplikacji, która oferuje dostęp do ogromnej bazy
           albumów. Bez względu na Twoje preferencje muzyczne, znajdziesz tu coś dla siebie. Poszerz swoje muzyczne
           horyzonty i odkrywaj nowe dźwięki każdego dnia!</p>
-
       </div>
       <div class="col-12 col-sm-5 m-5">
-        <img src="@/assets/baner.jpg" alt="baner" class="img-fluid shadow-lg">
+        <img src="@/assets/baner.jpg" alt="baner" class="img-fluid">
       </div>
     </div>
 
     <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5">
-        <img src="@/assets/register.png" alt="baner" class="img-fluid shadow-lg">
-
-
+        <img src="@/assets/register.png" alt="baner" class="img-fluid">
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <h2>Możliwość rejestracji jako studio, artysta lub użytkownik</h2>
@@ -48,7 +45,7 @@
       </div>
     </div>
 
-    <div class="row text-center py-3 block">
+    <div class="row text-center py-3 block border-home mid-back-color">
       <div class="col-12 col-sm-6 pt-5 mt-4">
         <h2>Intuicyjny wygląd</h2>
         <p>Nasza aplikacja oferuje intuicyjny i estetyczny interfejs, który sprawia, że korzystanie z niej jest
@@ -56,13 +53,13 @@
           prostota to nasze motto, abyś mógł cieszyć się muzyką bez dodatkowych przeszkód.</p>
       </div>
       <div class="col-12 col-sm-5 mt-5">
-        <img src="@/assets/logo_name.png" alt="baner" class="img-fluid shadow-lg mt-5">
+        <img src="@/assets/logo_name.png" alt="baner" class="img-fluid mt-5">
       </div>
     </div>
 
     <div class="row text-center py-3 block">
       <div class="col-12 col-sm-6 pt-5">
-        <img src="@/assets/player.png" alt="baner" class="img-fluid shadow-lg mt-5">
+        <img src="@/assets/player.png" alt="baner" class="img-fluid mt-5">
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <h2>Wbudowany player</h2>
