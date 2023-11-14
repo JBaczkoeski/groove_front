@@ -5,9 +5,9 @@
         <img src="@/assets/baner.jpg" class="img-fluid w-100 rounded-5" alt="Szeroki baner">
       </div>
     </div>
-    <div class="container-fluid row col-12 py-3">
+    <div class="container-fluid row col-12 py-3 text-center d-flex justify-content-center">
       <div class="col-12 col-sm-6 pt-5">
-        <div class="d-flex justify-content-center mb-3">
+        <div class="d-flex mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
           <i class="fa-solid fa-arrow-down fa-2xl"></i>
         </div>
