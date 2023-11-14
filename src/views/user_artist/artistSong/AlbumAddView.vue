@@ -23,7 +23,7 @@
                       name="name"
                   />
                 </div>
-                <div class="form-group mb-5 mt-3">
+                <div class="form-group mb-2 mt-3">
                   <label for="'cover'">Okładka</label>
                   <input
                       type="file"
@@ -34,6 +34,8 @@
                       accept="image/*"
                   />
                 </div>
+                <label :for="'cover' + index">lub dodaj link do zdjęcia</label>
+                <input v-model="ImgUrl" class="form-control mt-2 input-field  mb-5">
                 <p class="fw-bold h3">Utwory:</p>
                 <div class="form-group mt-4" v-for="(track, index) in tracks" :key="index">
                   <p class="fw-bold"> Nr {{index + 1}}</p>

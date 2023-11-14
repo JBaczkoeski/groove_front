@@ -20,7 +20,7 @@
                       id="author"
                       name="author"
                   >
-                    <option v-for="studio in studios" :key="studio.id" :value="studio.id">{{ studio.name }}</option>
+                    <option v-for="studio in studios" :key="studio.ownerId" :value="studio.ownerId">{{ studio.name }}</option>
                   </select>
                 </div>
                 <div class="text-center">
@@ -61,9 +61,10 @@ export default {
   },
   methods: {
     handleSave() {
-      //const userId = localStorage.getItem('userId');
+      const user = localStorage.getItem('userId');
       console.log('wysyła sie');
       api.post('/api/Artist/ApplyToStudio', {
+        userId: user,
         studioId: this.label
       })
     },
