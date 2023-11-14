@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg dark">
-      <div class="container-fluid nav-dark">
+    <nav class="navbar navbar-expand-lg dark nav-dark">
+      <div class="container-fluid">
         <a href="/">
           <img src="../../assets/logo.png" class="logo me-4 me-sm-0" alt="Opis obrazu">
         </a>
