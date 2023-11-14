@@ -21,7 +21,6 @@ export default {
     labelLayout,
     artistLayout
   },
-
   computed: {
     role() {
       if(localStorage.getItem('role') === null) {

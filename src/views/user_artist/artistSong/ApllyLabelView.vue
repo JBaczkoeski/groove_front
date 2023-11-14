@@ -61,9 +61,9 @@ export default {
   },
   methods: {
     handleSave() {
-      const userId = localStorage.getItem('token');
+      //const userId = localStorage.getItem('userId');
+      console.log('wysyła sie');
       api.post('/api/Artist/ApplyToStudio', {
-        artistId:userId,
         studioId: this.label
       })
     },

@@ -23,7 +23,7 @@
       <div class="container col-3 d-flex justify-content-end">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <NavLink :to="'/konto'" :label="'Konto'"/>
+            <NavLink :to="'/artysta/konto'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
             <button class="nav-link" @click="logout" style="color: #CCCCCC">Wyloguj</button>

@@ -145,7 +145,7 @@ export default {
       this.tracks.splice(index, 1);
     },
     handleSave() {
-       const userId = localStorage.getItem('token');
+       const userId = localStorage.getItem('userId');
 
       const formDataArray = this.tracks.map(track => {
         const formData = new FormData();

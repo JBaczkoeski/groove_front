@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-3 col-md-2 p-0">
-        <SideBarUser style="min-height: 858px"/>
+        <SideBarAccountArtist style="min-height: 858px"/>
       </div>
       <div class="col-12 col-sm-9 col-md-10 mt-5 mb-4 ">
         <div class="container border border-3 rounded rounded-5 p-4 shadow bg-dark-grey">
@@ -41,7 +41,7 @@
 
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="postal_code">Kod pocztowy:</label>
-                  <input v-model="postal" type="text" id="postal_code" class="form-control">
+                  <input v-model="postalCode" type="text" id="postal_code" class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
@@ -71,28 +71,28 @@
 
 <script>
 import SubmitButton from "@/components/SubmitButton.vue";
-import SideBarUser from "@/components/SideBarUser.vue";
+import SideBarAccountArtist from "@/components/SideBarAccountArtist.vue";
 import api from "@/services/api";
 import {mapState} from "vuex";
 
 export default {
   components: {
     SubmitButton,
-    SideBarUser
+    SideBarAccountArtist
   },
   data() {
     return {
       user: [],
-      name: null,
-      email: null,
-      telephone: null,
-      street: null,
-      postal: null,
-      city: null,
+      name: '',
+      email: '',
+      telephone: '',
+      street: '',
+      postalCode: '',
+      city: '',
       country: 'Polska',
-      password: null,
-      confirm_password: null,
-      image: null,
+      password: '',
+      confirm_password: '',
+      image: '',
     }
   },
   mounted() {
@@ -109,9 +109,9 @@ export default {
             this.email = this.user.email;
             this.name = this.user.name;
             this.telephone = this.user.phoneNumber;
-            this.street = this.user.userInformation.street;
-            this.postal = this.user.userInformation.postalCode;
-            this.city = this.user.userInformation.city;
+            this.street = this.user.street;
+            this.postal = this.user.postalCode;
+            this.city = this.user.city;
 
           });
     },
@@ -124,7 +124,7 @@ export default {
         City: this.city,
         Street: this.street,
         Country: this.country,
-        PostalCode: this.postal,
+        PostalCode: this.postalCode,
       })
     }
   },
