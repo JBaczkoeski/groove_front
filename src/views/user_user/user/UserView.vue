@@ -64,7 +64,32 @@
             </div>
           </div>
         </div>
+
+        <div class="container border border-3 rounded rounded-5 p-4 shadow bg-dark-grey mt-2">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="text-center mb-4">Zmiana hasła</h2>
+            </div>
+            <div class="col-12 col-md-6 offset-md-3">
+              <form @submit.prevent="changeUserPassword" class="row d-flex justify-content-center">
+
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="password">Hasło:</label>
+                  <input v-model="password" type="password" id="password" class="form-control">
+                </div>
+
+                <div class="mb-3 col-12 col-sm-6">
+                  <label for="confirm_password">Potwierdź hasło:</label>
+                  <input v-model="confirm_password" type="password" id="confirm_password" class="form-control">
+                </div>
+
+                <SubmitButton class="btn-secondary col-12 col-md-6 mt-4" label="Zmień hasło"/>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -125,6 +150,13 @@ export default {
         Street: this.street,
         Country: this.country,
         PostalCode: this.postal,
+      })
+    },
+    changeUserPassword() {
+      const userId = localStorage.getItem('userId');
+      api.post(`/api/Account/SaveUserInformation/${userId}`, {
+        password: this.password,
+        confirm_password: this.password,
       })
     }
   },
