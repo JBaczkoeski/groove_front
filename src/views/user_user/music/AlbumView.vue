@@ -12,6 +12,15 @@
           </div>
           <div class="container fw-bold mt-5">
             <p>Wykonwaca: {{ album.artist ?? 'Brak' }} * 14 utworów, 48 min 54sek </p>
+            <p v-if="liked === null">
+              <button class="btn" @click="likedbyuser">Lubie to! <i class="fa-regular fa-thumbs-up fa-2xl"
+                                                         style="color: #CCCCCC;"></i></button>
+            </p>
+
+            <p v-else>
+              <button class="btn">Nie lubie! <i class="fa-regular fa-thumbs-down fa-2xl" style="color: #CCCCCC;"></i>
+              </button>
+            </p>
           </div>
         </div>
         <div class="container col-3 pt-5 text-center mt-4">
@@ -55,6 +64,7 @@ export default {
     return {
       album: [],
       tracks: [],
+      liked: null,
     };
   },
   created() {
@@ -65,12 +75,25 @@ export default {
           console.log(response.data)
           this.album = response.data;
           this.tracks = response.data.tracks.$values
+          this.liked = response.data.likedByUsers
+          console.log(this.liked)
         })
         .catch(error => {
           console.error('Błąd podczas pobierania ścieżek:', error);
         });
+  },
+  methods: {
+    likedbyuser() {
+      const userId = localStorage.getItem('userId')
+      const albumId = this.$route.params.id;
 
-
+      api.post(`/api/User/LikeAlbum/${userId}/${albumId}`)
+          .catch(error => {
+            console.error('dupa',error)
+          })
+    }
   }
+
+
 }
 </script>

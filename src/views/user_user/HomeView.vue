@@ -7,9 +7,9 @@
     </div>
     <div class="container-fluid row col-12 py-3 text-center d-flex justify-content-center">
       <div class="col-12 col-sm-6 pt-5">
-        <div class="d-flex mb-3">
+        <div class="mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
-          <i class="fa-solid fa-arrow-down fa-2xl"></i>
+          <i class="fa-solid fa-arrows-up-down fa-2xl" style="color: #cccccc;"></i>
         </div>
         <div>
           <p>Pragniemy, aby nasza aplikacja muzyczna była nie tylko miejscem odkrywania nowych brzmień, ale także
