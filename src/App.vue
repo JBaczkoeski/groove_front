@@ -1,12 +1,13 @@
 <template>
-    <user-layout v-if="role ='user' && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>
-    <admin-layout v-if="role[1] === 'admin'"/>
-    <label-layout v-if="role[0] === 'studiohead'"/>
-    <artist-layout v-if="role[1] === 'artist'"/>
+  <!--    <user-layout v-if="role ='user' && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>-->
+  <!--  v-if="role[1] === 'admin'"  -->
+  <admin-layout/>
+  <label-layout v-if="role[0] === 'studiohead'"/>
+  <artist-layout v-if="role[1] === 'artist'"/>
 </template>
 
 <script>
-import userLayout from "@/views/layouts/userLayout.vue";
+// import userLayout from "@/views/layouts/userLayout.vue";
 import adminLayout from "@/views/layouts/adminLayout.vue";
 import labelLayout from "@/views/layouts/labelLayout.vue";
 import artistLayout from "@/views/layouts/artistLayout.vue";
@@ -15,15 +16,15 @@ import {mapState} from "vuex";
 export default {
   components: {
     adminLayout,
-    userLayout,
+    // userLayout,
     labelLayout,
     artistLayout
   },
   computed: {
     role() {
-      if(localStorage.getItem('role') === null) {
+      if (localStorage.getItem('role') === null) {
         return ['user'];
-      }else {
+      } else {
         const roles = localStorage.getItem('role')
         return roles.split(',');
       }
