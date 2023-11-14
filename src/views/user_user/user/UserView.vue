@@ -49,16 +49,6 @@
                   <input v-model="city" type="text" id="city" class="form-control">
                 </div>
 
-                <div class="mb-3 col-12 col-sm-6">
-                  <label for="password">Hasło:</label>
-                  <input v-model="password" type="password" id="password" class="form-control">
-                </div>
-
-                <div class="mb-3 col-12 col-sm-6">
-                  <label for="confirm_password">Potwierdź hasło:</label>
-                  <input v-model="confirm_password" type="password" id="confirm_password" class="form-control">
-                </div>
-
                 <SubmitButton class="btn-secondary col-12 col-md-6 mt-4" label="Zmień dane"/>
               </form>
             </div>
