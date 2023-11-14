@@ -20,13 +20,12 @@
                       id="author"
                       name="author"
                   >
-                    <option v-for="studio in studios" :key="studio.ownerId" :value="studio.ownerId">{{ studio.name }}</option>
+                    <option v-for="studio in studios" :key="studio.id" :value="studio.id">{{ studio.name }}</option>
                   </select>
                 </div>
                 <div class="text-center">
                   <button
                       @click="handleSave()"
-                      :disabled="isSaving"
                       type="button"
                       class="btn btn-success btn-lg shadow"
                   >
@@ -45,7 +44,6 @@
 <script>
 import sideBar from '@/components/SideBarArtist.vue'
 import api from "@/services/api";
-
 export default {
   data() {
     return {
@@ -60,22 +58,18 @@ export default {
     this.getAllStudios();
   },
   methods: {
-    handleSave() {
-      const user = localStorage.getItem('userId');
-      console.log('wysyła sie');
-      api.post('/api/Artist/ApplyToStudio', {
-        userId: user,
-        studioId: this.label
-      })
-    },
-    SelectFileChange(event) {
-      this.song.photo = event.target.files[0];
+    async handleSave() {
+      try {
+        const response = await api.post(`/api/Artist/ApplyToStudio?studioId=${this.label}`);
+        console.log('Sukces!', response);
+      } catch (error) {
+        console.error('Błąd podczas aplikowania do studia:', error);
+      }
     },
     getAllStudios() {
       api.get(`/api/Studio/GetAllStudios`)
           .then(response => {
             this.studios = response.data.$values;
-            console.log(this.studios)
           })
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);

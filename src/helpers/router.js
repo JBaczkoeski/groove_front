@@ -31,6 +31,8 @@ import LabelManagementPanel from "@/views/user_label/management/LabelManagementP
 import CartView from "@/views/user_user/user/CartView.vue";
 import UserArtistView from "@/views/user_artist/user/UserArtistView.vue";
 import DeleteArtistAccountView from "@/views/user_artist/user/DeleteArtistAccountView.vue";
+import DeleteLabelAccountView from "@/views/user_label/label/DeleteLabelAccountView.vue";
+import LabelUserView from "@/views/user_label/label/LabelUserView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -61,6 +63,8 @@ const router = createRouter({
         {path: '/wytwornia/artysci', component: ArtistListView, meta:{requiresAuth: true}},
         {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView, meta:{requiresAuth: true}},
         {path: '/wytwornia/panel', component: LabelManagementPanel, meta:{requiresAuth: true}},
+        {path: '/wytwornia/konto', component:LabelUserView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/konto/usun', component:DeleteLabelAccountView, meta:{requiresAuth: true}},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView, meta:{requiresAuth: true}},

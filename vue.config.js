@@ -4,7 +4,7 @@ module.exports = defineConfig({
     devServer: {
         proxy: {
             '/api/*': {
-                target: 'https://groovesync.azurewebsites.net',
+                target: 'https://groovemusic.azurewebsites.net',
                 ws: true,
                 changeOrigin: true
             }
