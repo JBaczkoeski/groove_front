@@ -1,10 +1,8 @@
 <template>
-  <div>
     <user-layout v-if="role ='user' && role[1] !== 'artist' && role[0] !== 'studiohead'|| role.length === 0"/>
     <admin-layout v-if="role[1] === 'admin'"/>
     <label-layout v-if="role[0] === 'studiohead'"/>
     <artist-layout v-if="role[1] === 'artist'"/>
-  </div>
 </template>
 
 <script>
