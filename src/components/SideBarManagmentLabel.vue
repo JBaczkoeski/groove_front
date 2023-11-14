@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/wytwornia/aplikacje" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+        <a href="/wytwornia/artysci/aplikacje" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-users-line fa-xl" style="color: #CCCCCC;"></i>
           Aplikacje artystow
         </a>

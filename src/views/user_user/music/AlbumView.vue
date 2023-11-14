@@ -13,7 +13,7 @@
           <div class="container fw-bold mt-5">
             <p>Wykonwaca: {{ album.artist ?? 'Brak' }} * 14 utworów, 48 min 54sek </p>
             <p v-if="liked === null">
-              <button class="btn" @click="likedbyuser">Lubie to! <i class="fa-regular fa-thumbs-up fa-2xl"
+              <button class="btn btn-dark" @click="likedbyuser">Lubie to! <i class="fa-regular fa-thumbs-up fa-2xl"
                                                          style="color: #CCCCCC;"></i></button>
             </p>
 

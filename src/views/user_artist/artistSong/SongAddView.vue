@@ -43,6 +43,17 @@
                   <label for="cover" class="mt-2">lub dodaj link do zdjęcia</label>
                   <input type="text" v-model="ImgUrl" class="form-control mt-2 input-field">
                 </div>
+                <div class="form-group mt-2">
+                  <label for="cover" class="mt-3">Plik mp3 utworu</label>
+                  <input
+                      type="file"
+                      @change="handleMp3FileChange"
+                      class="form-control mt-2 input-field"
+                      id="cover"
+                      name="cover"
+                      accept=".mp3"
+                  />
+                </div>
                 <div class="form-group">
                   <label for="description" class="mt-3">Opis</label>
                   <textarea
@@ -78,9 +89,10 @@ export default {
     return {
       Name: '',
       Author: '',
-      Img: '',
+      Img: null,
       Description: '',
       ImgUrl: '',
+      mp3File: null,
     }
   },
   components: {
@@ -88,26 +100,39 @@ export default {
   },
 
   methods: {
+    handleMp3FileChange(event) {
+      this.mp3File = event.target.files[0];
+    },
     handleFileChange(event) {
       this.Img = event.target.files[0].name;
-      console.log(this.Img)
     },
-    handleSave() {
-      const UserId = localStorage.getItem('userId')
+    async handleSave() {
+      const UserId = localStorage.getItem('userId');
 
-      if (this.Img === '') {
-        console.log(this.Img)
-        console.log('brak')
-        this.Img = this.ImgUrl;
+      const formData = new FormData();
+      formData.append('Name', this.Name);
+      formData.append('Author', this.Author);
+      if (this.Img === null)
+      {
+        formData.append('Img', this.ImgUrl);
+      }else {
+        formData.append('Img', this.Img);
       }
+      formData.append('Description', this.Description);
+      formData.append('UserId', UserId);
+      formData.append('mp3File', this.mp3File);
 
-      api.post('/api/Artist/AddTrack', {
-        Name: this.Name,
-        Author: this.Author,
-        Img: this.Img,
-        Description: this.Description,
-        UserId: UserId
-      });
+      try {
+        const response = await api.post('/api/Artist/AddTrack', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+
+        console.log('Plik MP3 został pomyślnie przesłany!', response);
+      } catch (error) {
+        console.error('Wystąpił błąd podczas przesyłania pliku MP3:', error);
+      }
     },
   }
 }

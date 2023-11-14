@@ -44,37 +44,37 @@ const router = createRouter({
         {path: '/konto/zamowienia', component: UserOrdersView, meta:{requiresAuth: true}},
         {path: '/konto/subskrypcja', component:SubscriptionView, meta:{requiresAuth: true}},
         {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
-        {path: '/konto/zamowienie', component: OrderView},
+        {path: '/konto/zamowienie', component: OrderView, meta:{requiresAuth: true}},
         // user utwory
         {path: '/utwory', component: SongsView},
-        {path: '/utwor/show/:id', component: SongView},
-        {path: '/albumy', component: AlbumsView},
-        {path: '/album', component: AlbumView},
-        {path: '/album/show/:id', component: AlbumView},
+        {path: '/utwor/show/:id', component: SongView, meta:{requiresAuth: true}},
+        {path: '/albumy', component: AlbumsView, meta:{requiresAuth: true}},
+        {path: '/album', component: AlbumView, meta:{requiresAuth: true}},
+        {path: '/album/show/:id', component: AlbumView, meta:{requiresAuth: true}},
         //sklep ogolny
         {path: '/sklep', component: ShopView},
         {path: '/koszyk', component: CartView},
 
         //Wytwórnia
-        {path: '/wytwornia', component: LabelHomeView},
-        {path: '/wytwornia/utwory/dodawanie', component: SongAddView},
-        {path: '/wytwornia/artysci', component: ArtistListView},
-        {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView},
-        {path: '/wytwornia/panel', component: LabelManagementPanel},
+        {path: '/wytwornia', component: LabelHomeView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/utwory/dodawanie', component: SongAddView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/artysci', component: ArtistListView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/panel', component: LabelManagementPanel, meta:{requiresAuth: true}},
 
         //Artysta
-        {path: '/artysta', component: ArtistHomeView},
-        {path: '/artysta/utwory', component: ArtistSongView},
-        {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView},
-        {path: '/artysta/utwory/wytwornia', component: ApllyLabelView},
-        {path: '/artysta/albumy', component: ArtistAlbumsView},
-        {path: '/artysta/albumy/dodawanie', component: AlbumAddView},
-        {path: '/artysta/konto', component: UserArtistView},
-        {path: '/artysta/konto/usun', component: DeleteArtistAccountView},
+        {path: '/artysta', component: ArtistHomeView, meta:{requiresAuth: true}},
+        {path: '/artysta/utwory', component: ArtistSongView, meta:{requiresAuth: true}},
+        {path: '/artysta/utwory/dodawanie', component: ArtistSongAddView, meta:{requiresAuth: true}},
+        {path: '/artysta/utwory/wytwornia', component: ApllyLabelView, meta:{requiresAuth: true}},
+        {path: '/artysta/albumy', component: ArtistAlbumsView, meta:{requiresAuth: true}},
+        {path: '/artysta/albumy/dodawanie', component: AlbumAddView, meta:{requiresAuth: true}},
+        {path: '/artysta/konto', component: UserArtistView, meta:{requiresAuth: true}},
+        {path: '/artysta/konto/usun', component: DeleteArtistAccountView, meta:{requiresAuth: true}},
 
         //Admin
-        {path: '/admin', component:AdminHome},
-        {path: '/admin/zarzadznie', component: ServiceManagment}
+        {path: '/admin', component:AdminHome, meta:{requiresAuth: true}},
+        {path: '/admin/zarzadznie', component: ServiceManagment, meta:{requiresAuth: true}}
     ],
 })
 

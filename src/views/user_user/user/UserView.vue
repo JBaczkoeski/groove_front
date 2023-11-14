@@ -108,11 +108,12 @@ export default {
             this.user = response.data;
             this.email = this.user.email;
             this.name = this.user.name;
-            this.telephone = this.user.phoneNumber;
-            this.street = this.user.userInformation.street;
-            this.postal = this.user.userInformation.postalCode;
-            this.city = this.user.userInformation.city;
-
+            if (this.user.userInformation) {
+              this.telephone = this.user.userInformation.phoneNumber;
+              this.street = this.user.userInformation.street;
+              this.postal = this.user.userInformation.postalCode;
+              this.city = this.user.userInformation.city;
+            }
           });
     },
     changeUserData() {

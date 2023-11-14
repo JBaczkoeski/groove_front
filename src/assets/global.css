@@ -12,6 +12,12 @@ body{
     color: #CCCCCC;
 }
 
+.btn-dark {
+    background-color: #121212;
+    color: #CCCCCC;
+    border: 0 solid #000000;
+}
+
 .submit-button-green {
     background-color: #4CAF50;
     color: #FFFFFF;
