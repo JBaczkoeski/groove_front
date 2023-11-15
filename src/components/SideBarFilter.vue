@@ -19,26 +19,57 @@
         </div>
       </li>
 
-        <li class="nav-item mt-4">
-          <select class="form-select mb-1" aria-label="Default select example">
-            <option selected>Wytwórnia</option>
-          </select>
-        </li>
+      <li class="nav-item mt-4">
+        <select class="form-select mb-1" aria-label="Default select example">
+          <option selected disabled>Wytwórnia</option>
+          <option v-for="studio in studios" :key="studio.id">{{studio.name}}</option>
+        </select>
+      </li>
 
-        <li class="nav-item mt-4">
-          <select class="form-select mb-1" aria-label="Default select example">
-            <option selected>Artysta</option>
-          </select>
-        </li>
+      <li class="nav-item mt-4">
+        <select class="form-select mb-1" aria-label="Default select example">
+          <option selected disabled>Artysta</option>
+          <option v-for="artist in artists" :key="artist.id">{{artist.name}}</option>
+        </select>
+      </li>
 
-        <button type="button" class="btn btn-warning mt-4 fw-bold">Filtruj produkty</button>
+      <button type="button" class="btn btn-warning mt-4 fw-bold">Filtruj produkty</button>
     </ul>
 
   </div>
 </template>
 
 <script>
+import api from "@/services/api";
 
+export default {
+  data() {
+    return {
+      artists: [],
+      studios: []
+    };
+  },
+  mounted() {
+    this.getAllArtist()
+    this.getAllStudios()
+  },
+  methods: {
+    getAllArtist() {
+      api.get('/api/Artist/GetAllArtists').then(
+          response => {
+            this.artists = response.data.$values;
+          }
+      )
+    },
+    getAllStudios() {
+      api.get('/api/Studio/GetAllStudios').then(
+          response => {
+            this.studios = response.data.$values;
+          }
+      )
+    }
+  }
+}
 </script>
 
 <style>

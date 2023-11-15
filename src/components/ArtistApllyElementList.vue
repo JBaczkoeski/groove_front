@@ -4,14 +4,15 @@
     <td class="pt-5">{{ name }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">
-      <button class="btn btn-success me-3">Zaakceptuj</button>
-      <button class="btn btn-danger">Usuń</button>
+      <button @click="acceptApply(id)" class="btn btn-success me-3">Zaakceptuj</button>
+      <button @click="deleteApply(id)" class="btn btn-danger">Usuń</button>
     </td>
   </tr>
 </template>
 
 <script>
 import {ref} from 'vue';
+import api from "@/services/api";
 
 export default {
   props: {
@@ -39,6 +40,16 @@ export default {
       placeRef
     };
   },
+  methods: {
+    acceptApply(id) {
+      api.post(`/api/Studio/AcceptRequest?requestId=${id}`)
+      window.location.reload();
+    },
+    deleteApply(id) {
+      api.delete(`/api/Studio/DeclineRequest?requestId=${id}`)
+
+    }
+  }
 }
 </script>
 

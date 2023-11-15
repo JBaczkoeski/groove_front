@@ -10,7 +10,7 @@
       <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1" style="color: #CCCCCC;"></i> {{ albumLenght }}
         minut</p>
       <div class="container col-6">
-        <a :href="`/album/show/${id}`" class="btn btn-success rounded rounded-5 my-4">Dodaj do koszyka</a>
+        <a @click="addAlbumToCart(id)" class="btn btn-success rounded rounded-5 my-4">Dodaj do koszyka</a>
       </div>
       <div class="container col-6">
       <a :href="`/album/show/${id}`" class="btn btn-primary rounded rounded-5 my-4">Sprawdź</a>
@@ -21,6 +21,7 @@
 
 <script>
 import {ref} from "vue";
+import api from "@/services/api";
 
 export default {
   props: {
@@ -31,6 +32,12 @@ export default {
     studio: String,
     songs: Number,
     albumLenght: Number
+  },
+
+  data(){
+    return{
+      artists: []
+    }
   },
 
   setup(props) {
@@ -51,6 +58,14 @@ export default {
       songsRef,
       albumLenghtRef
     };
+  },
+  methods: {
+    addAlbumToCart(id) {
+      api.post('/api/Shopping/AddAlbumToCart',{
+        albumId: id,
+        qty: 1
+      })
+    },
   }
 }
 </script>

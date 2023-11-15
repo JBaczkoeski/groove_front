@@ -49,7 +49,7 @@
                   <input v-model="city" type="text" id="city" class="form-control">
                 </div>
 
-                <SubmitButton class="btn-secondary col-12 col-md-6 mt-4" label="Zmień dane"/>
+                <SubmitButton class="submit-button-green col-12 col-md-6 mt-4" label="Zmień dane"/>
               </form>
             </div>
           </div>
@@ -63,17 +63,24 @@
             <div class="col-12 col-md-6 offset-md-3">
               <form @submit.prevent="changeUserPassword" class="row d-flex justify-content-center">
 
+                <div class="mb-3 col-12 d-flex justify-content-center">
+                  <div class="col-6">
+                    <label for="current_password">Aktualne hasło:</label>
+                    <input v-model="currentPassword" type="password" id="current_password" class="form-control">
+                  </div>
+                </div>
+
                 <div class="mb-3 col-12 col-sm-6">
-                  <label for="password">Hasło:</label>
+                  <label for="password">Nowe hasło:</label>
                   <input v-model="password" type="password" id="password" class="form-control">
                 </div>
 
                 <div class="mb-3 col-12 col-sm-6">
-                  <label for="confirm_password">Potwierdź hasło:</label>
+                  <label for="confirm_password">Potwierdź <n></n>owe hasło:</label>
                   <input v-model="confirm_password" type="password" id="confirm_password" class="form-control">
                 </div>
 
-                <SubmitButton class="btn-secondary col-12 col-md-6 mt-4" label="Zmień hasło"/>
+                <SubmitButton class="submit-button-green col-12 col-md-6 mt-4" label="Zmień hasło"/>
               </form>
             </div>
           </div>
@@ -107,6 +114,7 @@ export default {
       country: 'Polska',
       password: null,
       confirm_password: null,
+      currentPassword: null,
       image: null,
     }
   },
@@ -145,9 +153,11 @@ export default {
     },
     changeUserPassword() {
       const userId = localStorage.getItem('userId');
-      api.post(`/api/Account/SaveUserInformation/${userId}`, {
-        password: this.password,
-        confirm_password: this.password,
+      api.post(`/api/Account/ChangePassword`, {
+        userId: userId,
+        currentPassword: this.currentPassword,
+        newPassword: this.password,
+        confirmNewPassword: this.confirm_password,
       })
     }
   },

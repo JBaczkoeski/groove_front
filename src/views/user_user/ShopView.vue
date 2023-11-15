@@ -52,13 +52,13 @@ export default {
       api.get('/api/Album/GetAllAlbums')
           .then(response => {
             this.albums = response.data.$values;
-            console.log(this.albums);
             return true;
           })
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);
           });
-    }
+    },
+
   }
 }
 </script>

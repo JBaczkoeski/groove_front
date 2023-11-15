@@ -14,25 +14,25 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/artysta/utwory" class="nav-link text-white mt-3 mb-2" aria-current="page">
+        <a href="#" class="nav-link text-white mt-3 mb-2" aria-current="page">
           <i class="fa-solid fa-compact-disc fa-2xl" style="color: #ffffff;"></i>
-          Utwory artysty
+          Utwory
         </a>
       </li>
       <li class="nav-item">
-        <a href="/artysta/albumy" class="nav-link text-white mt-3 mb-2">
+        <a href="#" class="nav-link text-white mt-3 mb-2">
           <i class="fa-solid fa-record-vinyl fa-2xl" style="color: #ffffff;"></i>
-          Albumy artysty
+          Albumy
         </a>
       </li>
       <li class="nav-item">
-        <a href="/artysta/utwory/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+        <a href="/wytwornia/utwory/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-plus fa-2xl" style="color: #ffffff;"></i>
           Dodawanie utworu
         </a>
       </li>
       <li class="nav-item">
-        <a href="/artysta/albumy/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
+        <a href="/wytwornia/albumy/dodawanie" class="nav-link text-white mt-3 mb-2 " aria-current="page">
           <i class="fa-solid fa-folder-plus fa-2xl" style="color: #ffffff;"></i>
           Dodawanie albumu
         </a>

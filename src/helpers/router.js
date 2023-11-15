@@ -10,7 +10,6 @@ import UserView from "@/views/user_user/user/UserView.vue";
 import UserOrdersView from "@/views/user_user/user/UserOrdersView.vue";
 import DeleteAccountView from "@/views/user_user/user/DeleteAccountView.vue";
 import AlbumsView from "@/views/user_user/music/AlbumsView.vue";
-import SongAddView from "@/views/user_label/song/SongAddView.vue";
 import SongView from "@/views/user_user/music/SongView.vue";
 import LabelHomeView from "@/views/user_label/HomeView.vue";
 import ArtistHomeView from "@/views/user_artist/HomeView.vue";
@@ -33,6 +32,8 @@ import UserArtistView from "@/views/user_artist/user/UserArtistView.vue";
 import DeleteArtistAccountView from "@/views/user_artist/user/DeleteArtistAccountView.vue";
 import DeleteLabelAccountView from "@/views/user_label/label/DeleteLabelAccountView.vue";
 import LabelUserView from "@/views/user_label/label/LabelUserView.vue";
+import LabelAlbumAddView from "@/views/user_label/management/AlbumAddView.vue"
+import LabelSongAddView from "@/views/user_label/management/LabelAddSongView.vue"
 
 const router = createRouter({
     history: createWebHistory(),
@@ -59,12 +60,13 @@ const router = createRouter({
 
         //Wytwórnia
         {path: '/wytwornia', component: LabelHomeView, meta:{requiresAuth: true}},
-        {path: '/wytwornia/utwory/dodawanie', component: SongAddView, meta:{requiresAuth: true}},
         {path: '/wytwornia/artysci', component: ArtistListView, meta:{requiresAuth: true}},
         {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView, meta:{requiresAuth: true}},
         {path: '/wytwornia/panel', component: LabelManagementPanel, meta:{requiresAuth: true}},
         {path: '/wytwornia/konto', component:LabelUserView, meta:{requiresAuth: true}},
         {path: '/wytwornia/konto/usun', component:DeleteLabelAccountView, meta:{requiresAuth: true}},
+         {path: '/wytwornia/utwory/dodawanie', component:LabelSongAddView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/albumy/dodawanie', component:LabelAlbumAddView, meta:{requiresAuth: true}},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView, meta:{requiresAuth: true}},

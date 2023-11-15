@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <side-bar/>
+        <SideBarManagmentLabel/>
       </div>
       <div class="container col-9 d-flex justify-content-center h-75 ">
         <div class="row">
@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import sideBar from '@/components/SideBarArtist.vue'
+import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
 import api from "@/services/api";
 
 export default {
@@ -96,13 +96,12 @@ export default {
     }
   },
   components: {
-    sideBar
+    SideBarManagmentLabel
   },
 
   methods: {
     handleMp3FileChange(event) {
       this.mp3File = event.target.files[0];
-
     },
     handleFileChange(event) {
       this.Img = event.target.files[0].name;
@@ -121,7 +120,6 @@ export default {
       }
       formData.append('Description', this.Description);
       formData.append('UserId', UserId);
-      console.log(this.mp3File)
       formData.append('mp3File', this.mp3File);
 
       try {

@@ -18,7 +18,7 @@
             </thead>
             <tbody>
             <ArtistApllyElementList
-               v-for="(aplication,index) in aplications" :key="aplication.$id" :id="aplication.id" :name="aplication.artistName" :place="index" :addDate="formatDateTime(aplication.created)"
+               v-for="(aplication,index) in aplications" :key="aplication.requestId" :id="aplication.requestId" :name="aplication.artistName" :place="index" :addDate="formatDateTime(aplication.created)"
             />
             </tbody>
           </table>
