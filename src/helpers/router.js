@@ -32,8 +32,10 @@ import UserArtistView from "@/views/user_artist/user/UserArtistView.vue";
 import DeleteArtistAccountView from "@/views/user_artist/user/DeleteArtistAccountView.vue";
 import DeleteLabelAccountView from "@/views/user_label/label/DeleteLabelAccountView.vue";
 import LabelUserView from "@/views/user_label/label/LabelUserView.vue";
-import LabelAlbumAddView from "@/views/user_label/management/AlbumAddView.vue"
-import LabelSongAddView from "@/views/user_label/management/LabelAddSongView.vue"
+import LabelAlbumAddView from "@/views/user_label/management/AlbumAddView.vue";
+import LabelSongAddView from "@/views/user_label/management/LabelAddSongView.vue";
+import LikedSongsView from "@/views/user_user/music/LikedSongsView.vue";
+import LikedAlbumsView from "@/views/user_user/music/LikedAlbumsView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -50,7 +52,9 @@ const router = createRouter({
         {path: '/konto/zamowienie', component: OrderView, meta:{requiresAuth: true}},
         // user utwory
         {path: '/utwory', component: SongsView, meta:{requiresAuth: true}},
+        {path: '/polubione/utwory', component: LikedSongsView, meta:{requiresAuth: true}},
         {path: '/utwor/show/:id', component: SongView, meta:{requiresAuth: true}},
+        {path: '/polubione/albumy', component: LikedAlbumsView, meta:{requiresAuth: true}},
         {path: '/albumy', component: AlbumsView, meta:{requiresAuth: true}},
         {path: '/album', component: AlbumView, meta:{requiresAuth: true}},
         {path: '/album/show/:id', component: AlbumView, meta:{requiresAuth: true}},

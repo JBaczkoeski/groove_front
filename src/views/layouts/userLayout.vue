@@ -25,7 +25,13 @@
               <NavLink :to="'/utwory'" :label="'Utwory'"/>
             </li>
             <li class="nav-item">
+              <NavLink :to="'/polubione/utwory'" :label="'Polubione utwory'"/>
+            </li>
+            <li class="nav-item">
               <NavLink :to="'/albumy'" :label="'Albumy'"/>
+            </li>
+            <li class="nav-item">
+              <NavLink :to="'/polubione/albumy'" :label="'Polubiony albumy'"/>
             </li>
           </ul>
         </div>
