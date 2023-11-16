@@ -55,8 +55,8 @@ const router = createRouter({
         {path: '/album', component: AlbumView, meta:{requiresAuth: true}},
         {path: '/album/show/:id', component: AlbumView, meta:{requiresAuth: true}},
         //sklep ogolny
-        {path: '/sklep', component: ShopView},
-        {path: '/koszyk', component: CartView},
+        {path: '/sklep', component: ShopView, meta:{requiresAuth: true}},
+        {path: '/koszyk', component: CartView, meta:{requiresAuth: true}},
 
         //Wytwórnia
         {path: '/wytwornia', component: LabelHomeView, meta:{requiresAuth: true}},

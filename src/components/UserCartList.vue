@@ -8,7 +8,7 @@
       <button class="btn btn-primary me-3">Sprawdź</button>
       <button class="btn btn-success me-3">Napisz</button>
       <button @click="deleteItem(id)" v-if="type === 'Album'" class="btn btn-danger">Usuń</button>
-      <button @click="" v-if="type === 'Track'" class="btn btn-danger">Usuń</button>
+      <button @click="deleteTrack(id)" v-if="type === 'Track'" class="btn btn-danger">Usuń</button>
     </td>
   </tr>
 </template>
@@ -43,6 +43,9 @@ export default {
     deleteItem(id){
       api.delete(`/api/Shopping/RemoveAlbumFromCart?albumId=${id}`)
     },
+    deleteTrack(id){
+      api.delete(`/api/Shopping/RemoveTrackFromCart?albumId=${id}`)
+    }
   }
 }
 </script>
