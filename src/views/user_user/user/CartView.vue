@@ -11,7 +11,10 @@
       </tr>
       </thead>
       <tbody>
-      <UserCartList v-for="item in items" :key="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity"/>
+      <UserCartList v-for="item in items" :key="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
+      <tr>
+        <td class="text-end pe-5 h3">Cena końcowa: {{price}}</td>
+      </tr>
       </tbody>
     </table>
   </div>
@@ -27,20 +30,28 @@ export default {
   },
   data(){
     return {
-      items: []
+      items: [],
+      price: null
     }
   },
   mounted(){
     this.getCart()
+    this.getPrice()
   },
   methods:{
     getCart(){
       api.get('/api/Shopping/GetCart').then(response =>
       {
         this.items = response.data.$values
-        console.log(this.items)
       })
     },
+    getPrice(){
+      api.get('/api/Shopping/GetCartPrice').then(response =>
+      {
+        this.price = response.data
+        console.log(this.price)
+      })
+    }
   }
 }
 </script>

@@ -7,7 +7,8 @@
     <td class="pt-5">
       <button class="btn btn-primary me-3">Sprawdź</button>
       <button class="btn btn-success me-3">Napisz</button>
-      <button class="btn btn-danger">Usuń</button>
+      <button @click="deleteItem(id)" v-if="type === 'Album'" class="btn btn-danger">Usuń</button>
+      <button @click="" v-if="type === 'Track'" class="btn btn-danger">Usuń</button>
     </td>
   </tr>
 </template>
@@ -22,6 +23,7 @@ export default {
     name: String,
     price: String,
     quant: Number,
+    type: String,
   },
   setup(props) {
     const idRef = ref(props.id);
@@ -38,9 +40,9 @@ export default {
     };
   },
   methods:{
-    deleteItem(){
-      api.delete('/api/Shopping/RemoveTrackFromCart')
-    }
+    deleteItem(id){
+      api.delete(`/api/Shopping/RemoveAlbumFromCart?albumId=${id}`)
+    },
   }
 }
 </script>
