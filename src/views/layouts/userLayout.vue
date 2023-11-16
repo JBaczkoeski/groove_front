@@ -16,11 +16,11 @@
             <li class="nav-item">
               <NavLink :to="'/'" :label="'Strona główna'"/>
             </li>
+          </ul>
+          <ul class="navbar-nav" v-if="isLogged">
             <li class="nav-item">
               <NavLink :to="'/sklep'" :label="'Sklep'"/>
             </li>
-          </ul>
-          <ul class="navbar-nav" v-if="isLogged">
             <li class="nav-item">
               <NavLink :to="'/utwory'" :label="'Utwory'"/>
             </li>

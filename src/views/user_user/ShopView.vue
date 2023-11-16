@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     getAllTracks() {
-      api.get('/api/Album/GetAllAlbums')
+      api.get('/api/Album/GetAllPaidAlbums')
           .then(response => {
             this.albums = response.data.$values;
             return true;

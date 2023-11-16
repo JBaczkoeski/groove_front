@@ -147,20 +147,29 @@ export default {
       this.isLiked = !this.isLiked;
       if (this.isLiked) {
         const trackId = this.trackId;
-        const userId = localStorage.getItem('userId');
-        api.post(`/api/User/LikeTrack/${userId}/${trackId}`)
+        api.post(`/api/User/LikeTrack/${trackId}`)
         console.log('Utwór polubiony!');
       } else {
         const trackId = this.trackId;
-        const userId = localStorage.getItem('userId');
-        api.post(`/api/User/DislikeTrack/${userId}/${trackId}`)
+        api.post(`/api/User/DislikeTrack/${trackId}`)
         console.log('Utwór niepolubiony.');
       }
     },
 
     hidePlayer() {
       store.dispatch('player/togglePlayer', false);
-    }
+    },
+
+    async checkIfLiked() {
+      try {
+        const trackId = this.trackId;
+        const response = await api.get(`/api/User/CheckIfLiked/${trackId}`);
+        this.isLiked = response.data.isLiked; // Załóżmy, że odpowiedź API zwraca isLiked
+        console.log('Stan polubienia utworu:', this.isLiked);
+      } catch (error) {
+        console.error('Błąd podczas pobierania stanu polubienia:', error);
+      }
+    },
   },
 
   mounted() {
@@ -173,6 +182,8 @@ export default {
     this.audio.volume = this.volume / 100;
 
     this.updateCurrentTime();
+
+    this.checkIfLiked();
   },
 
   computed: {

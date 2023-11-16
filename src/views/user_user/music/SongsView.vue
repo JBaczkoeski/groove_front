@@ -45,7 +45,7 @@ export default {
     getAllTracks() {
       api.get('/api/Track/GetAllTracks')
           .then(response => {
-            this.tracks = response.data.$values;
+            this.tracks = response.data.value.$values;
           })
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);

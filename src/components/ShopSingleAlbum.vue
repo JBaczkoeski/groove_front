@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     addAlbumToCart(id) {
-      api.post('/api/Shopping/AddAlbumToCart',{
+      api.post(`/api/Shopping/AddAlbumToCart?albumId=${id}&qty=1`,{
         albumId: id,
         qty: 1
       })
