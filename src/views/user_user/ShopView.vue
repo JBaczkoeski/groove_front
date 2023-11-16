@@ -69,4 +69,6 @@ export default {
   height: 1px;
   border: 1px solid black;
 }
+
+
 </style>

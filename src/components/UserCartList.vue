@@ -43,18 +43,12 @@ export default {
       quantRef,
     };
   },
-  methods: {
-    deleteAlbum(id) {
+  methods:{
+    deleteItem(id){
       api.delete(`/api/Shopping/RemoveAlbumFromCart?albumId=${id}`)
     },
-    deleteTrack(id) {
+    deleteTrack(id){
       api.delete(`/api/Shopping/RemoveTrackFromCart?albumId=${id}`)
-    },
-    decreaseAlbum(id) {
-      api.delete(`/api/Shopping/DecreaseAlbum?albumId=${id}`)
-    },
-    decreaseTrack(id) {
-      api.delete(`/api/Shopping/DecreaseTrack?trackId=${id}`)
     }
   }
 }
