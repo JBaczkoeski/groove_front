@@ -49,7 +49,7 @@ const router = createRouter({
         {path: '/konto/zostanArtysta', component: BecomeAnArtist, meta:{requiresAuth: true}},
         {path: '/konto/zamowienie', component: OrderView, meta:{requiresAuth: true}},
         // user utwory
-        {path: '/utwory', component: SongsView},
+        {path: '/utwory', component: SongsView, meta:{requiresAuth: true}},
         {path: '/utwor/show/:id', component: SongView, meta:{requiresAuth: true}},
         {path: '/albumy', component: AlbumsView, meta:{requiresAuth: true}},
         {path: '/album', component: AlbumView, meta:{requiresAuth: true}},
