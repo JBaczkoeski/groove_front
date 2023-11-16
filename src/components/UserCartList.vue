@@ -6,8 +6,8 @@
       <button v-if="type === 'Album'" class="btn"><i class="fa-solid fa-plus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
       <button v-if="type === 'Track'" class="btn"><i class="fa-solid fa-plus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
       {{ quant }}
-      <button v-if="type === 'Album'" class="btn"><i class="fa-solid fa-minus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
-      <button v-if="type === 'Track'" class="btn"><i class="fa-solid fa-minus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
+      <button v-if="type === 'Album'" @click="decreaseAlbum(id)" class="btn"><i class="fa-solid fa-minus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
+      <button v-if="type === 'Track'" @click="decreaseTrack(id)" class="btn"><i class="fa-solid fa-minus fa-xl mb-1" style="color: #CCCCCC;"></i></button>
     </td>
     <td class="pt-5">{{ price }}</td>
     <td class="pt-5">
@@ -51,7 +51,7 @@ export default {
     },
     deleteTrack(id) {
       api.delete(`/api/Shopping/RemoveTrackFromCart?albumId=${id}`)
-    }
+    },
     decreaseAlbum(id) {
       api.delete(`/api/Shopping/DecreaseAlbum?albumId=${id}`)
     },
