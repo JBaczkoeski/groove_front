@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tbody>
-      <UserCartList v-for="item in items" :key="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
+      <UserCartList v-for="item in items" :key="item.id" :id="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
       <tr>
         <td class="text-end pe-5 h3">Cena końcowa: {{price}}</td>
       </tr>
@@ -49,7 +49,6 @@ export default {
       api.get('/api/Shopping/GetCartPrice').then(response =>
       {
         this.price = response.data
-        console.log(this.price)
       })
     }
   }
