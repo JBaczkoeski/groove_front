@@ -11,7 +11,6 @@ import UserOrdersView from "@/views/user_user/user/UserOrdersView.vue";
 import DeleteAccountView from "@/views/user_user/user/DeleteAccountView.vue";
 import AlbumsView from "@/views/user_user/music/AlbumsView.vue";
 import SongView from "@/views/user_user/music/SongView.vue";
-import LabelHomeView from "@/views/user_label/HomeView.vue";
 import ArtistHomeView from "@/views/user_artist/HomeView.vue";
 import ArtistSongAddView from "@/views/user_artist/artistSong/SongAddView.vue";
 import ArtistSongView from "@/views/user_artist/artistSong/SongsView.vue";
@@ -62,7 +61,6 @@ const router = createRouter({
         {path: '/koszyk', component: CartView, meta:{requiresAuth: true}},
 
         //Wytwórnia
-        {path: '/wytwornia', component: LabelHomeView, meta:{requiresAuth: true}},
         {path: '/wytwornia/artysci', component: ArtistListView, meta:{requiresAuth: true}},
         {path: '/wytwornia/artysci/aplikacje', component: LabelApllyArtistView, meta:{requiresAuth: true}},
         {path: '/wytwornia/panel', component: LabelManagementPanel, meta:{requiresAuth: true}},

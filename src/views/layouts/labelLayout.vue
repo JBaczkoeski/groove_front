@@ -10,9 +10,6 @@
       <div class="collapse navbar-collapse col-6" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <NavLink :to="'/wytwornia'" :label="'Panel główny'"/>
-          </li>
-          <li class="nav-item">
             <NavLink :to="'/wytwornia/panel'" :label="'Zarządzanie'"/>
           </li>
         </ul>
