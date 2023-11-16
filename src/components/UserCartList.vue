@@ -11,8 +11,6 @@
     </td>
     <td class="pt-5">{{ price }}</td>
     <td class="pt-5">
-      <button class="btn btn-primary me-3">Sprawdź</button>
-      <button class="btn btn-success me-3">Napisz</button>
       <button @click="deleteAlbum(id)" v-if="type === 'Album'" class="btn btn-danger">Usuń</button>
       <button @click="deleteTrack(id)" v-if="type === 'Track'" class="btn btn-danger">Usuń</button>
     </td>
