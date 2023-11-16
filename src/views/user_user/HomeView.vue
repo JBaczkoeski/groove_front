@@ -9,7 +9,6 @@
       <div class="col-12 col-sm-6 pt-5">
         <div class="mb-3">
           <h2> Dowiedz się więcej o naszych funkcjach</h2>
-          <i class="fa-solid fa-arrows-up-down fa-2xl" style="color: #cccccc;"></i>
         </div>
         <div>
           <p>Pragniemy, aby nasza aplikacja muzyczna była nie tylko miejscem odkrywania nowych brzmień, ale także
@@ -38,7 +37,7 @@
         <div class="col-12 col-sm-6 pt-5">
           <img src="@/assets/register.png" alt="baner" class="img-fluid">
         </div>
-        <div class="col-12 col-sm-5 mt-5">
+        <div class="col-12 col-sm-5 mt-5 p-5">
           <h2>Możliwość rejestracji jako studio, artysta lub użytkownik</h2>
           <p>Dołącz do społeczności muzyków, słuchaczy i entuzjastów naszej aplikacji! Zarejestruj się jako studio
             muzyczne, artysta lub po prostu jako pasjonat muzyki. Otwórz sobie drzwi do różnorodnych funkcji, które
@@ -48,7 +47,7 @@
     </div>
 
     <div class="container-fluid row col-12 text-center border-home mid-back-color">
-      <div class="col-12 col-sm-6 pt-5 mt-4">
+      <div class="col-12 col-sm-6 pt-5 mt-4 mb-5">
         <h2>Intuicyjny wygląd</h2>
         <p>Nasza aplikacja oferuje intuicyjny i estetyczny interfejs, który sprawia, że korzystanie z niej jest
           przyjemne i proste. Z łatwością nawiguj przez funkcje i treści, bez zbędnego zamieszania. Przejrzystość i

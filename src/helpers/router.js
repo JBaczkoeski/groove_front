@@ -22,7 +22,6 @@ import ShopView from "@/views/user_user/ShopView.vue";
 import SubscriptionView from "@/views/user_user/user/SubscriptionView.vue";
 import LabelApllyArtistView from "@/views/user_label/management/LabelApllyArtistView.vue";
 import ArtistListView from "@/views/user_label/management/ArtistListView.vue";
-import AdminHome from "@/views/user_admin/HomeView.vue";
 import ServiceManagment from "@/views/user_admin/ServiceManagment.vue";
 import OrderView from "@/views/user_user/user/OrderView.vue";
 import AlbumAddView from "@/views/user_artist/artistSong/AlbumAddView.vue";
@@ -83,7 +82,6 @@ const router = createRouter({
         {path: '/artysta/konto/usun', component: DeleteArtistAccountView, meta:{requiresAuth: true}},
 
         //Admin
-        {path: '/admin', component:AdminHome, meta:{requiresAuth: true}},
         {path: '/admin/zarzadznie', component: ServiceManagment, meta:{requiresAuth: true}}
     ],
 })
