@@ -31,7 +31,7 @@
               <NavLink :to="'/albumy'" :label="'Albumy'"/>
             </li>
             <li class="nav-item">
-              <NavLink :to="'/polubione/albumy'" :label="'Polubiony albumy'"/>
+              <NavLink :to="'/polubione/albumy'" :label="'Polubione albumy'"/>
             </li>
           </ul>
         </div>

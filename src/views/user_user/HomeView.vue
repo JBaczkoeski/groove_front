@@ -34,7 +34,7 @@
 
     <div class="container-fluid row col-12 text-center">
       <div class="row">
-        <div class="col-12 col-sm-6 pt-5">
+        <div class="col-12 col-sm-6 pt-5 mb-5">
           <img src="@/assets/register.png" alt="baner" class="img-fluid">
         </div>
         <div class="col-12 col-sm-5 mt-5 p-5">

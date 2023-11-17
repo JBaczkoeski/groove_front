@@ -10,7 +10,7 @@
           <div class="container col-12">
             <h2 class="text-center mt-5 mb-3">Dodawanie albumu</h2>
           </div>
-          <div class="card card-dark border border-3 rounded rounded-5">
+          <div class="card card-dark border border-3 rounded rounded-5 mb-5">
             <div class="card-body">
               <form>
                 <div class="form-group">
