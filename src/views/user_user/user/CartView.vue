@@ -12,11 +12,9 @@
       </thead>
       <tbody>
       <UserCartList v-for="item in items" :key="item.id" :id="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
-      <tr>
-        <td class="text-end pe-5 h3">Cena końcowa: {{price}}</td>
-      </tr>
       </tbody>
     </table>
+    <div class="container col-12 text-end h3">Cena końcowa: {{price}} <button @click="Buy" class="btn submit-button-green">Kup teraz</button></div>
   </div>
 </template>
 
@@ -50,6 +48,9 @@ export default {
       {
         this.price = response.data
       })
+    },
+    Buy(){
+      api.post('/api/Shopping/PayForCartByBalance')
     }
   }
 }

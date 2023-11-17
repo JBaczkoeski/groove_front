@@ -49,6 +49,12 @@ export default {
     },
     deleteTrack(id){
       api.delete(`/api/Shopping/RemoveTrackFromCart?albumId=${id}`)
+    },
+    decreaseTrack(id){
+      api.delete(`/api/Shopping/DecreaseTrack?albumId=${id}`)
+    },
+    deleteAlbum(id){
+      api.delete(`/api/Shopping/DecreaseAlbum?albumId=${id}`)
     }
   }
 }

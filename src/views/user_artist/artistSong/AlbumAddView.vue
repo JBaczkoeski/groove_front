@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <side-bar/>
+        <SideBarManagmentLabel/>
       </div>
 
       <div class="container col-9 d-flex justify-content-center h-75">
@@ -35,10 +35,14 @@
                   />
                 </div>
                 <label :for="'cover' + index">lub dodaj link do zdjęcia</label>
-                <input v-model="ImgUrl" class="form-control mt-2 input-field  mb-5">
+                <input v-model="ImgUrl" class="form-control mt-2 input-field  mb-3">
+                <label for="price">Artysta</label>
+                <select v-model="Artist" id="price" type="number" class="form-control mt-2 input-field  mb-5">
+                  <option value="4">TEST</option>
+                </select>
                 <p class="fw-bold h3">Utwory:</p>
                 <div class="form-group mt-4" v-for="(track, index) in tracks" :key="index">
-                  <p class="fw-bold"> Nr {{index + 1}}</p>
+                  <p class="fw-bold"> Nr {{ index + 1 }}</p>
                   <label :for="'name' + index">Tytuł utworu</label>
                   <input
                       v-model="track.Name"
@@ -57,7 +61,17 @@
                       accept="image/*"
                   />
                   <label :for="'cover' + index">lub dodaj link do zdjęcia</label>
-                  <input v-model="track.ImgUrl" class="form-control mt-2 input-field">
+                  <input v-model="track.ImgUrl" class="form-control mt-2 input-field" required>
+                  <label for="cover" class="mt-3">Plik mp3 utworu</label>
+                  <input
+                      type="file"
+                      @change="handleMp3FileChange(index, $event)"
+                      class="form-control mt-2 input-field"
+                      id="cover"
+                      name="cover"
+                      accept=".mp3"
+                      required
+                  />
                 </div>
                 <div class="form-group text-center">
                   <button @click="addTrack" type="button" class="btn btn-success mt-3 me-4 shadow">
@@ -86,35 +100,47 @@
 </template>
 
 <script>
-import sideBar from '@/components/SideBarArtist.vue'
+import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
 import api from "@/services/api";
-// import api from "@/services/api";
+import index from "vuex";
 
 export default {
+  computed: {
+    index() {
+      return index
+    }
+  },
   data() {
     return {
-      Name: '',
-      Author: '',
-      Img: '',
-      Description: '',
-      ImgUrl: '',
+      Name: null,
+      Author: null,
+      Img: null,
+      Description: null,
+      ImgUrl: null,
+      Artist: null,
+      type: null,
       tracks: [
         {
-          Name: '',
-          Author: '',
-          Img: '',
-          Description: '',
-          ImgUrl: '',
-          file: null
+          Name: null,
+          Author: null,
+          Img: null,
+          Description: null,
+          ImgUrl: null,
+          file: null,
+          Mp3File: '',
         }
       ]
     }
   },
   components: {
-    sideBar
+    SideBarManagmentLabel
   },
 
   methods: {
+    handleMp3FileChange(index, event) {
+      this.tracks[index].Mp3File = event.target.files[0];
+      console.log(this.tracks[index].Mp3File)
+    },
     handleFileChange(index, event) {
       const file = event.target.files[0];
 
@@ -146,35 +172,35 @@ export default {
     removeTrack(index) {
       this.tracks.splice(index, 1);
     },
-    handleSave() {
-       const userId = localStorage.getItem('userId');
+    async handleSave() {
+      const formData = new FormData();
 
-      const formDataArray = this.tracks.map(track => {
-        const formData = new FormData();
-        formData.append('Name', track.Name);
-        if (track.Img === '')
-        {
-          formData.append('Img', track.ImgUrl);
-        }else {
-          formData.append('Img', track.Img);
-        }
-        return formData;
+      formData.append('Name', this.Name);
+      if (this.Img === null) {
+        this.Img = this.ImgUrl;
+      }
+      formData.append('Img', this.Img);
+      formData.append('Desc', 'Description');
+      formData.append('ArtistId', this.Artist);
+
+      this.tracks.forEach((track, index) => {
+        formData.append(`Tracks[${index}][name]`, track.Name);
+        formData.append(`Tracks[${index}][img]`, track.Img || track.ImgUrl);
+        formData.append(`Tracks[${index}].Mp3File`, track.Mp3File);
       });
 
-      const extractedData = formDataArray.map(formData => ({
-        Name: formData.get('Name'),
-        Img: formData.get('Img')
-      }));
+      try {
+        const response = await api.post('/api/Artist/AddAlbum', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
 
-///api/Artist/AddAlbum
-      api.post('/api/Artist/AddTrackToAlbum\n',{
-        Track: extractedData,
-        userId: userId
-      })
-      console.log(extractedData);
+        console.log('Utwór został pomyślnie dodany:', response);
+      } catch (error) {
+        console.error('Wystąpił błąd podczas dodawania utworu:', error);
+      }
     }
-      // Teraz masz tablicę formDataArray z danymi do wysłania na serwer.
-      // Możesz je wysłać w osobnych żądaniach lub jako jedno żądanie zależnie od Twoich wymagań.
   }
 }
 </script>

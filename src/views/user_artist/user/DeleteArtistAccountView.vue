@@ -1,8 +1,3 @@
-<script setup>
-import SubmitButton from "@/components/SubmitButton.vue";
-import SideBarAccountArtist from "@/components/SideBarAccountArtist.vue";
-</script>
-
 <template>
   <div class="container-fluid">
     <div class="row">
@@ -22,8 +17,27 @@ import SideBarAccountArtist from "@/components/SideBarAccountArtist.vue";
             zastanowić się nad innymi dostępnymi opcjami przed podjęciem tej ostatecznej decyzji.
           </p>
         </div>
-        <SubmitButton :class="'btn-danger col-3 mt-2 mb-5'" :label="'Usuń konto'"/>
+        <SubmitButton @click="deleteAccount" :class="'btn-danger col-3 mt-2 mb-5'" :label="'Usuń konto'"/>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import SubmitButton from "@/components/SubmitButton.vue";
+import SideBarAccountArtist from "@/components/SideBarAccountArtist.vue";
+import api from "@/services/api";
+
+export default{
+  components:{
+    SubmitButton,
+    SideBarAccountArtist
+  },
+  methods:{
+    deleteAccount(){
+      api.delete('/api/Artist/DeleteArtist')
+      this.$store.dispatch('auth/logout');
+    }
+  }
+}
+</script>

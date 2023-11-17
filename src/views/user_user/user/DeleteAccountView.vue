@@ -1,8 +1,3 @@
-<script setup>
-import SubmitButton from "@/components/SubmitButton.vue";
-import SideBarUser from "@/components/SideBarUser.vue";
-</script>
-
 <template>
   <div class="container-fluid">
     <div class="row">
@@ -27,3 +22,21 @@ import SideBarUser from "@/components/SideBarUser.vue";
     </div>
   </div>
 </template>
+
+<script>
+import SubmitButton from "@/components/SubmitButton.vue";
+import SideBarUser from "@/components/SideBarUser.vue";
+// import api from "@/services/api";
+
+export default {
+  components: {
+    SubmitButton,
+    SideBarUser
+  },
+  // methods: {
+  //   deleteAccount() {
+  //     api.delete('')
+  //   }
+  // }
+}
+</script>

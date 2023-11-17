@@ -14,6 +14,13 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
+                  <label for="type">Rodzaj albumu</label>
+                  <select v-model="type" id="type" type="number" class="form-control mt-2 input-field  mb-2">
+                    <option value="free">Darmowy</option>
+                    <option value="pay">Płatny</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label for="name">Tytuł</label>
                   <input
                       v-model="Name"
@@ -121,6 +128,7 @@ export default {
       Description: null,
       ImgUrl: null,
       Artist: null,
+      type: null,
       tracks: [
         {
           Name: null,
@@ -191,9 +199,20 @@ export default {
         formData.append(`Tracks[${index}][img]`, track.Img || track.ImgUrl);
         formData.append(`Tracks[${index}].Mp3File`, track.Mp3File);
       });
-console.log(formData)
+
       try {
-        const response = await api.post('/api/Studio/CreateAlbumWithTracksPaid', formData, {
+
+        let url = '';
+        if(this.type === 'pay')
+        {
+          url = '/api/Studio/CreateAlbumWithTracksPaid'
+        }
+        else
+        {
+          url = '/api/Studio/CreateAlbumWithTracksFree'
+        }
+
+        const response = await api.post(url, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

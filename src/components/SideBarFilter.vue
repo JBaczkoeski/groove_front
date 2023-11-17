@@ -7,33 +7,34 @@
           Filtruj
         </a>
       </li>
+      <form @>
+        <li class="nav-item">
+          <p class="head mt-3 fw-bold">CENA</p>
+          <div class="d-flex justify-content-center">
+            <p class="mt-3 fw-bold">OD: <input type="text" id="price" name="price" required minlength="1" maxlength="4"
+                                               size="1" class=""/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              DO: <input type="text" id="price" name="price" required minlength="1" maxlength="4" size="1" class=""/>
+            </p>
+          </div>
+        </li>
 
-      <li class="nav-item">
-        <p class="head mt-3 fw-bold">CENA</p>
-        <div class="d-flex justify-content-center">
-          <p class="mt-3 fw-bold">OD: <input type="text" id="price" name="price" required minlength="1" maxlength="4"
-                                             size="1" class=""/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            DO: <input type="text" id="price" name="price" required minlength="1" maxlength="4" size="1" class=""/>
-          </p>
-        </div>
-      </li>
+        <li class="nav-item mt-4">
+          <select class="form-select mb-1" aria-label="Default select example">
+            <option selected disabled>Wytwórnia</option>
+            <option v-for="studio in studios" :key="studio.id">{{ studio.name }}</option>
+          </select>
+        </li>
 
-      <li class="nav-item mt-4">
-        <select class="form-select mb-1" aria-label="Default select example">
-          <option selected disabled>Wytwórnia</option>
-          <option v-for="studio in studios" :key="studio.id">{{studio.name}}</option>
-        </select>
-      </li>
+        <li class="nav-item mt-4">
+          <select class="form-select mb-1" aria-label="Default select example">
+            <option selected disabled>Artysta</option>
+            <option v-for="artist in artists" :key="artist.id">{{ artist.name }}</option>
+          </select>
+        </li>
 
-      <li class="nav-item mt-4">
-        <select class="form-select mb-1" aria-label="Default select example">
-          <option selected disabled>Artysta</option>
-          <option v-for="artist in artists" :key="artist.id">{{artist.name}}</option>
-        </select>
-      </li>
-
-      <button type="button" class="btn btn-warning mt-4 fw-bold">Filtruj produkty</button>
+        <submit-button type="submit" class="btn btn-warning mt-4 fw-bold" :label="'Filtruj produkty'"></submit-button>
+      </form>
     </ul>
 
   </div>
@@ -41,8 +42,10 @@
 
 <script>
 import api from "@/services/api";
+import SubmitButton from "@/components/SubmitButton.vue";
 
 export default {
+  components: {SubmitButton},
   data() {
     return {
       artists: [],

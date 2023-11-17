@@ -6,7 +6,7 @@
     <td class="pt-5">{{ album }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
-    <td class="pt-5"><a  class="btn btn-warning">Edytuj</a><a @click="deleteTrack" class="btn btn-danger ms-4">Usuń</a> </td>
+    <td class="pt-5"><a :href="`/artysta/utwory/edycja/${id}`" class="btn btn-warning">Edytuj</a><a @click="deleteTrack" class="btn btn-danger ms-4">Usuń</a> </td>
   </tr>
 </template>
 
@@ -59,8 +59,7 @@ export default {
   },
   methods:{
     deleteTrack(){
-      const userId = localStorage.getItem('userId');
-      api.delete(`/api/Artist/DeleteTrack?userId=${userId}&trackId=${this.id}`)
+      api.delete(`/api/Artist/DeleteTrack?trackId=${this.id}`)
           .then(response => {
             if (response.status === 200)
             window.location.reload();

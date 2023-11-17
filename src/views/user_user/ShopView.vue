@@ -16,8 +16,10 @@
           </select>
         </div>
 
-        <hr class="hr">
-
+        <p class="mt-2">
+          <button class="btn submit-button-bg btn-lg">Albumy</button>
+          <button class="btn submit-button-bg btn-lg">Utwory</button>
+        </p>
         <div class="row d-flex justify-content-center">
           <ShopSingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name"
                            :album-lenght="59"

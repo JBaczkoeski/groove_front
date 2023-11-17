@@ -38,11 +38,29 @@
 <script>
 import SideBarUser from "@/components/SideBarUser.vue";
 import ordersElement from "@/components/OrdersElement.vue";
+import api from "@/services/api";
 
 export default {
   components: {
     SideBarUser,
     ordersElement,
   },
+  data(){
+    return{
+      orders: []
+    }
+  },
+  mounted() {
+    this.getOrders()
+  },
+  methods: {
+    getOrders() {
+      api.get('/api/User/GetUserOrders').then(
+          response =>{
+            this.orders = response.data.$values
+          }
+      )
+    }
+  }
 }
 </script>

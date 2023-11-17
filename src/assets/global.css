@@ -23,6 +23,11 @@ body{
     color: #FFFFFF;
 }
 
+.submit-button-bg {
+    background-color: #121212;
+    color: #CCCCCC;
+}
+
 .table-dark-song th,
 .table-dark-song td {
     background-color: #121212 !important;

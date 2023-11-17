@@ -2,22 +2,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <SideBarManagmentLabel/>
+        <side-bar/>
       </div>
       <div class="container col-9 d-flex justify-content-center h-75 ">
         <div class="row">
           <div class="container col-12">
             <h2 class="text-center mt-5 mb-3">Dodawanie utworu</h2>
           </div>
-          <div class="card card-dark border border-3 rounded rounded-5 mb-5">
+          <div class="card card-dark border border-3 rounded rounded-5">
             <div class="card-body">
               <form>
-                <div class="form-group">
-                  <label for="name" class="mt-3">Rodzaj utworu</label>
-                  <select v-model="type" class="form-select input-field mt-2">
-                    <option value="pay">Płatny</option>
-                    <option value="free">Darmowy</option>
-                  </select>
+                <div class="form-group d-flex justify-content-center">
+                  <img :src="track.img" alt="okładka" class="w-25 rounded-4 ">
                 </div>
                 <div class="form-group">
                   <label for="name" class="mt-3">Tytuł</label>
@@ -26,13 +22,7 @@
                       type="text"
                       class="form-control mt-2 input-field"
                       id="name"
-                      name="name"/>
-                </div>
-                <div class="form-group">
-                  <label for="text" class="mt-3">Autor</label>
-                  <select v-model="Author">
-                    <option value="4">Test</option>
-                  </select>
+                      :value="track.name"/>
                 </div>
                 <div class="form-group mt-2">
                   <label for="cover" class="mt-3">Okładka</label>
@@ -45,7 +35,7 @@
                       accept="image/*"
                   />
                   <label for="cover" class="mt-2">lub dodaj link do zdjęcia</label>
-                  <input type="text" v-model="ImgUrl" class="form-control mt-2 input-field">
+                  <input type="text" :value="track.img" v-model="ImgUrl" class="form-control mt-2 input-field">
                 </div>
                 <div class="form-group mt-2">
                   <label for="cover" class="mt-3">Plik mp3 utworu</label>
@@ -57,15 +47,7 @@
                       name="cover"
                       accept=".mp3"
                   />
-                </div>
-                <div class="form-group">
-                  <label for="description" class="mt-3">Opis</label>
-                  <textarea
-                      v-model="Description"
-                      class="form-control mt-2 input-field"
-                      id="description"
-                      rows="3"
-                      name="description"></textarea>
+                  <a :href="track.blobUrl" class="btn btn-lg submit-button-bg mt-2"><i class="fa-solid fa-download fa-xl" style="color: #CCCCCC;"></i>Pobierz utwór który jest aktualnie</a>
                 </div>
                 <div class="form-group text-center">
                   <button
@@ -85,54 +67,63 @@
 </template>
 
 <script>
-import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
+import sideBar from '@/components/SideBarArtist.vue'
 import api from "@/services/api";
+import NavbarHref from "@/components/NavbarHref.vue";
 
 export default {
   data() {
     return {
+      track: [],
       Name: '',
       Author: '',
       Img: null,
       Description: '',
       ImgUrl: '',
       mp3File: null,
-      type: null
     }
   },
   components: {
-    SideBarManagmentLabel
+    NavbarHref,
+    sideBar
   },
-
+  mounted() {
+    this.getTrack()
+  },
   methods: {
     handleMp3FileChange(event) {
       this.mp3File = event.target.files[0];
+
     },
     handleFileChange(event) {
       this.Img = event.target.files[0].name;
+    },
+    getTrack(){
+      const albumId = this.$route.params.id;
+      api.get(`/api/Track/GetTrackById/${albumId}`).then(response =>{
+        this.track = response.data
+        console.log(this.track)
+      })
     },
     async handleSave() {
       const UserId = localStorage.getItem('userId');
 
       const formData = new FormData();
       formData.append('Name', this.Name);
-      formData.append('ArtistId', this.Author);
-      if (this.Img === null) {
+      formData.append('Author', this.Author);
+      if (this.Img === null)
+      {
         formData.append('Img', this.ImgUrl);
-      } else {
+      }else {
         formData.append('Img', this.Img);
       }
-      formData.append('Mp3File', this.mp3File);
+      formData.append('Description', this.Description);
+      formData.append('UserId', UserId);
+      console.log(this.mp3File)
+      formData.append('mp3File', this.mp3File);
 
       try {
-        let url;
-        if (this.type === 'pay') {
-          url = '/api/Studio/AddSinglePaid'
-        } else {
-          url = '/api/Studio/AddSingleFree'
-        }
-
-        const response = await api.post(url, formData, {
+        const response = await api.post('/api/Artist/AddTrack', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
