@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <side-bar style="min-height: 150vh"/>
+        <side-bar-managment-label/>
       </div>
       <div class="container col-12 col-sm-9 pt-3">
         <div class="row d-flex justify-content-center">
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import sideBar from '@/components/SideBarArtist.vue';
 import SingleAlbum from "@/components/SingleAlbum.vue";
 import api from "@/services/api";
+import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
 
 export default {
   components: {
-    sideBar,
+    SideBarManagmentLabel,
     SingleAlbum
   },
   data() {
@@ -31,7 +31,7 @@ export default {
     };
   },
   mounted() {
-    this.getAlbums()
+    this.getAlbumsByStudio()
   },
   methods: {
     // getAllTracks() {
@@ -44,18 +44,18 @@ export default {
     //         console.error('Błąd podczas pobierania ścieżek:', error);
     //       });
     // },
-    getAlbums(){
-       const artistId = localStorage.getItem('userId')
-      api.get(`/api/Album/GetAlbumByArtistId/${artistId}`)
+    getAlbumsByStudio() {
+      const studioId = localStorage.getItem('studioId')
+      api.get(`/api/Album/GetAlbumByStudioId/${studioId}`)
           .then(response => {
             this.albums = response.data;
             console.log(this.albums)
             return true;
           })
           .catch(error => {
-            console.error('Błąd podczas pobierania Id albumu', error);
+            console.error('Błąd podczas pobierania Id albumu!', error)
           });
-    },
+    }
   }
 }
 </script>

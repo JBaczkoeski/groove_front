@@ -32,7 +32,7 @@ export default {
           .catch(error => {
             console.error('Błąd podczas pobierania ścieżek:', error);
           });
-    }
+    },
   }
 }
 </script>

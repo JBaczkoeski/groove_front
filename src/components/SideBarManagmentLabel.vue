@@ -20,7 +20,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-white mt-3 mb-2">
+        <a href="/wytwornia/panel/albumy" class="nav-link text-white mt-3 mb-2">
           <i class="fa-solid fa-record-vinyl fa-2xl" style="color: #ffffff;"></i>
           Albumy
         </a>
