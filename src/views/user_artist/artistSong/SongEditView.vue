@@ -24,6 +24,7 @@
                       id="name"
                       :value="track.name"/>
                 </div>
+
                 <div class="form-group mt-2">
                   <label for="cover" class="mt-3">Okładka</label>
                   <input
@@ -47,7 +48,8 @@
                       name="cover"
                       accept=".mp3"
                   />
-                  <a :href="track.blobUrl" class="btn btn-lg submit-button-bg mt-2"><i class="fa-solid fa-download fa-xl" style="color: #CCCCCC;"></i>Pobierz utwór który jest aktualnie</a>
+                  <a :href="track.blobUrl" class="btn btn-lg submit-button-bg mt-2"><i
+                      class="fa-solid fa-download fa-xl" style="color: #CCCCCC;"></i>Pobierz utwór który jest aktualnie</a>
                 </div>
                 <div class="form-group text-center">
                   <button
@@ -69,7 +71,6 @@
 <script>
 import sideBar from '@/components/SideBarArtist.vue'
 import api from "@/services/api";
-import NavbarHref from "@/components/NavbarHref.vue";
 
 export default {
   data() {
@@ -84,7 +85,6 @@ export default {
     }
   },
   components: {
-    NavbarHref,
     sideBar
   },
   mounted() {
@@ -98,9 +98,9 @@ export default {
     handleFileChange(event) {
       this.Img = event.target.files[0].name;
     },
-    getTrack(){
+    getTrack() {
       const albumId = this.$route.params.id;
-      api.get(`/api/Track/GetTrackById/${albumId}`).then(response =>{
+      api.get(`/api/Track/GetTrackById/${albumId}`).then(response => {
         this.track = response.data
         console.log(this.track)
       })
@@ -111,10 +111,9 @@ export default {
       const formData = new FormData();
       formData.append('Name', this.Name);
       formData.append('Author', this.Author);
-      if (this.Img === null)
-      {
+      if (this.Img === null) {
         formData.append('Img', this.ImgUrl);
-      }else {
+      } else {
         formData.append('Img', this.Img);
       }
       formData.append('Description', this.Description);

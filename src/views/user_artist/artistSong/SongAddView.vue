@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <side-bar/>
+        <sideBar/>
       </div>
       <div class="container col-9 d-flex justify-content-center h-75 ">
         <div class="row">

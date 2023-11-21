@@ -112,7 +112,7 @@ export default {
       this.Img = event.target.files[0].name;
     },
     async handleSave() {
-      const UserId = localStorage.getItem('userId');
+      //const UserId = localStorage.getItem('userId');
 
       const formData = new FormData();
       formData.append('Name', this.Name);

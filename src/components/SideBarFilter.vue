@@ -7,7 +7,7 @@
           Filtruj
         </a>
       </li>
-      <form @>
+      <form>
         <li class="nav-item">
           <p class="head mt-3 fw-bold">CENA</p>
           <div class="d-flex justify-content-center">
