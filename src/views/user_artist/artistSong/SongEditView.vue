@@ -75,9 +75,9 @@ export default {
   data() {
     return {
       track: [],
-      Name: this.track.name,
+      Name: null,
       Author: '',
-      Img: this.track.img,
+      Img: null,
       Description: '',
       ImgUrl: '',
       mp3File: null,
@@ -101,6 +101,8 @@ export default {
       const albumId = this.$route.params.id;
       api.get(`/api/Track/GetTrackById/${albumId}`).then(response => {
         this.track = response.data
+        this.Name = this.track.name
+        this.ImgUrl = this.track.img
         console.log(this.track)
       })
     },

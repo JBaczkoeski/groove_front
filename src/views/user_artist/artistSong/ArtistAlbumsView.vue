@@ -46,7 +46,7 @@ export default {
     // },
     getAlbums(){
        // const artistId = localStorage.getItem('userId')
-      api.get(`/api/Artist/GetAlbumByUserId/GetAlbumByUserId`)
+      api.get(`/api/Artist/GetAlbumByUserId`)
           .then(response => {
             this.albums = response.data.$values;
             console.log(this.albums)

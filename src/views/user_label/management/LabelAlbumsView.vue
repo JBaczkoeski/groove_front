@@ -45,8 +45,7 @@ export default {
     //       });
     // },
     getAlbumsByStudio() {
-      const studioId = localStorage.getItem('studioId')
-      api.get(`/api/Album/GetAlbumByStudioId/${studioId}`)
+      api.get(`/api/Studio/GetAlbumByStudioOwnerId`)
           .then(response => {
             this.albums = response.data;
             console.log(this.albums)
