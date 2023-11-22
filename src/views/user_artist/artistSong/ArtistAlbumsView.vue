@@ -6,9 +6,9 @@
       </div>
       <div class="container col-12 col-sm-9 pt-3">
         <div class="row d-flex justify-content-center">
-          <SingleAlbum v-for="i in 6" :key="i"
-                       :cover="'https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'"
-                       :title="'Drzewo'" :album-lenght="59" :author="'Oskar'" :songs="14" :id="1"/>
+          <SingleAlbum v-for="album in albums" :key="album.id"
+                       :cover="album.img"
+                       :title="album.name" :album-lenght="59" :author="'Oskar'" :songs="14" :id="1"/>
         </div>
       </div>
     </div>
@@ -45,10 +45,10 @@ export default {
     //       });
     // },
     getAlbums(){
-       const artistId = localStorage.getItem('userId')
-      api.get(`/api/Album/GetAlbumByArtistId/${artistId}`)
+       // const artistId = localStorage.getItem('userId')
+      api.get(`/api/Artist/GetAlbumByUserId/GetAlbumByUserId`)
           .then(response => {
-            this.albums = response.data;
+            this.albums = response.data.$values;
             console.log(this.albums)
             return true;
           })

@@ -21,8 +21,7 @@
                       v-model="Name"
                       type="text"
                       class="form-control mt-2 input-field"
-                      id="name"
-                      :value="track.name"/>
+                      id="name"/>
                 </div>
 
                 <div class="form-group mt-2">
@@ -36,7 +35,7 @@
                       accept="image/*"
                   />
                   <label for="cover" class="mt-2">lub dodaj link do zdjęcia</label>
-                  <input type="text" :value="track.img" v-model="ImgUrl" class="form-control mt-2 input-field">
+                  <input type="text" v-model="ImgUrl" class="form-control mt-2 input-field">
                 </div>
                 <div class="form-group mt-2">
                   <label for="cover" class="mt-3">Plik mp3 utworu</label>
@@ -76,9 +75,9 @@ export default {
   data() {
     return {
       track: [],
-      Name: '',
+      Name: this.track.name,
       Author: '',
-      Img: null,
+      Img: this.track.img,
       Description: '',
       ImgUrl: '',
       mp3File: null,
