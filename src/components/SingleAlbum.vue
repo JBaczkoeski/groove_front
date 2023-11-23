@@ -12,14 +12,33 @@
       <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1"
                                                        style="color: #CCCCCC;"></i> {{ albumLenght }} minut</p>
       <a :href="`/album/show/${id}`" style="max-height: 45px" class="btn btn-success rounded rounded-pill my-4">Podgląd</a>
+<!--      <button @click="deleteAlbum">Usuń</button>-->
     </div>
   </div>
 </template>
 
 <script>
 import {ref} from "vue";
+import api from "@/services/api";
 
 export default {
+  methods: {
+    deleteAlbum() {
+      api.delete(`/api/Artist/DeleteAlbum`)
+          .then(response => {
+            if (response.status === 200) {
+              console.log('Album został usunięty.');
+              this.getAlbums();
+            } else {
+              console.error('Błąd podczas  usuwania albumu!', response);
+            }
+          })
+          .catch(error => {
+            console.error('Wystąpił błąd:', error);
+          })
+    }
+  },
+
   props: {
     id: Number,
     cover: String,

@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      albums: []
+      albums: [],
     };
   },
   mounted() {
@@ -44,8 +44,8 @@ export default {
     //         console.error('Błąd podczas pobierania ścieżek:', error);
     //       });
     // },
+
     getAlbums(){
-       // const artistId = localStorage.getItem('userId')
       api.get(`/api/Artist/GetAlbumByUserId`)
           .then(response => {
             this.albums = response.data.$values;

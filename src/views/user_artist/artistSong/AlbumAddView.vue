@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2 p-0">
-        <SideBarManagmentLabel/>
+        <side-bar/>
       </div>
 
       <div class="container col-9 d-flex justify-content-center h-75">
@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
+import sideBar from '@/components/SideBarArtist.vue';
 import api from "@/services/api";
 import index from "vuex";
 
@@ -133,7 +133,7 @@ export default {
     }
   },
   components: {
-    SideBarManagmentLabel
+    sideBar
   },
 
   methods: {
