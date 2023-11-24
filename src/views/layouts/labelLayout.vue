@@ -12,6 +12,9 @@
           <li class="nav-item">
             <NavLink :to="'/wytwornia/panel'" :label="'Zarządzanie'"/>
           </li>
+          <li class="nav-item">
+            <NavLink :to="'/wytwornia/admini'" :label="'Wytwornia'"/>
+          </li>
         </ul>
       </div>
       <div class="container col-3 d-flex justify-content-end" v-if="isLogged">
