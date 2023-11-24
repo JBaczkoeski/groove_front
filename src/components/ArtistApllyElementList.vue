@@ -1,11 +1,12 @@
 <template>
   <tr class="text-center">
-    <th scope="row" class="pt-5">{{ indexRef + 1 }}</th>
+    <th scope="row" class="pt-5">{{ placeRef + 1 }}</th>
     <td class="pt-5">{{ name }}</td>
-    <td class="pt-5">{{ addDate }}</td>
+    <td v-if="addDate" class="pt-5">{{ addDate }}</td>
     <td class="pt-5">
-      <button @click="acceptApply(id)" class="btn btn-success me-3">Zaakceptuj</button>
-      <button @click="deleteApply(id)" class="btn btn-danger">Usuń</button>
+      <button v-if="addDate" @click="acceptApply(id)" class="btn btn-success me-3">Zaakceptuj</button>
+      <button v-if="artistId" @click="deleteArtist(artistId)" class="btn btn-danger">Usuń</button>
+      <button v-else @click="deleteApply(id)" class="btn btn-danger">Usuń</button>
     </td>
   </tr>
 </template>
@@ -22,6 +23,7 @@ export default {
     lastName: String,
     song: String,
     addDate: String,
+    artistId: String,
   },
   setup(props) {
     const idRef = ref(props.id);
@@ -30,6 +32,7 @@ export default {
     const songRef = ref(props.song);
     const addDateRef = ref(props.addDate);
     const placeRef = ref(props.place);
+    const artistIdRef = ref(props.artistId);
 
     return {
       idRef,
@@ -37,7 +40,8 @@ export default {
       lastNameRef,
       songRef,
       addDateRef,
-      placeRef
+      placeRef,
+      artistIdRef
     };
   },
   methods: {
@@ -47,6 +51,10 @@ export default {
     },
     deleteApply(id) {
       api.delete(`/api/Studio/DeclineRequest?requestId=${id}`)
+
+    },
+    deleteArtist(id) {
+      api.delete(`/api/Studio/RemoveArtistFromStudio?artistId=${id}`)
 
     }
   }

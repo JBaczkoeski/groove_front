@@ -24,23 +24,22 @@
               9
             </p>
           </div>
-          <div class="container col-3 mx-5 rounded-5 border border-3 text-center mb-5 py-2">
-            <h3 class="border border-3 rounded-4 p-3 border block-header">Ilość zakupionych albumów:</h3>
-            <p class="fw-bold h2 my-4">
-              777
-            </p>
-          </div>
-          <div class="container col-3 mx-5 rounded-5 border border-3 text-center mb-5 py-2">
-            <h3 class="border border-3 rounded-4 p-3 border block-header">Najlepszy artysta:</h3>
-            <p class="fw-bold h2 mt-5">
-              Oskar Sukiennik
-            </p>
-          </div>
-          <div class="container col-3 mx-5 rounded-5 border border-3 text-center mb-5 py-2">
-            <h3 class="border border-3 rounded-4 p-3 border block-header">Najlepiej sprzedający się album:</h3>
-            <p class="fw-bold h2 mt-3">
-              Kocham programowanie i matematyke
-            </p>
+          <div class="table-responsive">
+            <table class="table table-dark-song">
+              <thead>
+              <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Imię</th>
+                <th scope="col"></th>
+              </tr>
+
+              </thead>
+              <tbody>
+              <ArtistApllyElementList
+                  v-for="(artist,index) in artists" :key="artist.id" :id="artist.id" :name="artist.name" :artistId="artist.userId" :place="index"
+              />
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -51,29 +50,40 @@
 <script>
 import SideBarLabel from '@/components/SideBarManagmentLabel.vue';
 import api from "@/services/api";
+import ArtistApllyElementList from "@/components/ArtistApllyElementList.vue";
 
 export default {
   components: {
+    ArtistApllyElementList,
     SideBarLabel,
   },
   data() {
     return {
-      requests: []
+      requests: [],
+      artists: [],
     };
   },
   mounted () {
     this.applySum();
+    this.getAllArtist()
   },
   methods: {
     applySum() {
       api.get ('/api/Studio/ShowAllRequests')
           .then (response => {
             this.requests = response.data.$values;
-            console.log(this.requests)
           })
           .catch(error => {
             console.error('Błąd podczas pobierania zapytan:', error);
           });
+    },
+    getAllArtist() {
+      api.get(`/api/Studio/GetArtistByStudio`).then(
+          response => {
+            this.artists = response.data.$values
+            console.log(this.artists)
+          }
+      )
     }
   }
 }
