@@ -39,8 +39,8 @@ const actions = {
                     localStorage.setItem('userId', jwtToken['UserId']);
                     localStorage.setItem('role', roles);
                 }
-                await router.push('/utwory');
-                location.reload();
+                 await router.push('/utwory');
+                 location.reload();
             } else {
                 console.log(response);
                 commit('SET_ERROR', `Błąd podczas logowania: ${{response}}`);
