@@ -52,6 +52,12 @@ export default {
     },
     decreaseTrack(id){
       api.delete(`/api/Shopping/DecreaseTrack?albumId=${id}`)
+          .then(response => {
+            console.log('Ilość zmniejszona pomyślnie.', response.data);
+          })
+          .catch(error => {
+            console.error('Błąd podczas zmniejszania ilości.', error);
+          });
     },
     deleteAlbum(id){
       api.delete(`/api/Shopping/DecreaseAlbum?albumId=${id}`)

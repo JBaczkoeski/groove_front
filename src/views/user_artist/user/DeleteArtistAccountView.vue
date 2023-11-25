@@ -34,10 +34,22 @@ export default{
     SideBarAccountArtist
   },
   methods:{
-    deleteAccount(){
+    deleteAccount() {
       api.delete('/api/Artist/DeleteArtist')
-      this.$store.dispatch('auth/logout');
-    }
-  }
+          .then(response => {
+            if (response.status === 200) {
+              console.log('Artysta został usunięty.');
+              this.$store.dispatch('auth/logout');
+            } else {
+              console.error('Błąd podczas  usuwania artysty!', response);
+            }
+          })
+          .catch(error => {
+            console.error('Wystąpił błąd:', error);
+          })
+        }
+      },
 }
+
+
 </script>
