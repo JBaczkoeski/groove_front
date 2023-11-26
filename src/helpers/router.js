@@ -37,6 +37,7 @@ import LikedAlbumsView from "@/views/user_user/music/LikedAlbumsView.vue";
 import SongEditView from "@/views/user_artist/artistSong/SongEditView.vue";
 import LabelAlbumsView from "@/views/user_label/management/LabelAlbumsView.vue";
 import AdminsView from "@/views/user_label/management/AdminsView.vue";
+import ArtistAlbumView from "@/views/user_artist/artistSong/ArtistAlbumView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -81,6 +82,7 @@ const router = createRouter({
         {path: '/artysta/utwory/edycja/:id', component: SongEditView, meta:{requiresAuth: true}},
         {path: '/artysta/utwory/wytwornia', component: ApllyLabelView, meta:{requiresAuth: true}},
         {path: '/artysta/albumy', component: ArtistAlbumsView, meta:{requiresAuth: true}},
+        {path: '/artysta/album/show/:id', component: ArtistAlbumView, meta:{requiresAuth: true}},
         {path: '/artysta/albumy/dodawanie', component: AlbumAddView, meta:{requiresAuth: true}},
         {path: '/artysta/konto', component: UserArtistView, meta:{requiresAuth: true}},
         {path: '/artysta/konto/usun', component: DeleteArtistAccountView, meta:{requiresAuth: true}},

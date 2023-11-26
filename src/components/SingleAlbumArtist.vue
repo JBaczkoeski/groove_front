@@ -13,7 +13,7 @@
                                                  style="color: #CCCCCC;"></i>{{ songs }} piosenek</p>
       <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1"
                                                        style="color: #CCCCCC;"></i> {{ albumLenght }} minut</p>
-      <a :href="`/album/show/${id}`" style="max-height: 45px" class="btn btn-success rounded rounded-pill my-4">Podgląd</a>
+      <a :href="`/artysta/album/show/${id}`" style="max-height: 45px" class="btn btn-success rounded rounded-pill my-4">Podgląd</a>
       <button @click="deleteAlbum(id)" class="btn btn-danger rounded-pill rounded">Usuń</button>
     </div>
   </div>

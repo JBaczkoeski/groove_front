@@ -40,7 +40,7 @@
         </tr>
         </thead>
         <tbody v-if="tracks">
-        <SongElementList v-for="(track, index) in tracks" :key="track.id"
+        <SongElementList v-for="(track, index) in tracks" :key="track.id" :id="track.id" :edit="true" :albumId="album.id"
                          :place="index" :cover="track.img" :title="track.name"
                          :album="track.album" :addDate="'09-09-2023'" :time="'23:19'"/>
         </tbody>
