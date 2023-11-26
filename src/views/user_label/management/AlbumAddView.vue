@@ -46,7 +46,7 @@
                 <label for="price">Cena</label>
                 <input v-model="Price" id="price" type="number" class="form-control mt-2 input-field  mb-3">
                 <label for="price">Artysta</label>
-                <select v-model="Artist" id="price" type="number" class="form-control mt-2 input-field  mb-5">
+                <select v-model="Artist" id="price" type="number" class="form-select mt-2 input-field  mb-5">
                   <option value="4">TEST</option>
                 </select>
                 <p class="fw-bold h3">Utwory:</p>

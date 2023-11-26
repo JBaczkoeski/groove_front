@@ -38,6 +38,7 @@ import SongEditView from "@/views/user_artist/artistSong/SongEditView.vue";
 import LabelAlbumsView from "@/views/user_label/management/LabelAlbumsView.vue";
 import AdminsView from "@/views/user_label/management/AdminsView.vue";
 import ArtistAlbumView from "@/views/user_artist/artistSong/ArtistAlbumView.vue";
+import LabelSongsView from "@/views/user_label/management/LabelSongsView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -74,6 +75,7 @@ const router = createRouter({
         {path: '/wytwornia/albumy/dodawanie', component:LabelAlbumAddView, meta:{requiresAuth: true}},
         {path: '/wytwornia/panel/albumy', component:LabelAlbumsView, meta:{requiresAuth: true}},
         {path: '/wytwornia/admini', component:AdminsView, meta:{requiresAuth: true}},
+        {path: '/wytwornia/utwory', component:LabelSongsView, meta:{requiresAuth: true}},
 
         //Artysta
         {path: '/artysta', component: ArtistHomeView, meta:{requiresAuth: true}},

@@ -22,7 +22,7 @@
         </p>
         <div class="row d-flex justify-content-center">
           <ShopSingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name"
-                           :album-lenght="59"
+                           :album-lenght="59" :price="album.price"
                            :author="album.author" :songs="14" :id="album.id"/>
         </div>
       </div>

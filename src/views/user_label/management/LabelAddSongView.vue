@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                   <label for="text" class="mt-3">Autor</label>
-                  <select v-model="Author">
+                  <select class="form-select mt-2 input-field" v-model="Author">
                     <option value="4">Test</option>
                   </select>
                 </div>

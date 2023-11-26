@@ -1,6 +1,6 @@
 <template>
-  <div class="card border border-2 mx-1 mb-3 text-center rounded-5 card-dark col-12 col-sm-3">
-    <img v-if="cover" :src="cover" class="w-75 mt-4 rounded-5 album_img" style="margin-left: 38px;" alt="album cover">
+  <div class="card border border-2 mx-1 mb-3 text-center rounded-5 card-dark col-12 col-sm-4 d-flex justify-content-center">
+    <img v-if="cover" :src="cover" class="w-75 mt-4 rounded-5 album_img" style="margin-left: 50px;" alt="album cover">
     <div class="card-body row">
       <h5 v-if="title" class="card-title">{{ title }}</h5>
       <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>
@@ -14,6 +14,14 @@
       </div>
       <div class="container col-6">
       <a :href="`/album/show/${id}`" class="btn btn-primary rounded rounded-5 my-4">Sprawdź</a>
+      </div>
+      <div class="container row">
+        <div class="container col-6">
+
+        </div>
+        <div class="container col-6 h4">
+          Cena: {{price}}
+        </div>
       </div>
     </div>
   </div>
@@ -31,7 +39,8 @@ export default {
     author: String,
     studio: String,
     songs: Number,
-    albumLenght: Number
+    albumLenght: Number,
+    price: Number
   },
 
   data(){
@@ -48,6 +57,7 @@ export default {
     const studioRef = ref(props.studio);
     const songsRef = ref(props.songs);
     const albumLenghtRef = ref(props.albumLenght);
+    const priceRef = ref(props.price)
 
     return {
       idRef,
@@ -56,7 +66,8 @@ export default {
       authorRef,
       studioRef,
       songsRef,
-      albumLenghtRef
+      albumLenghtRef,
+      priceRef
     };
   },
   methods: {
