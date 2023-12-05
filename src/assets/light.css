@@ -1,0 +1,70 @@
+.light {
+    background-color: #4CAF50 !important;
+    color: #CCCCCC;
+}
+
+.light .dark-form {
+    background-color: #1E1E1E;
+}
+
+.light .input-field {
+    background-color: #222222;
+    color: #CCCCCC;
+}
+
+.light .btn-dark {
+    background-color: #121212;
+    color: #CCCCCC;
+    border: 0 solid #000000;
+}
+
+.light .submit-button-green {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+.light .submit-button-bg {
+    background-color: #121212;
+    color: #CCCCCC;
+}
+
+.light .table-dark-song th,
+.light .table-dark-song td {
+    background-color: #121212 !important;
+    color: #CCCCCC !important;
+}
+
+.light .border {
+    color: #CCCCCC !important;
+}
+
+.light .card-dark {
+    background-color: #121212 !important;
+    color: #CCCCCC;
+}
+
+.light .bg-dark-grey {
+    background-color: #121211;
+}
+
+.light .dark {
+    background-color: #121212;
+}
+
+.light .nav-dark {
+    border-bottom: 4px solid #CCCCCC;
+}
+
+.light .select-field {
+    background-color: #222222;
+    color: #CCCCCC;
+}
+
+.light .border-home {
+    border-bottom: #CCCCCC 4px solid;
+    border-top: #CCCCCC 4px solid;
+}
+
+.light .mid-back-color {
+    background-color: #171717
+}

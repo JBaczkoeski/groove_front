@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './helpers/router'
 import store from './store'
 import axios from "axios"
-import globalCss from "@/assets/global.css"
+ import globalCss from "@/assets/global.css"
 
 const app = createApp(App)
 

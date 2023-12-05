@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tbody>
-      <UserCartList v-for="item in items" :key="item.id" :id="item.id" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
+      <UserCartList v-for="(item,index) in items" :key="item.itemId" :place="index" :id="item.itemId" :name="item.albumName ?? item.trackName" :price="item.price" :quant="item.quantity" :type="item.type"/>
       </tbody>
     </table>
     <div class="container col-12 text-end h3">Cena końcowa: {{price}} <button @click="Buy" class="btn submit-button-green">Kup teraz</button></div>
@@ -41,6 +41,7 @@ export default {
       api.get('/api/Shopping/GetCart').then(response =>
       {
         this.items = response.data.$values
+        console.log(this.items)
       })
     },
     getPrice(){

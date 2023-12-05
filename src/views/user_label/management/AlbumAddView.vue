@@ -47,7 +47,7 @@
                 <input v-model="Price" id="price" type="number" class="form-control mt-2 input-field  mb-3">
                 <label for="price">Artysta</label>
                 <select v-model="Artist" id="price" type="number" class="form-select mt-2 input-field  mb-5">
-                  <option value="4">TEST</option>
+                  <option v-for="artist in artists" :key="artist.id" :value="artist.id">{{artist.name}}</option>
                 </select>
                 <p class="fw-bold h3">Utwory:</p>
                 <div class="form-group mt-4" v-for="(track, index) in tracks" :key="index">
@@ -129,6 +129,7 @@ export default {
       ImgUrl: null,
       Artist: null,
       type: null,
+      artists: [],
       tracks: [
         {
           Name: null,
@@ -145,8 +146,15 @@ export default {
   components: {
     SideBarManagmentLabel
   },
-
+  mounted(){
+    this.getArtists()
+  },
   methods: {
+    getArtists() {
+      api.get('/api/Studio/GetArtistByStudio').then(response=>{
+        this.artists = response.data.$values
+      })
+    },
     handleMp3FileChange(index, event) {
       this.tracks[index].Mp3File = event.target.files[0];
       console.log(this.tracks[index].Mp3File)

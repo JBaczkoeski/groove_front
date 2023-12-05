@@ -5,15 +5,11 @@
       <h5 v-if="title" class="card-title">{{ title }}</h5>
       <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>
       <p v-if="studio" class="card-text">Studio: {{ studio }}</p>
-      <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1 icon"></i>{{ songs }}
-        piosenek</p>
-      <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1 icon"></i> {{ albumLenght }}
-        minut</p>
       <div class="container col-6">
         <a @click="addAlbumToCart(id)" class="btn btn-success rounded rounded-5 my-4">Dodaj do koszyka</a>
       </div>
       <div class="container col-6">
-      <a :href="`/album/show/${id}`" class="btn btn-primary rounded rounded-5 my-4">Sprawdź</a>
+        <a :href="`/album/show/${id}`" class="btn btn-primary rounded rounded-5 my-4">Sprawdź</a>
       </div>
       <div class="container row">
         <div class="container col-6">
@@ -38,8 +34,6 @@ export default {
     title: String,
     author: String,
     studio: String,
-    songs: Number,
-    albumLenght: Number,
     price: Number
   },
 
@@ -55,8 +49,6 @@ export default {
     const titleRef = ref(props.title);
     const authorRef = ref(props.author);
     const studioRef = ref(props.studio);
-    const songsRef = ref(props.songs);
-    const albumLenghtRef = ref(props.albumLenght);
     const priceRef = ref(props.price)
 
     return {
@@ -65,14 +57,12 @@ export default {
       titleRef,
       authorRef,
       studioRef,
-      songsRef,
-      albumLenghtRef,
       priceRef
     };
   },
   methods: {
     addAlbumToCart(id) {
-      api.post(`/api/Shopping/AddAlbumToCart?albumId=${id}&qty=1`,{
+      api.post(`/api/Shopping/AddTrackToCart?trackId=${id}&quantity=1`,{
         albumId: id,
         qty: 1
       })

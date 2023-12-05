@@ -13,10 +13,10 @@
           <div class="container fw-bold mt-5">
             <p>Wykonwaca: {{ album.artist ?? 'Brak' }} * 14 utworów, 48 min 54sek </p>
             <p v-if="this.isLiked === false">
-              <button class="btn btn-dark" @click="likedbyuser">Lubie to! <i class="fa-regular fa-thumbs-up fa-2xl" style="color: #CCCCCC;"></i></button>
+              <button class="btn btn-dark" @click="likedbyuser">Lubie to! <i class="fa-regular fa-thumbs-up fa-2xl icon"></i></button>
             </p>
             <p v-else>
-              <button class="btn btn-dark" @click="disLikeByUser">Nie lubie! <i class="fa-regular fa-thumbs-down fa-2xl" style="color: #CCCCCC;"></i></button>
+              <button class="btn btn-dark" @click="disLikeByUser">Nie lubie! <i class="fa-regular fa-thumbs-down fa-2xl icon"></i></button>
             </p>
           </div>
         </div>

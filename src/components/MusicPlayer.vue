@@ -14,14 +14,14 @@
         <div class="row">
           <div class="container" style="margin-top: -50px">
             <button @click="hidePlayer" class="btn btn-secondary rounded-circle">
-              <i class="fa-regular fa-eye-slash" style="color: #ffffff;"></i>
+              <i class="fa-regular fa-eye-slash icon"></i>
             </button>
           </div>
         </div>
         <div class="container mt-3">
           <button @click="toggleLike" class="btn btn-secondary rounded-circle">
-            <i v-if="isLiked" class="fas fa-heart"></i>
-            <i v-else class="far fa-heart"></i>
+            <i v-if="isLiked" class="fas fa-heart icon"></i>
+            <i v-else class="far fa-heart icon"></i>
           </button>
         </div>
       </div>
@@ -30,11 +30,11 @@
           <i class="fas fa-backward"></i>
         </button>
         <button @click="togglePlayback" class="btn btn-primary mx-4 rounded-circle">
-          <i v-if="isPlaying" class="fas fa-pause"></i>
-          <i v-else class="fas fa-play"></i>
+          <i v-if="isPlaying" class="fas fa-pause icon"></i>
+          <i v-else class="fas fa-play icon"></i>
         </button>
         <button @click="nextTrack" class="btn btn-secondary rounded-circle">
-          <i class="fas fa-forward"></i>
+          <i class="fas fa-forward icon"></i>
         </button>
         <div class="container col-12">
           <div class="row">
@@ -53,8 +53,8 @@
         <div class="row">
           <div class="container col-3">
             <button @click="toggleMute" class="btn btn-secondary rounded-circle">
-              <i v-if="isMuted" class="fas fa-volume-off"></i>
-              <i v-else class="fas fa-volume-up"></i>
+              <i v-if="isMuted" class="fas fa-volume-off icon"></i>
+              <i v-else class="fas fa-volume-up icon"></i>
             </button>
           </div>
           <div class="container col-9" style="margin-top: 5px">

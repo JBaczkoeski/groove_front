@@ -3,13 +3,13 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/wytwornia/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-regular fa-user fa-2xl icon"></i>
           Ustawienia konta
         </a>
       </li>
       <li>
         <a href="/wytwornia/konto/usun" class="nav-link text-white mt-3">
-          <i class="fa-solid fa-trash fa-xl" style="color: #CCCCCC;"></i>
+          <i class="fa-solid fa-trash fa-xl icon"></i>
           Usunięcie konta
         </a>
       </li>

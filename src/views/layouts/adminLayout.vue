@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <img src="../../assets/logo.png" class="logo" alt="Opis obrazu">
-      <p class="navbar-brand" style="margin-top: 10px">Groove Music</p>
+      <p class="navbar-brand brand">Groove Music</p>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
             <NavLink :to="'/konto'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
-            <button class="nav-link" @click="logout">Wyloguj</button>
+            <button class="nav-link dark" @click="logout">Wyloguj</button>
           </li>
         </ul>
       </div>

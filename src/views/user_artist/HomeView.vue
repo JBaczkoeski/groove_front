@@ -10,9 +10,9 @@
               <h5 v-if="title" class="card-title">{{ title }}</h5>
               <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>
               <p v-if="studio" class="card-text">Studio: {{ studio }}</p>
-              <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1" style="color: #000000;"></i>{{ songs }}
+              <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1 icon"></i>{{ songs }}
                 piosenek</p>
-              <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1" style="color: #000000;"></i> {{ albumLenght }}
+              <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1 icon"></i> {{ albumLenght }}
                 minut</p>
               <a :href="`/album/show/`" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
             </div>
@@ -23,9 +23,9 @@
               <h5 v-if="title" class="card-title">{{ title }}</h5>
               <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>
               <p v-if="studio" class="card-text">Studio: {{ studio }}</p>
-              <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1" style="color: #000000;"></i>{{ songs }}
+              <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1 icon"></i>{{ songs }}
                 piosenek</p>
-              <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1" style="color: #000000;"></i> {{ albumLenght }}
+              <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1 icon"></i> {{ albumLenght }}
                 minut</p>
               <a :href="`/album/show/`" class="btn btn-success rounded rounded-5 my-4">Podgląd</a>
             </div>

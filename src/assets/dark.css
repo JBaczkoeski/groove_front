@@ -1,0 +1,70 @@
+.dark{
+    background-color: #121212;
+    color: #CCCCCC ;
+}
+
+.dark .dark-form {
+    background-color: #1E1E1E;
+}
+
+.dark .input-field {
+    background-color: #222222;
+    color: #CCCCCC;
+}
+
+.dark .btn-dark {
+    background-color: #121212;
+    color: #CCCCCC;
+    border: 0 solid #000000;
+}
+
+.dark .submit-button-green {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+.dark .submit-button-bg {
+    background-color: #121212;
+    color: #CCCCCC;
+}
+
+.dark .table-dark-song th,
+.dark .table-dark-song td {
+    background-color: #121212 !important;
+    color: #CCCCCC !important;
+}
+
+.dark .border {
+    color: #CCCCCC !important;
+}
+
+.dark .card-dark {
+    background-color: #121212 !important;
+    color: #CCCCCC;
+}
+
+.dark .bg-dark-grey {
+    background-color: #121211;
+}
+
+.dark .dark {
+    background-color: #121212;
+}
+
+.dark .nav-dark {
+    border-bottom: 4px solid #CCCCCC;
+}
+
+.dark .select-field {
+    background-color: #222222;
+    color: #CCCCCC;
+}
+
+.dark .border-home {
+    border-bottom: #CCCCCC 4px solid;
+    border-top: #CCCCCC 4px solid;
+}
+
+.dark .mid-back-color {
+    background-color: #171717
+}

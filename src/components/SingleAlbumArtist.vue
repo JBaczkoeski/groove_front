@@ -9,10 +9,8 @@
       <h5 v-if="title" class="card-title mb-4">{{ title }}</h5>
       <p v-if="author" class="card-text">Wykonawca: {{ author }}</p>
       <p v-if="studio" class="card-text">Studio: {{ studio }}</p>
-      <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1"
-                                                 style="color: #CCCCCC;"></i>{{ songs }} piosenek</p>
-      <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1"
-                                                       style="color: #CCCCCC;"></i> {{ albumLenght }} minut</p>
+      <p v-if="songs" class="card-text col-6"><i class="fa-solid fa-music fa-lg me-1 icon"></i>{{ songs }} piosenek</p>
+      <p v-if="albumLenght" class="card-text col-6"><i class="fa-regular fa-clock fa-lg me-1 icon"></i> {{ albumLenght }} minut</p>
       <a :href="`/artysta/album/show/${id}`" style="max-height: 45px" class="btn btn-success rounded rounded-pill my-4">Podgląd</a>
       <button @click="deleteAlbum(id)" class="btn btn-danger rounded-pill rounded">Usuń</button>
     </div>

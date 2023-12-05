@@ -9,10 +9,10 @@
     <td class="pt-5">
 
       <a @click="deleteTrackFromAlbum(albumId, id)" class="btn">
-        <i class="fa-solid fa-trash fa-2xl" style="color: #CCCCCC;"></i>
+        <i class="fa-solid fa-trash fa-2xl icon"></i>
       </a>
       <a @click="load(track,title,cover,id)" class="btn">
-        <i class="fa-solid fa-play fa-2xl" style="color: #CCCCCC;"></i>
+        <i class="fa-solid fa-play fa-2xl icon"></i>
       </a>
     </td>
   </tr>

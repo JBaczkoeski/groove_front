@@ -190,7 +190,7 @@ export default {
       });
 
       try {
-        const response = await api.post('/api/Artist/AddAlbum', formData, {
+        const response = await api.post('/api/Artist/CreateAlbumWithTracks', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

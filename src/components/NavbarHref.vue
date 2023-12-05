@@ -27,8 +27,3 @@ export default {
   }
 }
 </script>
-<style>
-.dark{
-  color: #CCCCCC !important
-}
-</style>

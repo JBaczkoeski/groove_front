@@ -1,3 +1,3 @@
-const baseURL = 'https://groovemusic.azurewebsites.net';
+const baseURL = 'https://grooves.azurewebsites.net';
 
 export {baseURL};

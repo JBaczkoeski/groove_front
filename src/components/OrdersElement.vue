@@ -5,9 +5,9 @@
     <td>{{order_date}}</td>
     <td>{{price}}</td>
     <td class="d-flex justify-content-center">
-      <a href="#" ><i class="fa-solid fa-file-invoice-dollar fa-2xl" style="color: #CCCCCC;"></i></a>
-      <a href="#"><i class="fa-solid fa-file-arrow-down fa-2xl ms-4" style="color: #CCCCCC;"></i></a>
-      <a href="#"><i class="fa-solid fa-trash fa-2xl ms-4" style="color: #b80a0a;"></i></a>
+      <a href="#" ><i class="fa-solid fa-file-invoice-dollar fa-2xl icon"></i></a>
+      <a href="#"><i class="fa-solid fa-file-arrow-down fa-2xl ms-4 icon"></i></a>
+      <a href="#"><i class="fa-solid fa-trash fa-2xl ms-4 icon"></i></a>
     </td>
   </tr>
 </template>
