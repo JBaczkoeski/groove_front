@@ -78,6 +78,13 @@
     color: #CCCCCC;
 }
 
+.dark .side-bar-border{
+    border-right: 3px solid #CCCCCC;
+}
+
+.dark .bottom-border{
+    border-right: 3px solid #CCCCCC;
+}
 
 
 
@@ -121,6 +128,7 @@
 .light .table-dark-song td {
     background-color: #F1F1EF !important;
     color: #37352F !important;
+    border: 0px;
 }
 
 .light .border {
@@ -138,6 +146,30 @@
 
 .light .dark {
     background-color: #F1F1EF;
+    color: #37352F;
+}
+
+.light a{
+    color: #37352F;
+}
+
+.light .side-bar-border{
+    border-right: 3px solid #37352F;
+}
+
+.light .bottom-border{
+    border-right: 3px solid #37352F;
+}
+
+.light .top-border{
+    border-top: 3px solid #37352F;
+}
+
+.light p{
+    color: #37352F;
+}
+
+.light a{
     color: #37352F;
 }
 

@@ -26,7 +26,7 @@
             <NavLink :to="'/artysta/konto'" :label="'Konto'"/>
           </li>
           <li class="nav-item">
-            <button class="nav-link dark" @click="logout" style="color: #CCCCCC">Wyloguj</button>
+            <button class="nav-link dark" @click="logout">Wyloguj</button>
           </li>
         </ul>
       </div>

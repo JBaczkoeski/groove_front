@@ -16,9 +16,9 @@
 
         <p class="mt-2 mb-4">
           <button @click="showAlbums()" class="btn submit-button-bg btn-lg mt-2">Albumy</button>
-          <button @click="showTracks()" class="btn submit-button-bg btn-lg ms-2">Utwory</button>
+          <button @click="showTracks()" class="btn submit-button-bg btn-lg ms-2 mt-2">Utwory</button>
         </p>
-        <div v-if="visible === 'albums'" class="row d-flex justify-content-center border-top border-3 pt-5">
+        <div v-if="visible === 'albums'" class="row d-flex justify-content-center top-border pt-5">
           <ShopSingleAlbum v-for="album in albums" :key="album.id" :cover="album.img" :title="album.name"
                            :album-lenght="59" :price="album.price"
                            :author="album.author" :songs="14" :id="album.id"/>
@@ -103,13 +103,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.hr {
-  position: relative;
-  height: 1px;
-  border: 1px solid black;
-}
-
-
-</style>

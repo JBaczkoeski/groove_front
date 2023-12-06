@@ -1,20 +1,15 @@
 <template>
-  <div class="container-fluid d-flex flex-column p-3 text-white side-bar-filter">
+  <div class="container-fluid d-flex flex-column p-3 text-white side-bar-filter side-bar-border">
     <ul class="nav nav-pills flex-column mb-auto mt-4">
-      <li class="nav-item d-flex justify-content-center">
-        <a class="nav-link text-white mt-3 mb-2 fw-bold" aria-current="page">
-          <i class="fa-solid fa-filter fa-2xl icon"></i>
-          Filtruj
-        </a>
-      </li>
       <form>
         <li class="nav-item">
           <p class="head mt-3 fw-bold">CENA</p>
-          <div class="d-flex justify-content-center">
-            <p class="mt-3 fw-bold">OD: <input type="text" id="price" name="price" required minlength="1" maxlength="4"
-                                               size="1" class=""/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              DO: <input type="text" id="price" name="price" required minlength="1" maxlength="4" size="1" class=""/>
+          <div class="d-flex justify-content-center row">
+            <p class="mt-3 fw-bold">OD:
+              <input type="text" id="price" name="price" required minlength="1" maxlength="4" size="1"
+                     class="form-control"/>
+              DO: <input type="text" id="price" name="price" required minlength="1" maxlength="4" size="1"
+                         class="form-control"/>
             </p>
           </div>
         </li>
@@ -79,13 +74,13 @@ export default {
 .side-bar-filter {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   height: 100%;
-  border-right: 3px solid #CCCCCC;
 }
 
 @media (max-width: 576px) {
   .side-bar-filter {
-    min-height: 50vh;
+    min-height: 100%;
   }
 }
 </style>
