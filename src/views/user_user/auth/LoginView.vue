@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="login"
-        class="container col-12 dark-form  rounded rounded-5 col-sm-5 d-flex justify-content-center align-items-center flex-column container-flex">
+        class="container col-12 border rounded rounded-5 col-sm-5 d-flex justify-content-center align-items-center flex-column container-flex">
     <h3 class="mt-5">Logowanie</h3>
     <div class="col-7 mt-4">
       <label for="email">E-mail:</label>

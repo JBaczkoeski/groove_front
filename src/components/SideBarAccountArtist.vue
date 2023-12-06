@@ -1,15 +1,15 @@
 <template>
-  <div class="container-fluid d-flex flex-column p-3 text-white side-bar-st">
+  <div class="container-fluid d-flex flex-column p-3 side-bar-st side-bar-border">
     <ul class="nav nav-pills flex-column mb-auto mt-5">
-      <li class="nav-item">
-        <a href="/artysta/konto" class="nav-link text-white mt-3 mb-2" aria-current="page">
-          <i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i>
+      <li class="nav-item text-start">
+        <a href="/artysta/konto" class="nav-link dark mt-3 mb-2" aria-current="page">
+          <i class="fa-regular fa-user fa-2xl icon"></i>
           Ustawienia konta
         </a>
       </li>
-      <li>
-        <a href="/artysta/konto/usun" class="nav-link text-white mt-3">
-          <i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i>
+      <li class="nav-item text-start">
+        <a href="/artysta/konto/usun" class="nav-link dark mt-3">
+          <i class="fa-solid fa-trash fa-2xl icon"></i>
           Usunięcie konta
         </a>
       </li>

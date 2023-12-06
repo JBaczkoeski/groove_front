@@ -104,8 +104,9 @@
 }
 
 .light .input-field {
-    background-color: #F4EEEE;
+    background-color: #f3f0f0;
     color: #37352F;
+    border: 1px solid #000;
 }
 
 .light .btn-dark {
@@ -133,6 +134,7 @@
 
 .light .border {
     color: #37352F !important;
+    border: 3px solid #37352F !important;
 }
 
 .light .card-dark {

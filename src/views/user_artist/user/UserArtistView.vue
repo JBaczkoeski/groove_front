@@ -12,13 +12,6 @@
             </div>
             <div class="col-12 col-md-6 offset-md-3">
               <form @submit.prevent="changeUserData" class="row d-flex justify-content-center">
-                <div class="col-12">
-                  <img class="rounded-circle shadow border border-5" style="width: 200px; height: 200px"
-                       src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.6435-9/103488860_1966332453498047_1673215677078360732_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=be3454&_nc_ohc=rmDTA4aETMoAX_qeicJ&_nc_ht=scontent-waw1-1.xx&oh=00_AfAyw3rAT-5ug63--8tht5KkIln2olXMLrkOemt4v65FvA&oe=656206C2"
-                       alt="Oskar">
-                  <!--                  <input class="ms-4" type="file" v-model="image">-->
-                </div>
-
                 <div class="mb-3 col-12 col-sm-6">
                   <label for="name" class="form-label">Nazwa:</label>
                   <input v-model="name" type="text" id="name" required class="form-control">
