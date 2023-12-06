@@ -151,8 +151,12 @@
     color: #37352F;
 }
 
-.light a{
-    color: #37352F;
+.light a {
+    color: #37352F !important;
+}
+
+.light a:hover {
+    color: #c27df3 !important;
 }
 
 .light .side-bar-border{
