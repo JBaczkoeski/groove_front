@@ -2,9 +2,9 @@
   <div :class="themeClass" class="text-center page">
     <button class="btn submit-button-bg" v-if="this.isDarkTheme === false" @click="toggleTheme"><i class="fa-regular fa-moon fa-2xl" style="color: #000000;"></i></button>
     <button class="btn submit-button-bg" v-else @click="toggleTheme"><i class="fa-regular fa-sun fa-2xl" style="color: #ffffff;"></i></button>
-    <user-layout v-if="role.includes('user') && role[1] !== 'artist' && role[1] !== 'studiohead' && role[1] !== 'admin' || role.length === 0"/>
+    <user-layout v-if="role.includes('user') && role[1] !== 'artist' && role[0] !== 'studiohead' && role[1] !== 'admin' || role.length === 0"/>
     <admin-layout v-if="role[1] === 'admin'"/>
-    <label-layout v-if="role[1] === 'studiohead' && role[1] !== 'admin'"/>
+    <label-layout v-if="role[0] === 'studiohead'"/>
     <artist-layout v-if="role[1] === 'artist'"/>
   </div>
 </template>
