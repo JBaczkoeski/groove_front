@@ -6,7 +6,7 @@
       </div>
       <div class="container col-9 mt-3">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-dark-song">
             <thead>
             <tr class="text-center">
               <th scope="col">#</th>
@@ -17,7 +17,7 @@
             </thead>
             <tbody>
             <ArtistElementList
-                v-for="artist in artists" :key="artist.id" :name="artist.name" :place="0"
+                v-for="(artist,index) in artists" :key="artist.id" :name="artist.name" :place="index"
             />
             </tbody>
           </table>

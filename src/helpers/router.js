@@ -39,6 +39,7 @@ import LabelAlbumsView from "@/views/user_label/management/LabelAlbumsView.vue";
 import AdminsView from "@/views/user_label/management/AdminsView.vue";
 import ArtistAlbumView from "@/views/user_artist/artistSong/ArtistAlbumView.vue";
 import LabelSongsView from "@/views/user_label/management/LabelSongsView.vue";
+import UserManagmentView from "@/views/user_admin/UsersManagment.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -90,7 +91,8 @@ const router = createRouter({
         {path: '/artysta/konto/usun', component: DeleteArtistAccountView, meta:{requiresAuth: true}},
 
         //Admin
-        {path: '/admin/zarzadznie', component: ServiceManagment, meta:{requiresAuth: true}}
+        {path: '/admin/zarzadznie', component: ServiceManagment, meta:{requiresAuth: true}},
+        {path: '/admin/uzytkownicy', component: UserManagmentView, meta:{requiresAuth: true}}
     ],
 })
 

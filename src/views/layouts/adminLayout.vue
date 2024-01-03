@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg  dark nav-dark">
     <div class="container-fluid">
       <img src="../../assets/logo.png" class="logo" alt="Opis obrazu">
       <p class="navbar-brand brand">Groove Music</p>
@@ -11,6 +11,9 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <NavLink :to="'/admin/zarzadznie'" :label="'Zarządzanie serwisem'"/>
+          </li>
+          <li class="nav-item">
+            <NavLink :to="'/admin/uzytkownicy'" :label="'Użytkownicy'"/>
           </li>
         </ul>
       </div>
