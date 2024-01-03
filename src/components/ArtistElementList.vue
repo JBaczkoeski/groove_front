@@ -21,19 +21,21 @@ export default {
     name: String,
     lastName: String,
     addDate: String,
+    place: Number
   },
   setup(props) {
     const idRef = ref(props.id);
     const nameRef = ref(props.name);
     const lastNameRef = ref(props.lastName);
     const addDateRef = ref(props.addDate);
-
+    const placeRef = ref(props.place);
 
     return {
       idRef,
       nameRef,
       lastNameRef,
       addDateRef,
+      placeRef
     };
   },
 }

@@ -19,7 +19,7 @@
             </thead>
             <tbody>
             <ArtistElementList
-                :key="1" :name="'Oskar'" :lastName="'Sukiennik'" :addDate="'09-09-2023'"
+                :key="1" :name="'Oskar'" :lastName="'Sukiennik'" :addDate="'09-09-2023'" :place="0"
             />
             </tbody>
           </table>

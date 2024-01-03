@@ -46,8 +46,11 @@ export default {
   },
   methods: {
     acceptApply(id) {
-      api.post(`/api/Studio/AcceptRequest?requestId=${id}`)
-      window.location.reload();
+      api.post(`/api/Studio/AcceptRequest?requestId=${id}`).then(Response=>{
+        if (Response.status === 200){
+          window.location.reload();
+        }
+      })
     },
     deleteApply(id) {
       api.delete(`/api/Studio/DeclineRequest?requestId=${id}`)
