@@ -2,8 +2,6 @@
   <tr class="text-center">
     <th scope="row" class="pt-5">{{ placeRef + 1 }}</th>
     <td class="pt-5">{{ name }}</td>
-    <td class="pt-5">{{ lastName }}</td>
-    <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">
       <button class="btn btn-primary me-3">Sprawdź</button>
       <button class="btn btn-success me-3">Napisz</button>

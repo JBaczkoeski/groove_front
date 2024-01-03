@@ -11,15 +11,13 @@
             <tr class="text-center">
               <th scope="col">#</th>
               <th scope="col">Imię</th>
-              <th scope="col">Nazwisko</th>
-              <th scope="col">Data dołączenia</th>
               <th scope="col"></th>
             </tr>
 
             </thead>
             <tbody>
             <ArtistElementList
-                :key="1" :name="'Oskar'" :lastName="'Sukiennik'" :addDate="'09-09-2023'" :place="0"
+                v-for="artist in artists" :key="artist.id" :name="artist.name" :place="0"
             />
             </tbody>
           </table>
@@ -32,12 +30,29 @@
 <script>
 import SideBarManagmentLabel from "@/components/SideBarManagmentLabel.vue";
 import ArtistElementList from "@/components/ArtistElementList.vue";
+import api from "@/services/api";
 
 export default {
   components: {
     SideBarManagmentLabel,
     ArtistElementList,
   },
+  data(){
+    return {
+      artists: []
+    }
+  },
+  mounted() {
+    this.getArtists();
+  },
+  methods:{
+    getArtists(){
+      api.get('/api/Studio/GetArtistByStudio').then(Response=>{
+          this.artists = Response.data.$values
+        console.log(this.artists)
+      })
+    }
+  }
 }
 </script>
 
