@@ -3,8 +3,7 @@
     <th scope="row" class="pt-5">{{ placeRef + 1 }}</th>
     <td class="pt-5">{{ name }}</td>
     <td class="pt-5">
-      <button @click="makeAdmin(userId)" class="btn btn-primary me-3">Mianuj adminem</button>
-      <button @click="deleteArtist(id)" class="btn btn-danger">Usuń</button>
+      <button @click="deleteAdmin(id)" class="btn btn-danger">Usuń</button>
     </td>
   </tr>
 </template>
@@ -37,22 +36,13 @@ export default {
     };
   },
   methods: {
-    deleteArtist(id){
-      api.delete(`/api/Studio/RemoveArtistFromStudio?artistId=${id}`)
+    deleteAdmin(id){
+      api.delete(`/api/Studio/RemoveFromAdmin?adminId=${id}`)
           .then(response => {
             if (response.status === 200)
               window.location.reload();
           });
     },
-    makeAdmin(id){
-      api.post(`/api/Studio/MakeArtistAnAdm?artistId=${id}`)
-          .then(response=>{
-        if (response.status === 200){
-          window.location.reload();
-        }
-      });
-
-    }
   },
 }
 </script>
