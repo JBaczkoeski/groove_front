@@ -14,7 +14,7 @@
             </thead>
             <tbody>
             <UsersElementList
-                v-for="user in users" :key="user.id" :name="user.email" :place="0"
+                v-for="user in users" :id="user.userId" :key="user.id" :name="user.email" :place="0"
             />
             </tbody>
           </table>
@@ -47,8 +47,8 @@ export default defineComponent({
       api.get('/api/Admin/GetAllUsers').then(Response=>{
         this.users = Response.data.$values;
         console.log(this.users)
-      })
-    }
+      });
+    },
   }
 })
 </script>

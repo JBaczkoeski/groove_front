@@ -33,11 +33,12 @@ export default {
   },
   methods:{
     headAdmin(id){
-      api.post(`/api/Admin/MainNewHeadAdmin?newadminId=${id}`).then(Response=>{
-        if (Response.status === 200){
-          window.location.reload();
-        }
-      })
+      api.post(`/api/Admin/MainNewHeadAdmin?newadminId=${id}`)
+          .then(Response=>{
+            if (Response.status === 200){
+            window.location.reload();
+          }
+      });
     }
   }
 }
