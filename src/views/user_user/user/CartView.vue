@@ -51,7 +51,11 @@ export default {
       })
     },
     Buy(){
-      api.post('/api/Shopping/PayForCartByBalance')
+      api.post('/api/Shopping/PayForCartByBalance').then(Response =>{
+        if (Response.status === 200) {
+          window.location.reload()
+        }
+      })
     }
   }
 }

@@ -22,9 +22,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <ordersElement :id="1" :series_number="'asd123'" :order_date="20323-10-17" :price="53"/>
-                <ordersElement :id="2" :series_number="'a122222'" :order_date="20323-10-17" :price="22"/>
-                <ordersElement :id="3" :series_number="'as3333'" :order_date="20323-10-17" :price="45"/>
+                <ordersElement v-for="order in orders" :key="order.id" :id="1" :series_number="order.orderNumber"
+                               :order_date="formatDate(order.orderDate)" :price="order.orderCost"/>
                 </tbody>
               </table>
             </div>
@@ -45,8 +44,8 @@ export default {
     SideBarUser,
     ordersElement,
   },
-  data(){
-    return{
+  data() {
+    return {
       orders: []
     }
   },
@@ -56,10 +55,21 @@ export default {
   methods: {
     getOrders() {
       api.get('/api/User/GetUserOrders').then(
-          response =>{
+          response => {
             this.orders = response.data.$values
           }
       )
+    },
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+
+      const formattedDay = day < 10 ? `0${day}` : day;
+      const formattedMonth = month < 10 ? `0${month}` : month;
+
+      return `${formattedDay}-${formattedMonth}-${year}`;
     }
   }
 }
