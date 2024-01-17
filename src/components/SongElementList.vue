@@ -3,7 +3,7 @@
     <th scope="row" class="pt-5">{{ placeRef + 1 }}</th>
     <td><img :src="cover" alt="Opis obrazu" class="shadow cover-album"></td>
     <td class="pt-5">{{ title }}</td>
-    <td class="pt-5">{{ album }}</td>
+    <td class="pt-5">{{ albumName }}</td>
     <td class="pt-5">{{ addDate }}</td>
     <td class="pt-5">{{ time }}</td>
     <td class="pt-5">
@@ -34,7 +34,8 @@ export default {
     time: String,
     track: String,
     edit: Boolean,
-    albumId: Number
+    albumId: Number,
+    albumName: String
   },
   setup(props) {
     const idRef = ref(props.id);
@@ -46,7 +47,8 @@ export default {
     const timeRef = ref(props.time);
     const trackRef = ref(props.track);
     const editRef = ref(props.edit);
-    const albumIdRef = ref(props.albumId)
+    const albumIdRef = ref(props.albumId);
+    const albumNameRef = ref(props.albumName);
     const store = useStore();
 
     const load = (track, title, cover, id) => {
@@ -68,7 +70,8 @@ export default {
       trackRef,
       load,
       editRef,
-      albumIdRef
+      albumIdRef,
+      albumNameRef
     };
   },
   methods: {
