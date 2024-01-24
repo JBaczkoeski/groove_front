@@ -22,7 +22,6 @@
         </div>
         <div class="container col-3 pt-5 text-center mt-4">
           <p class="h2 mb-3">Cena: 49.99 zł</p>
-          <a href="#" class="btn btn-success btn-lg">Kup teraz</a>
         </div>
       </div>
     </div>
